@@ -15,7 +15,7 @@
 
 ## 页面展示
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/image1.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/image_1.png'>
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/image_2.png'>
 
@@ -74,6 +74,8 @@ blog: https://github.com/PDKSophia/blog.io
 juejin: https://juejin.im/user/594ca8a35188250d892f4139
 
 erek-editor: https://github.com/PDKSophia/erek-editror
+
+pro-ant-design: https://pro.ant.design/index-cn
 
 -----
 
