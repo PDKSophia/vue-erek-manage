@@ -9,8 +9,8 @@
 
 ## 特性
 
-- 直接配置 `Menu菜单栏` 和 `BreadItem面包屑`
-- 仿`pro-ant-design`框架, 提供`Echarts图标` `Table表格列表`等页面借鉴
+- 直接配置 `Menu菜单栏` 和 `BreadItem面包屑`
+- 仿`pro-ant-design`框架, 提供`Echarts图标` `Table表格列表`等页面借鉴
 - 使用 `npm + webpack + babel` 的工作流，支持 `ES6`
 
 ## 页面展示
