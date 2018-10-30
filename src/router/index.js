@@ -4,6 +4,10 @@ import ErekManageLogin from '@/view/Login/Login'
 import ErekManageRouter from '@/view/Manage/Router'
 // 后台管理
 import ErekManageHome from '@/view/Manage/ErekHome/Home'
+
+// 列表页
+import ErekTableList from '@/view/Manage/ErekList/Table'
+import ErekStandardList from '@/view/Manage/ErekList/Standard'
 // 安全管理
 import ErekSafeSystem from '@/view/Manage/ErekSafe/System'
 import ErekSafeAdminRole from '@/view/Manage/ErekSafe/AdminRole'
@@ -41,6 +45,7 @@ export default new Router({
             keepAlive: false
           }
         },
+        // 安全管理
         {
           path: 'erek-safe-system',
           name: 'ErekSafeSystem',
@@ -65,6 +70,7 @@ export default new Router({
             keepAlive: false
           }
         },
+        // 工具栏
         {
           path: 'erek-tool-message',
           name: 'ErekToolMessage',
@@ -96,6 +102,23 @@ export default new Router({
           meta: {
             keepAlive: false
           }
+        },
+        // 列表页
+        {
+          path: 'erek-list-table',
+          name: 'ErekTableList',
+          component: ErekTableList,
+          meta: {
+            keepAlive: false
+          } 
+        },
+        {
+          path: 'erek-list-standard',
+          name: 'ErekStandardList',
+          component: ErekStandardList,
+          meta: {
+            keepAlive: false
+          } 
         }
       ],
       meta: {

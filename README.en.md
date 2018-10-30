@@ -1,19 +1,18 @@
-简体中文 | [English](./README.en.md)
+[简体中文](./README.md) | English
 # Vue-Erek-Manage
 
 ![](https://img.shields.io/badge/vue-2.5.2-blue.svg)
 ![](https://img.shields.io/badge/license-MIT-orange.svg)
 
-## 介绍
-`Vue-Erek-Manage` 是一款基于 `Vue 2.0` + `iView UI` 的后台管理
+## Introduce
+`Vue-Erek-Manage` is a backstage management system based on `Vue 2.0` and `iView UI`
 
-## 特性
+## Characteristic
+- Configure `Menu bar` and `Breadcrumbs directly`
+- Imitation `pro-ant-design` framework, provide `Echarts icon ` and `Table form list` and other pages to learn from
+- Use `npm + webpack + babel` workflow , and support `ES6`
 
-- 直接配置 `Menu菜单栏` 和 `BreadItem面包屑`
-- 仿`pro-ant-design`框架, 提供`Echarts图标` `Table表格列表`等页面借鉴
-- 使用 `npm + webpack + babel` 的工作流，支持 `ES6`
-
-## 页面展示
+## Display Picture
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/image1.png'>
 
@@ -22,7 +21,7 @@
 <!-- ## Display Link -->
 <!-- Link: http://yun.pengdaokuan.cn/erek-manage -->
 
-## 技术栈
+## Technology
 + vue-cli
 + vuex
 + axios
@@ -33,26 +32,26 @@
 + mock.js
 + ...
 
-## 实现目标
-- [ ] 仪表盘
-- [ ] 列表页
-- [ ] 错误页
-- [ ] 安全管理
-- [ ] 工作栏管理
+## Target function
+- [ ] Dashboard
+- [ ] List Page
+- [ ] Error Page
+- [ ] Security Management
+- [ ] Work Management
 
-## 项目环境
+## Project Environment
 ```javascript
     1 . Node.js is v10.6.0 
 
     2 . Vue-cli is v3.0.0
 
-    3 . 其他依赖请看 package.json
+    3 . Other dependencies please move package.json
 
-    4 . 开发人员移步至 DEVELOPER.md 文档
+    4 . Developer explains document move DEVELOPER.md
 
 ```
 
-## 使用
+## Use
 ```javascript
   1. git clone https://github.com/PDKSophia/vue-manage
   
@@ -63,8 +62,7 @@
   4. npm run serve
 ```
 
-## 其他链接
-
+## Related links
 v1.1 YunResume: http://yun.pengdaokuan.cn/YunResume
 
 v2.0 ErekResume: http://yun.pengdaokuan.cn/erek-resume

@@ -6,7 +6,9 @@ const BreadItem = {
   '/erek-manage/erek-tool-message': '工具栏-系统通知',
   '/erek-manage/erek-tool-advertise': '工具栏-宣传栏',
   '/erek-manage/erek-tool-commonality': '工具栏-公告栏',
-  '/erek-manage/erek-tool-words': '工具栏-工作留言'
+  '/erek-manage/erek-tool-words': '工具栏-工作留言',
+  '/erek-manage/erek-list-table': '列表页-查询表格',
+  '/erek-manage/erek-list-standard': '列表页-标准列表'
 }
 
 export default BreadItem

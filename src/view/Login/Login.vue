@@ -2,7 +2,7 @@
   <div class="erek-wrapper-box">
     <canvas-animate />
     <div class="erek-admin-login">
-      <h1>Erek Resume Manage</h1>
+      <h1>Vue Erek Manage</h1>
       <div class="erek-form-login">
         <Form ref="erekUser" :model="erekUser" :rules="ruleInline">
           <FormItem prop="user">

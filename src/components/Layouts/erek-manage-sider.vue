@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <Layout>
-      <Sider hide-trigger :style="{ background: '#f5f7f9', width: '240px', minWidth: '240px', maxWidth: '240px' }">
-        <Menu :active-name='Menu[0].name' :style="{ background: '#f5f7f9' }">
+  <div :style="{height: '100%'}">
+    <Layout :style="{height: '100%'}">
+      <Sider hide-trigger :style="{ background: '#5b6270', width: '240px', minWidth: '240px', maxWidth: '240px', height: '100%' }">
+        <Menu :active-name='Menu[0].name' :style="{ background: '#5b6270', color: '#f1f1f1' }">
           <div v-for='(item, index) in Menu' :key='index'>
             <!-- 没有子菜单 -->
             <MenuItem :name='item.name' v-if='!item.isSubmenu' :to='item._to'>

@@ -2,7 +2,9 @@
   <div>
     <Header>
       <Menu mode="horizontal" theme="dark" active-name="1">
-        <div class="layout-logo"></div>
+        <div class="layout-logo">
+          <p class="erek-vue-manage">Vue Erek Manage</p>
+        </div>
         <div class="layout-nav">
           <MenuItem name="1">
             <Icon type="ios-navigate"></Icon>
@@ -26,14 +28,20 @@ export default {
 
 <style scoped lang='scss'>
 .layout-logo {
-  width: 100px;
+  width: 160px;
   height: 30px;
   background-color: #5b6270;
   border-radius: 3px;
   float: left;
   position: relative;
   top: 15px;
+  text-align: center;
   left: 20px;
+
+  .erek-vue-manage {
+    color: white;
+    margin-top: -13px;
+  }
 }
 .layout-nav {
   width: 400px;

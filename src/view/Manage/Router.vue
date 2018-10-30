@@ -1,6 +1,6 @@
 <template>
   <div id="erek-manage-container">
-    <Layout>
+    <Layout id='erek-layout'>
       <erek-header />
       <erek-sider :Menu='Menu' :BreadItem='BreadItem'/>
     </Layout>
@@ -40,5 +40,8 @@ export default {
 }
 </script>
 <style scoped lang='scss'>
-
+#erek-manage-container, #erek-layout{
+  height: 100%;
+  width: 100%;
+}
 </style>

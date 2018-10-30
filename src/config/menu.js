@@ -10,7 +10,7 @@ const Menu = [
   // 三级菜单栏
   {
     text: '安全管理',
-    icon: 'ios-swap',
+    icon: 'ios-medkit-outline',
     isSubmenu: true,
     name: '2',
     list: [
@@ -72,6 +72,26 @@ const Menu = [
       }
     ]
   },
+  {
+    text: '列表页',
+    icon: 'md-grid',
+    isSubmenu: true,
+    name: '4',
+    list: [
+      {
+        text: '查询表格',
+        hasSubmenu: false, // 是否有子菜单
+        name: '4-1',
+        _to: '/erek-manage/erek-list-table' // 跳转的链接
+      },
+      {
+        text: '标准列表',
+        hasSubmenu: false, // 是否有子菜单
+        name: '4-2',
+        _to: '/erek-manage/erek-list-standard' // 跳转的链接
+      },
+    ]
+  }
 ]
 
 export default Menu
