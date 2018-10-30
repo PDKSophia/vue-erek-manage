@@ -1,4 +1,4 @@
-# Erek Resume Manage
+# Vue-Manage
 
 ![](https://img.shields.io/badge/vue-2.5.2-blue.svg)
 ![](https://img.shields.io/badge/license-MIT-orange.svg)
