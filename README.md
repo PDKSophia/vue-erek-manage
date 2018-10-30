@@ -50,6 +50,17 @@ Link: http://yun.pengdaokuan.cn/erek-manage
 
 ```
 
+## Use
+```javascript
+  1. git clone https://github.com/PDKSophia/vue-manage
+  
+  2. cd vue-manage
+  
+  3. npm install
+  
+  4. npm run serve
+```
+
 ## Related links
 v1.1 YunResume: http://yun.pengdaokuan.cn/YunResume
 
