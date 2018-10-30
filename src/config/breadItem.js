@@ -1,0 +1,12 @@
+const BreadItem = {
+  '/erek-manage/erek-home': '仪表盘',
+  '/erek-manage/erek-safe-system': '安全管理-系统安全',
+  '/erek-manage/erek-safe-admin-role': '安全管理-管理员操作-角色设定',
+  '/erek-manage/erek-safe-admin-password': '安全管理-管理员操作-密码修改',
+  '/erek-manage/erek-tool-message': '工具栏-系统通知',
+  '/erek-manage/erek-tool-advertise': '工具栏-宣传栏',
+  '/erek-manage/erek-tool-commonality': '工具栏-公告栏',
+  '/erek-manage/erek-tool-words': '工具栏-工作留言'
+}
+
+export default BreadItem
