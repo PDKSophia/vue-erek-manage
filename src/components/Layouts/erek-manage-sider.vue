@@ -89,7 +89,6 @@ export default {
 .erek-right-layout {
 
   > .erek-layout-content {
-    padding: 24px;
     background-color: #fff
   }
 }

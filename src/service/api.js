@@ -63,4 +63,96 @@ export default {
       }
     })
   },
+  /**
+   * desc: 获取所有数据信息
+   * @return {*} 
+  */
+  fetchAllDataList: () => {
+    return request(`${baseUrl}/data/getAllData`, {
+      method: 'GET'
+    }).then((res) => {
+      let { response } = res
+      if (response.code === 1) {
+        Message.success({
+          content: response.msg,
+          duration: 1.5
+        })
+        return response.list
+      } else {
+        Message.error({
+          content: response.msg,
+          duration: 1.5
+        })
+      }
+    })
+  },
+  /**
+   * desc: 获取所有待办任务
+   * @return {*} 
+  */
+  getAllTaskList: () => {
+    return request(`${baseUrl}/data/getAllTask`, {
+      method: 'GET'
+    }).then((res) => {
+      let { response } = res
+      if (response.code === 1) {
+        Message.success({
+          content: response.msg,
+          duration: 1.5
+        })
+        return response.list
+      } else {
+        Message.error({
+          content: response.msg,
+          duration: 1.5
+        })
+      }
+    })
+  },
+  /**
+   * desc: 获取 `平台日访问量` 和  `日注册人数`
+   * @return {*} 
+  */
+  fetchPlatFormViewData: () => {
+    return request(`${baseUrl}/data/getPlatFormViewData`, {
+      method: 'GET'
+    }).then((res) => {
+      let { response } = res
+      if (response.code === 1) {
+        Message.success({
+          content: response.msg,
+          duration: 1.5
+        })
+        return response.list
+      } else {
+        Message.error({
+          content: response.msg,
+          duration: 1.5
+        })
+      }
+    })
+  },
+  /**
+   * desc: 获取所有首页tab的卡片数据
+   * @return {*} 
+  */
+  fetchAllTabData: () => {
+    return request(`${baseUrl}/data/getAllTabCardList`, {
+      method: 'GET'
+    }).then((res) => {
+      let { response } = res
+      if (response.code === 1) {
+        Message.success({
+          content: response.msg,
+          duration: 1.5
+        })
+        return response.list
+      } else {
+        Message.error({
+          content: response.msg,
+          duration: 1.5
+        })
+      }
+    })
+  }
 }

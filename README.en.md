@@ -14,9 +14,13 @@
 
 ## Display Picture
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/image_1.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_0.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/image_2.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_1.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_2.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_3.png'>
 
 <!-- ## Display Link -->
 <!-- Link: http://yun.pengdaokuan.cn/erek-manage -->
@@ -38,6 +42,12 @@
 - [ ] Error Page
 - [ ] Security Management
 - [ ] Work Management
+
+
+## Echarts
+- [ ] Line Echarts
+- [ ] Data Card
+- [ ] Pie Echarts
 
 ## Project Environment
 ```javascript

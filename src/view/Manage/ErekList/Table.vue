@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='vue-erek-table-box'>
     <Row :gutter="16" :style="{marginBottom: '20px'}">
       <Col span="8">
         <div>
@@ -22,7 +22,12 @@
         </div>
       </Col>
     </Row>
-    <Table :border="true" :stripe="true" size="small" :data="tableData" :columns="columns"></Table>
+    <erek-table 
+      :border='tableObj.border'
+      :stripe='tableObj.stripe'
+      :size='tableObj.size'
+      :tableData='tableObj.tableData'
+    />
     <div style="margin: 20px 10px;overflow: hidden">
       <div style="float: right;">
         <Page :total="100" :current="1" ></Page>
@@ -32,8 +37,12 @@
 </template>
 
 <script>
-import dataList from '../../../config/data.list'
+import ErekTable from '../../../components/Table/vue-erek-table.vue'
 export default {
+  name: 'ErekManageTableList',
+  components: {
+    ErekTable
+  },
   data () {
     return {
       keyWords: '',
@@ -48,95 +57,12 @@ export default {
           label: '离职'
         }
       ],
-      tableData: [],
-      columns: [
-        {
-          title: '员工ID',
-          key: 'id',
-          width: 80,
-        },
-        {
-          title: '员工名',
-          key: 'username',
-          width: 100,
-        },
-        {
-          title: '员工编号',
-          key: 'staffID'
-        },
-        {
-          title: '所属部门',
-          key: 'department'
-        },
-        {
-          title: '所在职位',
-          key: 'type'
-        },
-        {
-          title: '员工状态',
-          key: 'status',
-          filters: [
-            {
-              label: '在职',
-              value: 'online'
-            },
-            {
-              label: '离职',
-              value: 'exit'
-            }
-          ],
-          filterMultiple: false,
-          filterMethod (value, row) {
-            return row.status.indexOf(value) > -1;
-          }
-        },
-        {
-          title: '联系方式',
-          key: 'phone'
-        },
-        {
-          title: '入职时间',
-          key: 'time'
-        },
-        {
-          title: 'Action',
-          key: 'action',
-          width: 150,
-          align: 'center',
-          render: (h, params) => {
-            return h('div', [
-              h('Button', {
-                props: {
-                  type: 'primary',
-                  size: 'small'
-                },
-                style: {
-                  marginRight: '5px'
-                },
-                on: {
-                  click: () => {
-                    this.$tool.toastTips('info', `你当前点击: ${++params.index}`, 1)
-                  }
-                }
-              }, '查看'),
-              h('Button', {
-                props: {
-                  type: 'error',
-                  size: 'small'
-                },
-                style: {
-                  marginRight: '5px'
-                },
-                on: {
-                  click: () => {
-                    this.$tool.toastTips('info', `你当前点击: ${params.index}`, 2)
-                  }
-                }
-              }, '删除')
-            ])
-          }
-        }
-      ]
+      tableObj: {
+        border: false,
+        stripe: true,
+        size: 'large',
+        tableData: [],
+      },
     }
   },
   methods: {
@@ -154,12 +80,18 @@ export default {
     }
   },
   mounted() {
-    this.tableData = dataList
+    // 发送请求获取数据信息
+    this.$api.fetchAllDataList().then((res) => {
+      this.tableObj.tableData = res
+    })
   },
 }
 </script>
 
 <style scoped lang="scss">
+.vue-erek-table-box {
+  padding: 24px;
+}
 .erek-span-text {
   font-size: 14px;
 }

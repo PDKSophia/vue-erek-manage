@@ -15,9 +15,13 @@
 
 ## 页面展示
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/image_1.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_0.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/image_2.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_1.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_2.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_3.png'>
 
 <!-- ## Display Link -->
 <!-- Link: http://yun.pengdaokuan.cn/erek-manage -->
@@ -39,6 +43,11 @@
 - [ ] 错误页
 - [ ] 安全管理
 - [ ] 工作栏管理
+
+## 图表
+- [ ] 折现表
+- [ ] 数据卡片
+- [ ] 饼图
 
 ## 项目环境
 ```javascript
