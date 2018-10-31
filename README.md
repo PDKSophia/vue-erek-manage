@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/license-MIT-orange.svg)
 
 ## 介绍
-`Vue-Erek-Manage` 是一款基于 `Vue 2.0` + `iView UI` 的后台管理
+`Vue-Erek-Manage` 是一款基于 `Vue 2.0` + `iView UI` 的后台管理, 借鉴模仿 `pro-ant-design`的设计，适用于小型项目后台管理
 
 ## 特性
 
@@ -63,7 +63,7 @@
 
 ## 使用
 ```javascript
-  1. git clone https://github.com/PDKSophia/vue-manage
+  1. git clone https://github.com/PDKSophia/vue-erek-manage
   
   2. cd vue-erek-manage
   
