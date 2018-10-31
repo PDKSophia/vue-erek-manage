@@ -5,7 +5,8 @@
 ![](https://img.shields.io/badge/license-MIT-orange.svg)
 
 ## Introduce
-`Vue-Erek-Manage` is a backstage management system based on `Vue 2.0` and `iView UI`
+`Vue-Erek-Manage` is a backstage management system based on `Vue 2.0` and `iView UI`，It draws on `pro-ant-design` framework. It applies to background management for small projects
+
 
 ## Characteristic
 - Configure `Menu bar` and `Breadcrumbs directly`
@@ -63,7 +64,7 @@
 
 ## Use
 ```javascript
-  1. git clone https://github.com/PDKSophia/vue-manage
+  1. git clone https://github.com/PDKSophia/vue-erek-manage
   
   2. cd vue-erek-manage
   
