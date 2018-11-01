@@ -102,4 +102,8 @@ html, body {
 .ivu-menu {
   color: #f1f1f1 !important;
 }
+
+.ivu-divider, .ivu-divider-vertical {
+  height: 1.4rem !important;
+}
 </style>
