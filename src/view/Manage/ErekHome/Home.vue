@@ -17,16 +17,23 @@
     </div>
     <erek-br :bgColor='hrObj.bgColor' :height='hrObj.height'></erek-br>
     <div class="vue-erek-home-down">
+      <vue-erek-echarts-radar
+        :series="radarSeries"
+        :indicator='radarIndicator'
+        :width='radarWidth'
+        :height='radarHeight'
+      ></vue-erek-echarts-radar>
       <vue-erek-echarts-pie
         :series="pieSeries"
         :width='pieWidth'
         :height='pieHeight'
       ></vue-erek-echarts-pie>
-      <vue-erek-echarts-pie
-        :series="pieSeries"
-        :width='pieWidth'
-        :height='pieHeight'
-      ></vue-erek-echarts-pie>
+      <vue-erek-echarts-radar
+        :series="radarSeries"
+        :indicator='radarIndicator'
+        :width='radarWidth'
+        :height='radarHeight'
+      ></vue-erek-echarts-radar>
     </div>
   </div>
 </template>
@@ -34,6 +41,7 @@
 <script>
 import VueErekEchartsLine from '../../../common/ErekEcharts/erek-line.vue'
 import VueErekEchartsPie from '../../../common/ErekEcharts/erek-pie.vue'
+import VueErekEchartsRadar from '../../../common/ErekEcharts/erek-radar.vue'
 import VueErekTab from '../../../common/ErekTab/vue-erek-tab.vue'
 import ErekBr from '../../../common/ErekBr/vue-erek-br.vue'
 import tabconfig from '../../../config/tab'
@@ -43,6 +51,7 @@ export default {
   components: {
     VueErekEchartsLine,
     VueErekEchartsPie,
+    VueErekEchartsRadar,
     VueErekTab,
     ErekBr
   },
@@ -67,6 +76,10 @@ export default {
         bgColor: '#f5f7f9',
         height: '30px'
       },
+      radarWidth: '100%',
+      radarHeight: '300px',
+      radarSeries: [], // 雷达图数据
+      radarIndicator: [] // 雷达图配置
     }
   },
   mounted() {
@@ -122,12 +135,37 @@ export default {
       let obj = {
         name: '访问来源',
         type: 'pie',
+        radius : '60%',
+        center: ['50%', '60%'],
         data: []
       }
       for (let k = 0; k < res.length; k++) {
         obj.data.push(res[k])
       }
       this.pieSeries.push(obj)
+    })
+    // 请求拿到 `预算开销和实际开销`
+    this.$api.fetchExpenseOriginData().then(res => {
+      console.log(res)
+      let obj = {
+        name: `预算分配与实际开销`,
+        type: 'radar',
+        data: [],
+        itemStyle: {normal: {areaStyle: {type: 'default'}}},
+      }
+      Object.keys(res).forEach((key) => {
+        let dataObj = {
+          value: [],
+          name: res[key].name
+        }
+        for (let j = 0; j < res[key].data.length; j++) {
+          dataObj.value.push(res[key].data[j].value)
+          this.radarIndicator.push(res[key].data[j].name)
+        }
+        obj.data.push(dataObj)
+      })
+      this.radarSeries.push(obj)
+      this.radarIndicator = this.$utils.uniqueArray(this.radarIndicator)
     })
   },
 }
