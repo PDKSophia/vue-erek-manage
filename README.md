@@ -15,9 +15,9 @@
 
 ## 页面展示
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_1.png'>
-
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_0.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_1.png'>
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_2.png'>
 
@@ -48,6 +48,7 @@
 - [ ] 折现表
 - [ ] 数据卡片
 - [ ] 饼图
+- [ ] 雷达图
 
 ## 项目环境
 ```javascript
