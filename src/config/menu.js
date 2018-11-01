@@ -64,12 +64,12 @@ const Menu = [
         name: '3-3',
         _to: '/erek-manage/erek-tool-commonality' // 跳转的链接
       },
-      {
-        text: '工作留言',
-        hasSubmenu: false, // 是否有子菜单
-        name: '3-4',
-        _to: '/erek-manage/erek-tool-words' // 跳转的链接
-      }
+      // {
+      //   text: '工作留言',
+      //   hasSubmenu: false, // 是否有子菜单
+      //   name: '3-4',
+      //   _to: '/erek-manage/erek-tool-words' // 跳转的链接
+      // }
     ]
   },
   {
@@ -89,6 +89,26 @@ const Menu = [
         hasSubmenu: false, // 是否有子菜单
         name: '4-2',
         _to: '/erek-manage/erek-list-standard' // 跳转的链接
+      },
+    ]
+  },
+  {
+    text: '个人页',
+    icon: 'md-grid',
+    isSubmenu: true,
+    name: '5',
+    list: [
+      {
+        text: '个人中心',
+        hasSubmenu: false, // 是否有子菜单
+        name: '5-1',
+        _to: '/erek-manage/erek-user/information' // 跳转的链接
+      },
+      {
+        text: '个人设置',
+        hasSubmenu: false, // 是否有子菜单
+        name: '5-2',
+        _to: '/erek-manage/erek-user/setting' // 跳转的链接
       },
     ]
   }
