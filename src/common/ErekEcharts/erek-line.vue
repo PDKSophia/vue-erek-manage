@@ -52,19 +52,19 @@ export default {
     }
   },
   methods: {
-    drawLineOrderEcharts() {
-      let lineOrder = this.$echarts.init(this.$refs.erek_line)
+    drawLineEcharts() {
+      let lineEcharts = this.$echarts.init(this.$refs.erek_line)
       let newOptions = Object.assign(configOptions, {
         series: this.series,
         xAxis: this.xAxis,
         yAxis: this.yAxis
       })
-      lineOrder.setOption(newOptions)
+      lineEcharts.setOption(newOptions)
     }
   },
   mounted() {
     setTimeout(() => {
-      this.drawLineOrderEcharts()
+      this.drawLineEcharts()
     }, 1000)
   },
 }
