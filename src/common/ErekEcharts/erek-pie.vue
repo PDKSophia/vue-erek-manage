@@ -31,8 +31,15 @@ export default {
   methods: {
     drawPieEcharts() {
       let pieEcharts = this.$echarts.init(this.$refs.erek_pie)
+      let legenData = []
+      for (let i = 0; i < this.series[0].data.length; i++) {
+        legenData.push(this.series[0].data[i].name)
+      }
       let newOptions = Object.assign(configOptions, {
-        series: this.series
+        series: this.series,
+        legend: {
+          data: legenData
+        }
       })
       pieEcharts.setOption(newOptions)
     }
