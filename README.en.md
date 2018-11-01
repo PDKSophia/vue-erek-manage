@@ -15,9 +15,9 @@
 
 ## Display Picture
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_1.png'>
-
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_0.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_1.png'>
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_2.png'>
 
@@ -49,6 +49,7 @@
 - [ ] Line Echarts
 - [ ] Data Card
 - [ ] Pie Echarts
+- [ ] Radar Echarts
 
 ## Project Environment
 ```javascript
