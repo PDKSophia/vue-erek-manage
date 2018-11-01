@@ -154,5 +154,30 @@ export default {
         })
       }
     })
-  }
+  },
+
+    /**
+   * desc: 获取 `平台日访问量` 和  `日注册人数`
+   * @return {*} 
+  */
+  fetchAllOriginData: () => {
+    return request(`${baseUrl}/data/getOriginAllData`, {
+      method: 'GET'
+    }).then((res) => {
+      let { response } = res
+      if (response.code === 1) {
+        Message.success({
+          content: response.msg,
+          duration: 1.5
+        })
+        return response.list
+      } else {
+        Message.error({
+          content: response.msg,
+          duration: 1.5
+        })
+      }
+    })
+  },
 }
+
