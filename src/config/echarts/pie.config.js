@@ -11,7 +11,7 @@ const option = {
     {
       name: '访问来源',
       type: 'pie',
-      radius : '55%',
+      radius : '40%',
       center: ['50%', '60%'],
       data:[
         {value:335, name:'直接访问'},
