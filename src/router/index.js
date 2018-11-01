@@ -19,6 +19,10 @@ import ErekToolAdvertise from '@/view/Manage/ErekTool/Advertise'
 import ErekToolCommonality from '@/view/Manage/ErekTool/Commonality'
 import ErekToolWords from '@/view/Manage/ErekTool/Words'
 
+// 个人页
+import ErekPersonInformation from '@/view/Manage/ErekPerson/Information'
+import ErekPersonSetting from '@/view/Manage/ErekPerson/Setting'
+
 Vue.use(Router)
 
 export default new Router({
@@ -119,7 +123,24 @@ export default new Router({
           meta: {
             keepAlive: false
           } 
-        }
+        },
+        // 个人页
+        {
+          path: 'erek-user/information',
+          name: 'ErekPersonInformation',
+          component: ErekPersonInformation,
+          meta: {
+            keepAlive: false
+          } 
+        },
+        {
+          path: 'erek-user/setting',
+          name: 'ErekPersonSetting',
+          component: ErekPersonSetting,
+          meta: {
+            keepAlive: false
+          } 
+        },
       ],
       meta: {
         keepAlive: false
