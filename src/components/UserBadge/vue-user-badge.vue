@@ -68,7 +68,7 @@ export default {
         flex: 1;
         justify-content: space-around;
         align-items: center;
-        padding: 9px 3px;
+        padding: 13px 3px;
         text-align: center;
 
         .vue-erek-badge-cell-content-value {
