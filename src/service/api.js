@@ -1,5 +1,6 @@
 import request from './request'
 import { Message } from 'iview'
+import { getAuthorityToken } from '../utils/vue-token'
 
 let baseUrl = ''
 if (process.env.NODE_ENV !== 'production') {
@@ -23,10 +24,10 @@ export default {
     }).then((res) => {
       let { response } = res
       if (response.code === 1) {
-        // Message.success({
-        //   content: response.msg,
-        //   duration: 1.5
-        // })
+        Message.success({
+          content: response.msg,
+          duration: 1.5
+        })
         return response.data
       } else {
         Message.error({
@@ -41,7 +42,7 @@ export default {
    * @param {String} UserName
    * @param {String} PassWord
    * @param {String} Code
-   * @return {*} 
+   * @return {String} Token
   */
   fetchOauthAdminLogin: (jsondata) => {
     return request(`${baseUrl}/oauth/login`, {
@@ -50,10 +51,30 @@ export default {
     }).then((res) => {
       let { response } = res
       if (response.code === 1) {
-        // Message.success({
-        //   content: response.msg,
-        //   duration: 1.5
-        // })
+        Message.success({
+          content: response.msg,
+          duration: 1.5
+        })
+        return response.data
+      } else {
+        Message.error({
+          content: response.msg,
+          duration: 1.5
+        })
+      }
+    })
+  },
+  /**
+   * desc: 获取用户信息
+   * @return {*} 
+  */
+  fetchCurrentUser: () => {
+    return request(`${baseUrl}/erek-user/getCurrentUser`, {
+      method: 'GET',
+      token: getAuthorityToken()
+    }).then((res) => {
+      let { response } = res
+      if (response.code === 1) {
         return response.data
       } else {
         Message.error({
@@ -69,7 +90,8 @@ export default {
   */
   fetchAllDataList: () => {
     return request(`${baseUrl}/data/getAllData`, {
-      method: 'GET'
+      method: 'GET',
+      token: getAuthorityToken()
     }).then((res) => {
       let { response } = res
       if (response.code === 1) {
@@ -92,7 +114,8 @@ export default {
   */
   getAllTaskList: () => {
     return request(`${baseUrl}/data/getAllTask`, {
-      method: 'GET'
+      method: 'GET',
+      token: getAuthorityToken()
     }).then((res) => {
       let { response } = res
       if (response.code === 1) {
@@ -115,7 +138,8 @@ export default {
   */
   fetchPlatFormViewData: () => {
     return request(`${baseUrl}/data/getPlatFormViewData`, {
-      method: 'GET'
+      method: 'GET',
+      token: getAuthorityToken()
     }).then((res) => {
       let { response } = res
       if (response.code === 1) {
@@ -138,7 +162,8 @@ export default {
   */
   fetchAllTabData: () => {
     return request(`${baseUrl}/data/getAllTabCardList`, {
-      method: 'GET'
+      method: 'GET',
+      token: getAuthorityToken()
     }).then((res) => {
       let { response } = res
       if (response.code === 1) {
@@ -162,7 +187,8 @@ export default {
   */
   fetchAllOriginData: () => {
     return request(`${baseUrl}/data/getOriginAllData`, {
-      method: 'GET'
+      method: 'GET',
+      token: getAuthorityToken()
     }).then((res) => {
       let { response } = res
       if (response.code === 1) {
@@ -186,7 +212,8 @@ export default {
   */
   fetchExpenseOriginData: () => {
     return request(`${baseUrl}/data/getExpenseAllData`, {
-      method: 'GET'
+      method: 'GET',
+      token: getAuthorityToken()
     }).then((res) => {
       let { response } = res
       if (response.code === 1) {
@@ -203,5 +230,26 @@ export default {
       }
     })
   },
+
+  /**
+   * desc: 获取 `个人页 - 个人中心` 数据
+   * @return {*} 
+  */
+  fetchAllListData: () => {
+    return request(`${baseUrl}/erek-user-all/getAllData`, {
+      method: 'GET',
+      token: getAuthorityToken()
+    }).then((res) => {
+      let { response } = res
+      if (response.code === 1) {
+        return response.list
+      } else {
+        Message.error({
+          content: response.msg,
+          duration: 1.5
+        })
+      }
+    })
+  }
 }
 
