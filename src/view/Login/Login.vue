@@ -38,7 +38,7 @@
 
 <script>
 import CanvasAnimate from '../../components/Canvas/Index'
-import { mapActions } from 'vuex'
+import { setAuthorityToken } from '../../utils/vue-token'
 
 export default {
   name: 'ErekLogin',
@@ -46,9 +46,6 @@ export default {
     CanvasAnimate
   },
    methods: {
-    ...mapActions([
-      'setErekUser'
-    ]),
     // 倒计时60s
     setCountDownTime () {
       this.sendCode = false
@@ -80,7 +77,7 @@ export default {
             this.$tool.toastTips('warning', '请输入正确邮箱', 1.5)
           } else {
             this.$api.fetchOauthAdminLogin(JSON.stringify(this.erekUser)).then(res => {
-              this.setErekUser(res)
+              setAuthorityToken(res.token)
               setTimeout(() => {
                 this.$router.push({
                   path: '/erek-manage'

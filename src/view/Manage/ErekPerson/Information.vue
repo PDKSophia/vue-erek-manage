@@ -3,34 +3,61 @@
     <div class="vue-user-item">
       <div class="vue-user-item-meta">
         <div class="vue-user-item-meta-avatar">
-          <img class='vue-user-item-meta-avatar-image' src="../../../assets/avatar1.jpeg" alt="">
+          <img class='vue-user-item-meta-avatar-image' :src='erekUser.avatar' alt="">
         </div>
         <div class="vue-user-item-meta-content">
-          <h4 class="vue-user-item-meta-title">彭道宽</h4>
+          <h4 class="vue-user-item-meta-title">{{ erekUser.username }}</h4>
           <div class="vue-user-item-meta-summary">
-            Vue-Erek-Manage 开发者 | 前端工程师 | 平台维护者
+            <span v-for='(tag, index) in erekUser.tag' :key="index">{{ tag }}<Divider type="vertical" v-if='index !== erekUser.tag.length-1' /></span>
           </div>
         </div>
       </div>
       <div class="vue-user-item-action">
         <ul>
-          <a href='https://github.com/PDKSophia/vue-erek-manage' target="_blank" class="vue-erek-link">Github</a>
-          <Divider type="vertical" />
-          <a href='https://juejin.im/user/594ca8a35188250d892f4139/posts' target="_blank" class="vue-erek-link">掘金</a>
-          <Divider type="vertical" />
-          <a href='https://weibo.com/u/2971991985' target="_blank" class="vue-erek-link">微博</a>
-          <Divider type="vertical" />
-          <a href='https://github.com/PDKSophia/blog.io' target="_blank" class="vue-erek-link">博客</a>
+          <a target="_blank" 
+            class="vue-erek-link" 
+            v-for='(item, key) in erekUser.link' 
+            :key="key" 
+            :href='item.target'
+          >
+            {{ item.text }}
+            <Divider type="vertical" v-if='key !== erekUser.link.length-1' />
+          </a>
         </ul>
       </div>
     </div>
     <erek-br :bgColor='hrObj.bgColor' :height='hrObj.height'></erek-br>
     <div class="vue-erek-article">
       <div class="vue-erek-badge-left">
-        <vue-erek-badge :badgeData='badgeData'></vue-erek-badge>
+        <vue-user-badge :badgeData='badgeData'></vue-user-badge>
       </div>
       <div class="vue-erek-content-right">
-        <vue-erek-badge :badgeData='badgeData'></vue-erek-badge>
+        <vue-erek-echarts-line
+          :xAxis='xAxis'
+          :yAxis='yAxis'
+          :series='lineSeries'
+          :itemList='itemList'
+          :width='lineWidth'
+          :height='lineHeight'
+        ></vue-erek-echarts-line>
+      </div>
+    </div>
+    <!-- <erek-br :bgColor='hrObj.bgColor' :height='hrObj.height'></erek-br> -->
+    <div class="vue-erek-meta-item-cell">
+      <div class="vue-erek-card-item-middle">
+        <!-- <vue-erek-echarts-radar
+          :series="radarSeries"
+          :indicator='radarIndicator'
+          :width='radarWidth'
+          :height='radarHeight'
+        ></vue-erek-echarts-radar> -->
+        <vue-erek-card-item :CardItem='bookCardItem'></vue-erek-card-item>
+      </div>
+      <div class="vue-erek-card-item-middle">
+        <vue-erek-card-item :CardItem='movieCardItem'></vue-erek-card-item>
+      </div>
+      <div class="vue-erek-card-item-middle">
+        <vue-erek-card-item :CardItem='bookCardItem'></vue-erek-card-item>
       </div>
     </div>
   </div>
@@ -38,96 +65,128 @@
 
 <script>
 import ErekBr from '../../../common/ErekBr/vue-erek-br.vue'
-import VueErekBadge from '../../../components/Badge/vue-erek-badge.vue'
+import VueUserBadge from '../../../components/UserBadge/vue-user-badge.vue'
+import VueErekEchartsLine from '../../../common/ErekEcharts/erek-line.vue'
+import VueErekEchartsRadar from '../../../common/ErekEcharts/erek-radar.vue'
+import VueErekCardItem from '../../../common/ErekCardItem/erek-other-card.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'ErelUserInformation',
   components: {
     ErekBr,
-    VueErekBadge
+    VueUserBadge,
+    VueErekEchartsLine,
+    VueErekEchartsRadar,
+    VueErekCardItem
   },
+  computed: mapState({
+    erekUser: state => state.user.erekUser
+  }),
   data () {
     return {
       hrObj: {
         bgColor: '#f5f7f9',
-        height: '30px'
+        height: '20px'
       },
-      badgeData: {
+      badgeData: {}, // 徽章
+      xAxis: { // x轴 
+        data: []
+      }, 
+      yAxis: { // y轴
+        min: null,
+        max: null
+      },
+      itemList: [],
+      lineWidth: '100%',
+      lineHeight: '250px',
+      lineSeries: [], // 折线数据
+
+      radarWidth: '100%',
+      radarHeight: '300px',
+      radarSeries: [], // 雷达图数据
+      radarIndicator: [], // 雷达图配置
+      movieCardItem: {},
+      bookCardItem: {}
+    }
+  },
+  mounted() {
+    // 发送请求获取所有个人中心的数据
+    this.$api.fetchAllListData().then(res => {
+      this.badgeData = Object.assign({}, {
         namespace: '获得的徽章',
         valueColor: '#52cdb7',
-        data: [
-          {
-            name: '成就值',
-            data: [
-              {
-                value: 20,
-                text: '查看量'
-              },
-              {
-                value: 62,
-                text: '下载量'
-              },
-              {
-                value: 96,
-                text: '点击量'
-              }
-            ]
-          },
-          {
-            name: '钱包',
-            data: [
-              {
-                value: 861,
-                text: 'Q币'
-              },
-              {
-                value: 876,
-                text: '优惠券'
-              },
-              {
-                value: 9172,
-                text: '余额'
-              }
-            ]
-          },
-          {
-            name: '钱包',
-            data: [
-              {
-                value: 861,
-                text: 'Q币'
-              },
-              {
-                value: 876,
-                text: '优惠券'
-              },
-              {
-                value: 9172,
-                text: '余额'
-              }
-            ]
-          },
-          {
-            name: '钱包',
-            data: [
-              {
-                value: 861,
-                text: 'Q币'
-              },
-              {
-                value: 876,
-                text: '优惠券'
-              },
-              {
-                value: 9172,
-                text: '余额'
-              }
-            ]
-          }
-        ]
+        data: res.data
+      })
+      // 折线图 - 近期日访问量
+      let loginStep = res.loginStep
+      for (let i = 0; i < loginStep.timeRange.length; i++) {
+        this.xAxis.data.push(loginStep.timeRange[i])
       }
-    }
-  }
+      this.yAxis.min = loginStep.countRange[0]
+      this.yAxis.max = loginStep.countRange[1]
+
+      for (let j = 0; j < loginStep.data.length; j++) {
+        let normalColor = this.$utils.getColorFromArray()
+        let config = {
+          text: loginStep.data[j].text,
+          badgeColor: normalColor
+        }
+        this.itemList.push(config)
+        let obj = {
+          data: loginStep.data[j].data,
+          type: 'bar',
+          barWidth: 15,
+          itemStyle: {
+            normal: {
+              color: normalColor,  // 设置折线点颜色
+            }
+          },
+          smooth: true // 折线 圆滑
+        }
+        this.lineSeries.push(obj)
+      }
+      // 雷达图 - 个人技能
+      let skill = res.skill
+      let radObj = {
+        type: 'radar',
+        data: [],
+      }
+      Object.keys(skill.mySkill).forEach((key) => {
+        let dataObj = {
+          value: [],
+          name: skill.mySkill[key]
+        }
+        for (let j = 0; j < skill.mySkill.data.length; j++) {
+          dataObj.value.push(skill.mySkill.data[j].value)
+          this.radarIndicator.push(skill.mySkill.data[j].name)
+        }
+        radObj.data.push(dataObj)
+      })
+      this.radarSeries.push(radObj)
+      this.radarIndicator = this.$utils.uniqueArray(this.radarIndicator)
+      // 喜欢的电影列表
+      let movieObj = {
+        title: '喜欢的电影',
+        subtitle: '更多',
+        data: []
+      }
+      for (let n = 0; n < res.MovieList.length; n++) {
+        movieObj.data.push(res.MovieList[n])
+      }
+      this.movieCardItem = JSON.parse(JSON.stringify(movieObj))
+      // 喜欢的书籍列表
+      let bookObj = {
+        title: '喜欢的书籍',
+        subtitle: '购买',
+        data: []
+      }
+      for (let n = 0; n < res.BookList.length; n++) {
+        bookObj.data.push(res.BookList[n])
+      }
+      this.bookCardItem = JSON.parse(JSON.stringify(bookObj))
+    })
+  },
 }
 </script>
 
@@ -192,7 +251,6 @@ export default {
 
             > .vue-erek-link {
                 color: #2894FF;
-                width: 66px;
             }
           }
       }
@@ -201,13 +259,24 @@ export default {
 .vue-erek-article {
   display: flex;
   width: 100%;
+  margin-bottom: 30px;
 
   > .vue-erek-badge-left {
-    flex: 2 0;
+    flex: 3 0;
   }
 
   > .vue-erek-content-right {
     flex: 2 1;
+  }
+}
+
+.vue-erek-meta-item-cell {
+  display: flex;
+  width: 100%;
+  padding: 16px 16px 32px;
+
+  > .vue-erek-card-item-middle {
+    flex: 1 0;
   }
 }
 </style>

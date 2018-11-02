@@ -12,7 +12,7 @@
       <div class="vue-erek-right-box" :style="{height: 'height'}">
         <p class='vue-erek-right-box-title'>数据卡片
         </p>
-        <vue-erek-tab :tabArray='tabArray'/>
+        <vue-erek-card-badge :tabArray='tabArray'/>
       </div>
     </div>
     <erek-br :bgColor='hrObj.bgColor' :height='hrObj.height'></erek-br>
@@ -42,7 +42,7 @@
 import VueErekEchartsLine from '../../../common/ErekEcharts/erek-line.vue'
 import VueErekEchartsPie from '../../../common/ErekEcharts/erek-pie.vue'
 import VueErekEchartsRadar from '../../../common/ErekEcharts/erek-radar.vue'
-import VueErekTab from '../../../common/ErekTab/vue-erek-tab.vue'
+import VueErekCardBadge from '../../../common/ErekCardBadge/vue-erek-card-badge.vue'
 import ErekBr from '../../../common/ErekBr/vue-erek-br.vue'
 import tabconfig from '../../../config/tab'
 
@@ -52,7 +52,7 @@ export default {
     VueErekEchartsLine,
     VueErekEchartsPie,
     VueErekEchartsRadar,
-    VueErekTab,
+    VueErekCardBadge,
     ErekBr
   },
   data () {
@@ -146,7 +146,6 @@ export default {
     })
     // 请求拿到 `预算开销和实际开销`
     this.$api.fetchExpenseOriginData().then(res => {
-      console.log(res)
       let obj = {
         name: `预算分配与实际开销`,
         type: 'radar',

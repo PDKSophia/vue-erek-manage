@@ -12,6 +12,8 @@ import ErekHeader from '../../components/Layouts/erek-manage-header.vue'
 import ErekSider from '../../components/Layouts/erek-manage-sider.vue'
 import Menu from '../../config/menu'
 import BreadItem from '../../config/breadItem'
+import { getAuthorityToken } from '../../utils/vue-token'
+import { mapActions } from 'vuex'
 export default {
   name: 'ErekManageContainer',
   components: {
@@ -36,7 +38,27 @@ export default {
       },
       deep: true
     }
-  }
+  },
+  methods: {
+    ...mapActions([
+      'setErekUser'
+    ])
+  },
+  mounted() {
+    if (getAuthorityToken() == undefined || getAuthorityToken() == '') {
+      this.$tool.toastTips('error', 'token 已过期，请重新登陆', 1.5)
+      setTimeout(() => {
+        this.$router.push({
+          path: '/'
+        })
+      })
+    } else {
+      // 获取用户信息
+      this.$api.fetchCurrentUser().then(res => {
+        this.setErekUser(res)
+      })
+    }
+  },
 }
 </script>
 <style scoped lang='scss'>
