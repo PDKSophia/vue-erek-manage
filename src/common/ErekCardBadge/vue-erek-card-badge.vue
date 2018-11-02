@@ -1,6 +1,6 @@
 <template>
   <div class="erek-flex-container">
-    <div class='erek-tab-box' 
+    <div class='erek-card-box' 
       v-for="(tab, index) in tabArray" 
       :style='{ backgroundColor: tab.bgColor, color: tab.color, borderColor: tab.borderColor, width: tab.width }'
       :key="index" >
@@ -36,7 +36,7 @@ export default {
   text-align: center;
   align-items: center;
 
-  > .erek-tab-box {
+  > .erek-card-box {
     border: 1px solid #f5f7f9;
     background-color: #f5f7f9;
     padding: 24px 0;
@@ -45,6 +45,14 @@ export default {
       font-size: 15px;
       margin-bottom: 5px;
     }
+  }
+
+  .erek-card-box:hover{
+    transform: rotate(360deg) scale(1.2);
+    -webkit-transform: rotate(360deg) scale(1.2);
+    -moz-transform: rotate(360deg) scale(1.2);
+    -o-transform: rotate(360deg) scale(1.2);
+    -ms-transform: rotate(360deg) scale(1.2)
   }
 
 }
