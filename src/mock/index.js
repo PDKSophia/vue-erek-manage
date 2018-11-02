@@ -14,18 +14,53 @@ Mock.mock('/api/oauth/send-validate-code', () => {
     response
   }
 })
-// 登陆
+
+// 登陆获取token，本地缓存
 Mock.mock('/api/oauth/login', () => {
   let response = {
     code: 1,
     msg: '登陆成功',
     data: {
-      username: 'Admin',
+      token: 'VueErekManageByPengDaoKuan1063137960@qq.com'
+    }
+  }
+  return {
+    response
+  }
+})
+
+// 通过缓存判断是否过期，并所有请求，都需要携带token
+Mock.mock('/api/erek-user/getCurrentUser', () => {
+  let response = {
+    code: 1,
+    msg: '获取用户信息成功',
+    data: {
+      username: '彭道宽',
       email: '1063137960@qq.com',
+      avatar: 'https://avatars0.githubusercontent.com/u/29560420?s=460&v=4',
       role: {
         grade: 'admin',
         priority: 10
-      }
+      },
+      tag: ['Vue-Erek-Manage 开发者', '前端工程师', '平台维护者'],
+      link: [
+        {
+          text: 'Github',
+          target: 'https://github.com/PDKSophia/vue-erek-manage'
+        },
+        {
+          text: '掘金',
+          target: 'https://juejin.im/user/594ca8a35188250d892f4139/posts'
+        },
+        {
+          text: '微博',
+          target: 'https://weibo.com/u/2971991985'
+        },
+        {
+          text: '博客',
+          target: 'https://github.com/PDKSophia/blog.io'
+        }
+      ]
     }
   }
   return {
