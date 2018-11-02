@@ -23,6 +23,8 @@
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_3.png'>
 
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_4.png'>
+
 <!-- ## Display Link -->
 <!-- Link: http://yun.pengdaokuan.cn/erek-manage -->
 
@@ -43,12 +45,14 @@
 - [ ] 错误页
 - [ ] 安全管理
 - [ ] 工作栏管理
+- [ ] 个人页
 
 ## 图表
 - [ ] 折现表
 - [ ] 数据卡片
 - [ ] 饼图
 - [ ] 雷达图
+- [ ] 柱图
 
 ## 项目环境
 ```javascript

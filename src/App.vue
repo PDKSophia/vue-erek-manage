@@ -23,6 +23,9 @@ html, body {
   width: 100%;
   background: #000000;
 }
+ul, li {
+  list-style: none;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -105,5 +108,6 @@ html, body {
 
 .ivu-divider, .ivu-divider-vertical {
   height: 1.4rem !important;
+  margin: 0 14px !important;
 }
 </style>

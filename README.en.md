@@ -23,6 +23,8 @@
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_3.png'>
 
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_4.png'>
+
 <!-- ## Display Link -->
 <!-- Link: http://yun.pengdaokuan.cn/erek-manage -->
 
@@ -43,6 +45,7 @@
 - [ ] Error Page
 - [ ] Security Management
 - [ ] Work Management
+- [ ] Person Page
 
 
 ## Echarts
