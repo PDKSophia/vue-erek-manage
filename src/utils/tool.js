@@ -8,8 +8,12 @@ export default {
    * @param {Number} delay
    * @param {String} customClass
   */
-  loadingTips: () => {
-   
+  loadingTips: (content = 'Loading', duration = 0, continueDelay = 1500) => {
+    const msg = Message.loading({
+       content: content,
+       duration: duration
+    })
+    setTimeout(msg, continueDelay)
   },
   /**
    * desc: 提示框
