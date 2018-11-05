@@ -25,6 +25,8 @@
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_4.png'>
 
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_5.png'>
+
 <!-- ## Display Link -->
 <!-- Link: http://yun.pengdaokuan.cn/erek-manage -->
 
