@@ -12,7 +12,7 @@ const actions = {
 
 const mutations = {
   [types.SET_EREK_USER_INFO] (state, payload) {
-    state.erekUser = JSON.parse(JSON.stringify(payload.data))
+    state.erekUser = {...payload.data}
   }
 }
 

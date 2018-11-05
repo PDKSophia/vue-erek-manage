@@ -68,20 +68,20 @@ ul, li {
   border: 1px solid rgb(36, 36, 36) !important;
 }
 // 输入框错误提示
-.ivu-form-item-error-tip {
-  color: #f5f5f5 !important;
-}
-.ivu-form-item-error .ivu-input {
-  border: 1px solid rgb(36, 36, 36) !important;
-}
+// .ivu-form-item-error-tip {
+//   color: #f5f5f5 !important;
+// }
+// .ivu-form-item-error .ivu-input {
+//   border: 1px solid rgb(36, 36, 36) !important;
+// }
+// .ivu-input {
+//   background-color: rgb(43, 43, 43) !important;
+//   border: 1px solid rgb(36, 36, 36) !important;
+// }
+// .ivu-input:hover {
+//   border: 1px solid rgb(36, 36, 36) !important;
+// }
 
-.ivu-input {
-  background-color: rgb(43, 43, 43) !important;
-  border: 1px solid rgb(36, 36, 36) !important;
-}
-.ivu-input:hover {
-  border: 1px solid rgb(36, 36, 36) !important;
-}
 .ivu-input-group {
   display: inline-table !important;
 }
