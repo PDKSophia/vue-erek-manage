@@ -38,10 +38,15 @@ Mock.mock('/api/erek-user/getCurrentUser', () => {
       username: '彭道宽',
       email: '1063137960@qq.com',
       avatar: 'https://avatars0.githubusercontent.com/u/29560420?s=460&v=4',
+      address: '海南省海口市琼山区府城xx街道xx小区xx栋xx楼xx号',
+      gender: 'male',
+      city: 'China',
+      interest: ['吃', '喝', '买'],
       role: {
         grade: 'admin',
         priority: 10
       },
+      desc: '笨鸟先飞，所以我先走一步',
       tag: ['Vue-Erek-Manage 开发者', '前端工程师', '平台维护者'],
       link: [
         {
