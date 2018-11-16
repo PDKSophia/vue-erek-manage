@@ -3,29 +3,18 @@
 
 ![](https://img.shields.io/badge/vue-2.5.2-blue.svg)
 ![](https://img.shields.io/badge/license-MIT-orange.svg)
+![](https://img.shields.io/badge/echarts-4.1.0-yellow.svg)
+![](https://img.shields.io/badge/iView-3.1.3-green.svg)
+![](https://img.shields.io/badge/axios-0.18.0-red.svg)
 
 ## 介绍
-`Vue-Erek-Manage` 是一款基于 `Vue 2.0` + `iView UI` 的后台管理, 借鉴模仿 `pro-ant-design`的设计，适用于小型项目后台管理
+`Vue-Erek-Manage` 是一款基于 `Vue 2.5` + `iView UI` 的后台管理, 借鉴模仿 `pro-ant-design`的设计，适用于小型项目后台管理，个人维护项目
 
 ## 特性
 
 - 直接配置 `Menu菜单栏` 和 `BreadItem面包屑`
 - 仿`pro-ant-design`框架, 提供`Echarts图标` `Table表格列表`等页面借鉴
 - 使用 `npm + webpack + babel` 的工作流，支持 `ES6`
-
-## 页面展示
-
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-1.png'>
-
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-2.png'>
-
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-3.png'>
-
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-4.png'>
-
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-5.png'>
-
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-6.png'>
 
 <!-- ## Display Link -->
 <!-- Link: http://yun.pengdaokuan.cn/erek-manage -->
@@ -55,6 +44,20 @@
 - [ ] 饼图
 - [ ] 雷达图
 - [ ] 柱图
+
+## 页面展示
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-1.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-2.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-3.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-4.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-5.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-6.png'>
 
 ## 项目环境
 ```javascript
