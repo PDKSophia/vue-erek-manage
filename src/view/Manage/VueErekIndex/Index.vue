@@ -12,10 +12,10 @@
       <div class="vue-erek-right-box" :style="{height: 'height'}">
         <p class='vue-erek-right-box-title'>数据卡片
         </p>
-        <vue-erek-card-badge :tabArray='tabArray'/>
+        <vue-scale-card :tabArray='tabArray'/>
       </div>
     </div>
-    <erek-br :bgColor='hrObj.bgColor' :height='hrObj.height'></erek-br>
+    <vue-erek-br :bgColor='hrObj.bgColor' :height='hrObj.height'></vue-erek-br>
     <div class="vue-erek-home-down">
       <vue-erek-echarts-radar
         :series="radarSeries"
@@ -39,11 +39,11 @@
 </template>
 
 <script>
-import VueErekEchartsLine from '../../../erekComponents/ErekEcharts/erek-line.vue'
-import VueErekEchartsPie from '../../../erekComponents/ErekEcharts/erek-pie.vue'
-import VueErekEchartsRadar from '../../../erekComponents/ErekEcharts/erek-radar.vue'
-import VueErekCardBadge from '../../../erekComponents/ErekCardBadge/vue-erek-card-badge.vue'
-import ErekBr from '../../../erekComponents/ErekBr/vue-erek-br.vue'
+import VueErekEchartsLine from '../../../erekComponents/VueErekEcharts/erek-line.vue'
+import VueErekEchartsPie from '../../../erekComponents/VueErekEcharts/erek-pie.vue'
+import VueErekEchartsRadar from '../../../erekComponents/VueErekEcharts/erek-radar.vue'
+import VueScaleCard from '../../../erekComponents/VueErekScaleCard/ScaleCard.vue'
+import VueErekBr from '../../../erekComponents/VueErekBr/vue-erek-br.vue'
 import tabconfig from '../../../config/tab'
 
 export default {
@@ -52,8 +52,8 @@ export default {
     VueErekEchartsLine,
     VueErekEchartsPie,
     VueErekEchartsRadar,
-    VueErekCardBadge,
-    ErekBr
+    VueScaleCard,
+    VueErekBr
   },
   data () {
     return {

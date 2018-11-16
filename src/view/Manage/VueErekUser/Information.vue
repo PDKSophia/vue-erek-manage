@@ -26,10 +26,10 @@
         </ul>
       </div>
     </div>
-    <erek-br :bgColor='hrObj.bgColor' :height='hrObj.height'></erek-br>
+    <vue-erek-br :bgColor='hrObj.bgColor' :height='hrObj.height' />
     <div class="vue-erek-article">
       <div class="vue-erek-badge-left">
-        <vue-user-badge :badgeData='badgeData'></vue-user-badge>
+        <vue-user-badge-box :badgeData='badgeData' />
       </div>
       <div class="vue-erek-content-right">
         <vue-erek-echarts-line
@@ -42,43 +42,36 @@
         ></vue-erek-echarts-line>
       </div>
     </div>
-    <!-- <erek-br :bgColor='hrObj.bgColor' :height='hrObj.height'></erek-br> -->
     <div class="vue-erek-meta-item-cell">
       <div class="vue-erek-card-item-middle">
-        <!-- <vue-erek-echarts-radar
-          :series="radarSeries"
-          :indicator='radarIndicator'
-          :width='radarWidth'
-          :height='radarHeight'
-        ></vue-erek-echarts-radar> -->
-        <vue-erek-card-item :CardItem='bookCardItem'></vue-erek-card-item>
+        <vue-user-card-item :CardItem='bookCardItem'></vue-user-card-item>
       </div>
       <div class="vue-erek-card-item-middle">
-        <vue-erek-card-item :CardItem='movieCardItem'></vue-erek-card-item>
+        <vue-user-card-item :CardItem='bookCardItem'></vue-user-card-item>
       </div>
       <div class="vue-erek-card-item-middle">
-        <vue-erek-card-item :CardItem='bookCardItem'></vue-erek-card-item>
+        <vue-user-card-item :CardItem='bookCardItem'></vue-user-card-item>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ErekBr from '../../../erekComponents/ErekBr/vue-erek-br.vue'
-import VueUserBadge from '../../../components/UserBadge/vue-user-badge.vue'
-import VueErekEchartsLine from '../../../erekComponents/ErekEcharts/erek-line.vue'
-import VueErekEchartsRadar from '../../../erekComponents/ErekEcharts/erek-radar.vue'
-import VueErekCardItem from '../../../erekComponents/ErekCardItem/erek-other-card.vue'
+import VueErekBr from '../../../erekComponents/VueErekBr/vue-erek-br.vue'
+import VueUserBadgeBox from '../../../components/UserBadge/vue-user-badge.vue'
+import VueErekEchartsLine from '../../../erekComponents/VueErekEcharts/erek-line.vue'
+import VueErekEchartsRadar from '../../../erekComponents/VueErekEcharts/erek-radar.vue'
+import VueUserCardItem from '../../../erekComponents/VueErekUserCardItem/CardRankItem.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'ErelUserInformation',
   components: {
-    ErekBr,
-    VueUserBadge,
+    VueErekBr,
+    VueUserBadgeBox,
     VueErekEchartsLine,
     VueErekEchartsRadar,
-    VueErekCardItem
+    VueUserCardItem
   },
   computed: mapState({
     erekUser: state => state.user.erekUser

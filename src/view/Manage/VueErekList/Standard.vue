@@ -1,7 +1,7 @@
 <template>
   <div class="erek-standard-container">
-    <vue-erek-card-badge :tabArray='tabArray'/>
-    <erek-br :bgColor='hrObj.bgColor' :height='hrObj.height'></erek-br>
+    <vue-scale-card :tabArray='tabArray'/>
+    <vue-erek-br :bgColor='hrObj.bgColor' :height='hrObj.height' />
     <div class='erek-standard-list'>
       <h3>所有待办任务</h3>
       <Button type="dashed" long icon="ios-add">新增</Button>
@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import VueErekCardBadge from '../../../erekComponents/ErekCardBadge/vue-erek-card-badge.vue'
-import ErekBr from '../../../erekComponents/ErekBr/vue-erek-br.vue'
+import VueScaleCard from '../../../erekComponents/VueErekScaleCard/ScaleCard.vue'
+import VueErekBr from '../../../erekComponents/VueErekBr/vue-erek-br.vue'
 import ErekStandList from '../../../components/StandardList/vue-erek-standard-list.vue'
 import tabconfig from '../../../config/tab'
 export default {
   name: 'ErekStandardList',
   components: {
-    VueErekCardBadge,
-    ErekBr,
+    VueScaleCard,
+    VueErekBr,
     ErekStandList
   },
   data () {
