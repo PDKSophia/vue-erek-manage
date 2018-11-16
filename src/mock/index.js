@@ -7,7 +7,7 @@ Mock.mock('/api/oauth/send-validate-code', () => {
     msg: '验证码获取成功',
     data: {
       email: '1063137960@qq.com',
-      code: '1111'
+      code: Math.floor(Math.random() * 10000)
     }
   }
   return {
