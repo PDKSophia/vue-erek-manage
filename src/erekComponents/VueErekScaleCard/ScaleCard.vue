@@ -48,11 +48,11 @@ export default {
   }
 
   .erek-card-box:hover{
-    transform: rotate(360deg) scale(1.2);
-    -webkit-transform: rotate(360deg) scale(1.2);
-    -moz-transform: rotate(360deg) scale(1.2);
-    -o-transform: rotate(360deg) scale(1.2);
-    -ms-transform: rotate(360deg) scale(1.2)
+    transform: rotate(360deg) scale(1.1);
+    -webkit-transform: rotate(360deg) scale(1.1);
+    -moz-transform: rotate(360deg) scale(1.1);
+    -o-transform: rotate(360deg) scale(1.1);
+    -ms-transform: rotate(360deg) scale(1.1)
   }
 
 }
