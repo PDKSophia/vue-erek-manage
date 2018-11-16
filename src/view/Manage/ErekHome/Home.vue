@@ -39,11 +39,11 @@
 </template>
 
 <script>
-import VueErekEchartsLine from '../../../common/ErekEcharts/erek-line.vue'
-import VueErekEchartsPie from '../../../common/ErekEcharts/erek-pie.vue'
-import VueErekEchartsRadar from '../../../common/ErekEcharts/erek-radar.vue'
-import VueErekCardBadge from '../../../common/ErekCardBadge/vue-erek-card-badge.vue'
-import ErekBr from '../../../common/ErekBr/vue-erek-br.vue'
+import VueErekEchartsLine from '../../../erekComponents/ErekEcharts/erek-line.vue'
+import VueErekEchartsPie from '../../../erekComponents/ErekEcharts/erek-pie.vue'
+import VueErekEchartsRadar from '../../../erekComponents/ErekEcharts/erek-radar.vue'
+import VueErekCardBadge from '../../../erekComponents/ErekCardBadge/vue-erek-card-badge.vue'
+import ErekBr from '../../../erekComponents/ErekBr/vue-erek-br.vue'
 import tabconfig from '../../../config/tab'
 
 export default {

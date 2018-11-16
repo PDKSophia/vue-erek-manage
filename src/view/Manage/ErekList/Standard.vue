@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import VueErekCardBadge from '../../../common/ErekCardBadge/vue-erek-card-badge.vue'
-import ErekBr from '../../../common/ErekBr/vue-erek-br.vue'
+import VueErekCardBadge from '../../../erekComponents/ErekCardBadge/vue-erek-card-badge.vue'
+import ErekBr from '../../../erekComponents/ErekBr/vue-erek-br.vue'
 import ErekStandList from '../../../components/StandardList/vue-erek-standard-list.vue'
 import tabconfig from '../../../config/tab'
 export default {

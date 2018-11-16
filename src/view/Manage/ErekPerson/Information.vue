@@ -64,11 +64,11 @@
 </template>
 
 <script>
-import ErekBr from '../../../common/ErekBr/vue-erek-br.vue'
+import ErekBr from '../../../erekComponents/ErekBr/vue-erek-br.vue'
 import VueUserBadge from '../../../components/UserBadge/vue-user-badge.vue'
-import VueErekEchartsLine from '../../../common/ErekEcharts/erek-line.vue'
-import VueErekEchartsRadar from '../../../common/ErekEcharts/erek-radar.vue'
-import VueErekCardItem from '../../../common/ErekCardItem/erek-other-card.vue'
+import VueErekEchartsLine from '../../../erekComponents/ErekEcharts/erek-line.vue'
+import VueErekEchartsRadar from '../../../erekComponents/ErekEcharts/erek-radar.vue'
+import VueErekCardItem from '../../../erekComponents/ErekCardItem/erek-other-card.vue'
 import { mapState } from 'vuex'
 
 export default {
