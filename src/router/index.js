@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ErekManageLogin from '@/view/Login/Login'
+import ErekManageLogin from '@/view/Login/MainLogin'
 import ErekManageRouter from '@/view/Manage/Router'
 // 后台管理
 import ErekManageHome from '@/view/Manage/ErekHome/Home'
