@@ -15,17 +15,17 @@
 
 ## 页面展示
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_0.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-1.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_1.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-2.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_2.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-3.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_3.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-4.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_4.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-5.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/pic_5.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-6.png'>
 
 <!-- ## Display Link -->
 <!-- Link: http://yun.pengdaokuan.cn/erek-manage -->
