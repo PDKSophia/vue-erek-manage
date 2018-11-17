@@ -133,4 +133,7 @@ export default {
       }
   }
 }
+.vue-erek-edit:hover, .vue-erek-delete:hover {
+  cursor: pointer;
+}
 </style>

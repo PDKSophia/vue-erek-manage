@@ -8,10 +8,6 @@ import VueErekManageIndex from '@/view/Manage/VueErekIndex/Index'
 // 列表页
 import VueErekTableList from '@/view/Manage/VueErekList/Table'
 import VueErekStandardList from '@/view/Manage/VueErekList/Standard'
-// 安全管理
-import ErekSafeSystem from '@/view/Manage/ErekSafe/System'
-import ErekSafeAdminRole from '@/view/Manage/ErekSafe/AdminRole'
-import ErekSafeAdminPWD from '@/view/Manage/ErekSafe/AdminPassWord'
 
 // 工具栏
 import VueErekToolMessage from '@/view/Manage/VueErekTool/Message'
@@ -50,31 +46,6 @@ export default new Router({
           path: 'erek-home',
           name: 'VueErekManageIndex',
           component: VueErekManageIndex,
-          meta: {
-            keepAlive: false
-          }
-        },
-        // 安全管理
-        {
-          path: 'erek-safe-system',
-          name: 'ErekSafeSystem',
-          component: ErekSafeSystem,
-          meta: {
-            keepAlive: false
-          }
-        },
-        {
-          path: 'erek-safe-admin-role',
-          name: 'ErekSafeAdminRole',
-          component: ErekSafeAdminRole,
-          meta: {
-            keepAlive: false
-          }
-        },
-        {
-          path: 'erek-safe-admin-password',
-          name: 'ErekSafeAdminPWD',
-          component: ErekSafeAdminPWD,
           meta: {
             keepAlive: false
           }

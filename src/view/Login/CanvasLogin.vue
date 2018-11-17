@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import CanvasAnimate from '../../components/Canvas/Index'
+import CanvasAnimate from '../../erekPages/Canvas/Index'
 import { setAuthorityToken } from '../../utils/vue-token'
 
 export default {

@@ -79,7 +79,7 @@ export default {
           key: 'time'
         },
         {
-          title: 'Action',
+          title: '操作',
           key: 'action',
           width: 150,
           align: 'center',

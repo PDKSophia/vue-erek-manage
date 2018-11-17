@@ -29,7 +29,7 @@
     <vue-erek-br :bgColor='hrObj.bgColor' :height='hrObj.height' />
     <div class="vue-erek-article">
       <div class="vue-erek-badge-left">
-        <vue-user-badge-box :badgeData='badgeData' />
+        <vue-user-badge :badgeData='badgeData' />
       </div>
       <div class="vue-erek-content-right">
         <vue-erek-echarts-line
@@ -58,7 +58,7 @@
 
 <script>
 import VueErekBr from '../../../erekComponents/VueErekBr/vue-erek-br.vue'
-import VueUserBadgeBox from '../../../components/UserBadge/vue-user-badge.vue'
+import VueUserBadge from '../../../erekComponents/VueErekUserBadge/vue-user-badge.vue'
 import VueErekEchartsLine from '../../../erekComponents/VueErekEcharts/erek-line.vue'
 import VueErekEchartsRadar from '../../../erekComponents/VueErekEcharts/erek-radar.vue'
 import VueUserCardItem from '../../../erekComponents/VueErekUserCardItem/CardRankItem.vue'
@@ -68,7 +68,7 @@ export default {
   name: 'ErelUserInformation',
   components: {
     VueErekBr,
-    VueUserBadgeBox,
+    VueUserBadge,
     VueErekEchartsLine,
     VueErekEchartsRadar,
     VueUserCardItem

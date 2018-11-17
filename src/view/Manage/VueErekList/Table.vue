@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import ErekTable from '../../../components/Table/vue-erek-table-list.vue'
+import ErekTable from '../../../erekPages/TableList/Index.vue'
 export default {
   name: 'ErekManageTableList',
   components: {

@@ -13,7 +13,7 @@
 <script>
 import VueScaleCard from '../../../erekComponents/VueErekScaleCard/ScaleCard.vue'
 import VueErekBr from '../../../erekComponents/VueErekBr/vue-erek-br.vue'
-import ErekStandList from '../../../components/StandardList/vue-erek-standard-list.vue'
+import ErekStandList from '../../../erekPages/StandardList/Index.vue'
 import tabconfig from '../../../config/tab'
 export default {
   name: 'ErekStandardList',

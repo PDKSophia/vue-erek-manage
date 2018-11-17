@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import ErekHeader from '../../components/Layouts/erek-manage-header.vue'
-import ErekSider from '../../components/Layouts/erek-manage-sider.vue'
+import ErekHeader from '../../erekPages/Layouts/Header.vue'
+import ErekSider from '../../erekPages/Layouts/Sider.vue'
 import Menu from '../../config/menu'
 import BreadItem from '../../config/breadItem'
 import { getAuthorityToken } from '../../utils/vue-token'
