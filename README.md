@@ -34,9 +34,9 @@
 - [ ] 仪表盘
 - [ ] 列表页
 - [ ] 错误页
-- [ ] 安全管理
 - [ ] 工作栏管理
 - [ ] 个人页
+- [ ] 主题设置
 
 ## 图表
 - [ ] 折现表
@@ -55,21 +55,12 @@
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-4.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-5.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-403.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-6.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-user-1.png'>
 
-## 项目环境
-```javascript
-    1 . Node.js is v10.6.0 
+## 其他页面请点击这里 [Wiki 文档](https://github.com/PDKSophia/vue-erek-manage/wiki)
 
-    2 . Vue-cli is v3.0.0
-
-    3 . 其他依赖请看 package.json
-
-    4 . 开发人员移步至 DEVELOPER.md 文档
-
-```
 
 ## 使用
 ```javascript
@@ -80,6 +71,21 @@
   3. npm install
   
   4. npm run serve
+```
+
+## 使用文档
+- [了解 Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
+
+- [Vue-Erek-Manage 文档](https://github.com/PDKSophia/vue-erek-manage/wiki)
+
+## 项目环境
+```javascript
+    1 . Node.js is v10.6.0 
+
+    2 . Vue-cli is v3.0.0
+
+    3 . 其他依赖请看 package.json
+
 ```
 
 ## 其他链接
