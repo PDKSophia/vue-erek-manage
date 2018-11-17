@@ -95,10 +95,26 @@ export default {
     }).then((res) => {
       let { response } = res
       if (response.code === 1) {
-        // Message.success({
-        //   content: response.msg,
-        //   duration: 1.5
-        // })
+        return response.list
+      } else {
+        Message.error({
+          content: response.msg,
+          duration: 1.5
+        })
+      }
+    })
+  },
+  /**
+   * desc: 获取标准列表数据信息
+   * @return {*} 
+  */
+  fetchStandAllDataList: () => {
+    return request(`${baseUrl}/data/getStandAllData`, {
+      method: 'GET',
+      token: getAuthorityToken()
+    }).then((res) => {
+      let { response } = res
+      if (response.code === 1) {
         return response.list
       } else {
         Message.error({
