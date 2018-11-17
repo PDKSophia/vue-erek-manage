@@ -49,11 +49,11 @@
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-1.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-2.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-index.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-3.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-table.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-4.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-stand.png'>
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-403.png'>
 
