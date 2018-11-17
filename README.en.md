@@ -84,6 +84,10 @@
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-403.png'>
 
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-404.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-500.png'>
+
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-user-1.png'>
 
 ## [Please click here for other pages](https://github.com/PDKSophia/vue-erek-manage/wiki)
