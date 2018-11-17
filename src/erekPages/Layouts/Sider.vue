@@ -100,11 +100,9 @@ export default {
 }
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
   background: #242427 !important;
-  // color: #f1f1f1 !important; 
 }
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
   background: #242427 !important;
   width: 1px !important;
-  // color: #f1f1f1 !important; 
 }
 </style>

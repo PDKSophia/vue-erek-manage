@@ -5,7 +5,10 @@
     <div class='erek-standard-list'>
       <h3>所有待办任务</h3>
       <Button type="dashed" long icon="ios-add">新增</Button>
-      <erek-stand-list :standlist='standlist'></erek-stand-list>
+      <erek-stand-list
+        :standlist='standlist'
+        @onHandleClickStandItem='handleEmitClickItem'
+      ></erek-stand-list>
     </div>
   </div>
 </template>
@@ -32,6 +35,11 @@ export default {
       standlist: []
     }
   },
+  methods: {
+    handleEmitClickItem (value, type) {
+      this.$tool.toastTips('info', `你当前点击 : ${type}, 点击的item id为 : ${value.id}`, 1)
+    }
+  },
   mounted() {
     // 请求获取所有任务
     this.$api.getAllTaskList().then(res => {
@@ -45,7 +53,7 @@ export default {
       }
     })
     // 请求获取数据
-    this.$api.fetchAllDataList().then((res) => {
+    this.$api.fetchStandAllDataList().then((res) => {
       this.standlist = res
     })
   },

@@ -73,10 +73,12 @@
   4. npm run serve
 ```
 
-## 使用文档
-- [了解 Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
+## Wiki 使用文档
+- [Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
 
-- [Vue-Erek-Manage 文档](https://github.com/PDKSophia/vue-erek-manage/wiki)
+- [相关配置](https://github.com/PDKSophia/vue-erek-manage/wiki/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
+
+- [列表页](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%88%97%E8%A1%A8%E9%A1%B5)
 
 ## 项目环境
 ```javascript

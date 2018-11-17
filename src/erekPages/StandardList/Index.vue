@@ -8,7 +8,7 @@
         <div class="vue-erek-item-meta-content">
           <h4 class="vue-erek-item-meta-title">{{ item.username }}</h4>
           <div class="vue-erek-item-meta-summary">
-            那是一种内在的东西， 他们到达不了，也无法触及的
+            {{ item.content }}
           </div>
         </div>
       </div>
@@ -22,8 +22,8 @@
       </div>
       <div class="vue-erek-item-action">
         <ul>
-          <li class="vue-erek-edit" @click='handleOnClickEdit(item.id)'>编辑</li>
-          <li class="vue-erek-delete" @click='handleOnClickDelete(item.id)'>删除</li>
+          <li class="vue-erek-edit" @click='handleOnClickEdit(item)'>编辑</li>
+          <li class="vue-erek-delete" @click='handleOnClickDelete(item)'>删除</li>
         </ul>
       </div>
     </div>
@@ -42,11 +42,11 @@ export default {
     }
   },
   methods: {
-    handleOnClickEdit(id) {
-      this.$tool.toastTips('info', `编辑id : ${id}`, 3)
+    handleOnClickEdit(item) {
+      this.$emit('onHandleClickStandItem', item, 'edit')
     },
-    handleOnClickDelete(id) {
-      this.$tool.toastTips('error', `删除id : ${id}`, 3)
+    handleOnClickDelete(item) {
+      this.$emit('onHandleClickStandItem', item, 'delete')
     }
   }
 }

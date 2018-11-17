@@ -27,6 +27,7 @@
       :stripe='tableObj.stripe'
       :size='tableObj.size'
       :tableData='tableObj.tableData'
+      @onHandleClickItem='handleEmitTableValue'
     />
     <div style="margin: 20px 10px;overflow: hidden">
       <div style="float: right;">
@@ -77,6 +78,9 @@ export default {
       this.$tool.toastTips('warning', `你点击了重置`, 2)
       this.keyWords = ''
       this.selectValue = ''
+    },
+    handleEmitTableValue (value, type) {
+      this.$tool.toastTips('info', `你当前点击 : ${type}, 下标索引为 : ${value}`, 1)
     }
   },
   mounted() {

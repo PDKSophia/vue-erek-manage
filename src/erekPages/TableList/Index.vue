@@ -95,7 +95,8 @@ export default {
                 },
                 on: {
                   click: () => {
-                    this.$tool.toastTips('info', `你当前点击: ${++params.index}`, 1)
+                    var index = params.index
+                    this.$emit('onHandleClickItem', index, 'view')
                   }
                 }
               }, '查看'),
@@ -109,7 +110,8 @@ export default {
                 },
                 on: {
                   click: () => {
-                    this.$tool.toastTips('info', `你当前点击: ${params.index}`, 2)
+                    var index = params.index
+                    this.$emit('onHandleClickItem', index, 'delete')
                   }
                 }
               }, '删除')
