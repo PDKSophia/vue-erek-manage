@@ -1,11 +1,15 @@
 <template>
   <div>
-    <Header>
-      <Menu mode="horizontal" theme="dark" active-name="1">
-        <div class="layout-logo">
-          <p class="erek-vue-manage">Vue Erek Manage</p>
+    <Header :style='{ height: `${theme.height} !important` }'>
+      <Menu mode="horizontal"
+        theme="dark" 
+        active-name="1"
+        :style='{ backgroundColor: theme.bgVueErek, color: `${theme.colorVueErek} !important`, height: `${theme.height} !important` }'
+      >
+        <div class="layout-logo" :style='{ backgroundColor: theme.bgLogoVueErek }'>
+          <p class="erek-vue-manage" :style='{ color: `${theme.colorVueErek} !important` }'>Vue Erek Manage</p>
         </div>
-        <div class="layout-nav">
+        <div class="layout-nav" :style='{ color: `${theme.colorVueErek} !important` }'>
           <MenuItem name="1">
             <Icon type="ios-navigate"></Icon>
             Item 1
@@ -22,7 +26,15 @@
 
 <script>
 export default {
-  name: 'ErekManageHeader'
+  name: 'ErekManageHeader',
+  props: {
+    theme: {
+      type: Object,
+      default: function () {
+        return {}
+      }
+    }
+  }
 }
 </script>
 
@@ -36,7 +48,7 @@ export default {
   position: relative;
   top: 15px;
   text-align: center;
-  left: 20px;
+  left: 80px;
 
   .erek-vue-manage {
     color: white;
@@ -47,5 +59,11 @@ export default {
   width: 400px;
   margin: 0 auto;
   margin-right: 20px;
+}
+.ivu-layout-header {
+  background: #515a6e;
+  padding: 0;
+  height: 60px;
+  line-height: 64px;
 }
 </style>

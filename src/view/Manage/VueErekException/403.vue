@@ -21,7 +21,7 @@ export default {
   -webkit-box-align: center;
   -webkit-box-pack: center;
   -webkit-box-orient:horizontal;
-  margin-top: 13%;
+  margin-top: 16%;
 
   >.error-image {
     width: 275px;

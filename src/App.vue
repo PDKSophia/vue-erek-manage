@@ -68,20 +68,6 @@ ul, li {
   background-color: rgb(36, 36, 36) !important;
   border: 1px solid rgb(36, 36, 36) !important;
 }
-// 输入框错误提示
-// .ivu-form-item-error-tip {
-//   color: #f5f5f5 !important;
-// }
-// .ivu-form-item-error .ivu-input {
-//   border: 1px solid rgb(36, 36, 36) !important;
-// }
-// .ivu-input {
-//   background-color: rgb(43, 43, 43) !important;
-//   border: 1px solid rgb(36, 36, 36) !important;
-// }
-// .ivu-input:hover {
-//   border: 1px solid rgb(36, 36, 36) !important;
-// }
 
 .ivu-input-group {
   display: inline-table !important;
@@ -93,15 +79,6 @@ ul, li {
 .ivu-menu-submenu-title span>i, .ivu-menu-submenu-title>i {
   font-size: 16px;
   margin-top: -3px;
-}
-.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
-  background: #525761 !important;
-  color: #f1f1f1 !important; 
-}
-.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
-  background: #525761 !important;
-  width: 1px !important;
-  color: #f1f1f1 !important; 
 }
 .ivu-menu {
   color: #f1f1f1 !important;

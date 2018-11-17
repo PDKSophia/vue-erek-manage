@@ -1,8 +1,8 @@
 <template>
   <div :style="{height: '100%'}">
     <Layout :style="{height: '100%'}">
-      <Sider hide-trigger :style="{ background: '#5b6270', width: '240px', minWidth: '240px', maxWidth: '240px', height: '100%' }">
-        <Menu :active-name='Menu[0].name' :style="{ background: '#5b6270', color: '#f1f1f1' }">
+      <Sider hide-trigger :style="{ background: theme.bgVueErek, width: '240px', minWidth: '240px', maxWidth: '240px', height: '100%' }">
+        <Menu :active-name='Menu[0].name' :style="{ background: theme.bgVueErek, color: `${theme.colorVueErek} !important` }">
           <div v-for='(item, index) in Menu' :key='index'>
             <!-- 没有子菜单 -->
             <MenuItem :name='item.name' v-if='!item.isSubmenu' :to='item._to'>
@@ -63,6 +63,12 @@ export default {
     BreadItem: {
       type: String,
       default: ''
+    },
+    theme: {
+      type: Object,
+      default: function () {
+        return {}
+      }
     }
   },
   watch: {
@@ -91,5 +97,14 @@ export default {
   > .erek-layout-content {
     background-color: #fff
   }
+}
+.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
+  background: #242427 !important;
+  // color: #f1f1f1 !important; 
+}
+.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
+  background: #242427 !important;
+  width: 1px !important;
+  // color: #f1f1f1 !important; 
 }
 </style>

@@ -1,8 +1,12 @@
 <template>
   <div id="erek-manage-container">
     <Layout id='erek-layout'>
-      <erek-header />
-      <erek-sider :Menu='Menu' :BreadItem='BreadItem'/>
+      <erek-header :theme='layoutTheme.layoutHeader' />
+      <erek-sider 
+        :Menu='Menu'
+        :BreadItem='BreadItem'
+        :theme='layoutTheme.layoutMenu'
+      />
     </Layout>
   </div>
 </template>
@@ -12,6 +16,7 @@ import ErekHeader from '../../erekPages/Layouts/Header.vue'
 import ErekSider from '../../erekPages/Layouts/Sider.vue'
 import Menu from '../../config/menu'
 import BreadItem from '../../config/breadItem'
+import VueErekTheme from '../../config/theme'
 import { getAuthorityToken } from '../../utils/vue-token'
 import { mapActions } from 'vuex'
 export default {
@@ -23,7 +28,8 @@ export default {
   data () {
     return {
       Menu: Menu,
-      BreadItem: '首页'
+      BreadItem: '首页',
+      layoutTheme: {}
     }
   },
   watch: {
@@ -45,6 +51,7 @@ export default {
     ])
   },
   mounted() {
+    this.layoutTheme = Object.assign(VueErekTheme)
     if (getAuthorityToken() == undefined || getAuthorityToken() == '') {
       this.$tool.toastTips('error', 'token 已过期，请重新登陆', 1.5)
       setTimeout(() => {
