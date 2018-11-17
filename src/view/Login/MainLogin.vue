@@ -40,8 +40,8 @@ export default {
       ErekSummary: '一套基于 iView UI 的 Vue.js 后台管理系统',
       actualData: [
         {
-          text: '介绍',
-          status: 'erek-introduce'
+          text: '文档',
+          status: 'erek-docs'
         },
         {
           text: 'Github',
@@ -65,8 +65,8 @@ export default {
         case 'erek-origincode':
           window.location.href = 'https://github.com/PDKSophia/vue-erek-manage'
           break
-        case 'erek-introduce':
-          console.log('介绍')
+        case 'erek-docs':
+          window.location.href = 'https://github.com/PDKSophia/vue-erek-manage/wiki'
           break
         case 'erek-login':
           this.loginForm.loginVisible = true

@@ -44,7 +44,7 @@
         <div class="vue-user-avatar-large">
           <img :src="formValidate.avatar" alt="" class="avatar">
           <a class='erek-button-avatar-upload' href='javascript:;'>
-            + 课程图片<input class='erek-button-avatar-input' type='file' name='avatar' id='avatar' @change='handleChangeAvatar' />
+            + 个人头像<input class='erek-button-avatar-input' type='file' name='avatar' id='avatar' @change='handleChangeAvatar' />
           </a>
         </div>
       </Col>
@@ -141,7 +141,7 @@ export default {
   },
   mounted() {
     if (this.initDataLoading) {
-      this.$tool.loadingTips('loading', 0, 3000)
+      this.$tool.loadingTips('loading', 0, 2000)
       this.formValidate = {...this.erekUser}
       setTimeout(() => {
         this.initDataLoading = false
