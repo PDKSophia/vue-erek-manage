@@ -42,6 +42,36 @@
 - [ ] Pie Echarts
 - [ ] Radar Echarts
 
+## Project Environment
+```javascript
+    1 . Node.js is v10.6.0 
+
+    2 . Vue-cli is v3.0.0
+
+    3 . Other dependencies please move package.json
+
+```
+
+## Use
+```javascript
+  1. git clone https://github.com/PDKSophia/vue-erek-manage
+  
+  2. cd vue-erek-manage
+  
+  3. npm install
+  
+  4. npm run serve
+```
+
+## Docs
+- [Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
+
+- [theme、menu、breadItem ConfigPage](https://github.com/PDKSophia/vue-erek-manage/wiki/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
+
+- [table、standlist ListPage](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%88%97%E8%A1%A8%E9%A1%B5)
+
+- [badge Page](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%BE%BD%E7%AB%A0)
+
 ## Display Picture
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-1.png'>
@@ -58,32 +88,6 @@
 
 ## [Please click here for other pages](https://github.com/PDKSophia/vue-erek-manage/wiki)
 
-## Docs
-- [Understand Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
-
-- [Vue-Erek-Manage Docs](https://github.com/PDKSophia/vue-erek-manage/wiki)
-
-
-## Use
-```javascript
-  1. git clone https://github.com/PDKSophia/vue-erek-manage
-  
-  2. cd vue-erek-manage
-  
-  3. npm install
-  
-  4. npm run serve
-```
-
-## Project Environment
-```javascript
-    1 . Node.js is v10.6.0 
-
-    2 . Vue-cli is v3.0.0
-
-    3 . Other dependencies please move package.json
-
-```
 
 ## Related links
 v1.1 YunResume: http://yun.pengdaokuan.cn/YunResume

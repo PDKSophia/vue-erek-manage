@@ -45,22 +45,15 @@
 - [ ] 雷达图
 - [ ] 柱图
 
-## 页面展示
+## 项目环境
+```javascript
+    1 . Node.js is v10.6.0 
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-1.png'>
+    2 . Vue-cli is v3.0.0
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-index.png'>
+    3 . 其他依赖请看 package.json
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-table.png'>
-
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-stand.png'>
-
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-403.png'>
-
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-user-1.png'>
-
-## 其他页面请点击这里 [Wiki 文档](https://github.com/PDKSophia/vue-erek-manage/wiki)
-
+```
 
 ## 使用
 ```javascript
@@ -76,19 +69,36 @@
 ## Wiki 使用文档
 - [Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
 
-- [相关配置](https://github.com/PDKSophia/vue-erek-manage/wiki/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
+- [theme、menu、breadItem 配置](https://github.com/PDKSophia/vue-erek-manage/wiki/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
 
-- [列表页](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%88%97%E8%A1%A8%E9%A1%B5)
+- [table、standlist 列表页](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%88%97%E8%A1%A8%E9%A1%B5)
 
-## 项目环境
-```javascript
-    1 . Node.js is v10.6.0 
+- [badge 徽章](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%BE%BD%E7%AB%A0)
 
-    2 . Vue-cli is v3.0.0
+## 页面展示
 
-    3 . 其他依赖请看 package.json
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-1.png'>
 
-```
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-index.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-table.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-stand.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-403.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-404.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-403.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-user-1.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-user-2.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-user-3.png'>
+
+## 其他页面请点击这里 [Wiki 文档](https://github.com/PDKSophia/vue-erek-manage/wiki)
+
 
 ## 其他链接
 
