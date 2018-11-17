@@ -7,41 +7,41 @@ const Menu = [
     name: '1',
     _to: '/erek-manage/erek-home' // 跳转的链接
   },
-  // 三级菜单栏
-  {
-    text: '安全管理',
-    icon: 'ios-medkit-outline',
-    isSubmenu: true,
-    name: '2',
-    list: [
-      {
-        text: '系统安全',
-        hasSubmenu: false, // 是否有子菜单
-        name: '2-1',
-        _to: '/erek-manage/erek-safe-system' // 跳转的链接
-      },
-      {
-        text: '管理员操作',
-        hasSubmenu: true,
-        name: '2-2',
-        submenu: [
-          {
-            text: '角色设定',
-            name: '2-2-1',
-            _to: '/erek-manage/erek-safe-admin-role'
-          },
-          {
-            text: '密码修改',
-            name: '2-2-2',
-            _to: '/erek-manage/erek-safe-admin-password'
-          }
-        ]
-      }
-    ]
-  },
+  // // 三级菜单栏
+  // {
+  //   text: '安全管理',
+  //   icon: 'ios-medkit-outline',
+  //   isSubmenu: true,
+  //   name: '2',
+  //   list: [
+  //     {
+  //       text: '系统安全',
+  //       hasSubmenu: false, // 是否有子菜单
+  //       name: '2-1',
+  //       _to: '/erek-manage/erek-safe-system' // 跳转的链接
+  //     },
+  //     {
+  //       text: '管理员操作',
+  //       hasSubmenu: true,
+  //       name: '2-2',
+  //       submenu: [
+  //         {
+  //           text: '角色设定',
+  //           name: '2-2-1',
+  //           _to: '/erek-manage/erek-safe-admin-role'
+  //         },
+  //         {
+  //           text: '密码修改',
+  //           name: '2-2-2',
+  //           _to: '/erek-manage/erek-safe-admin-password'
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // },
   // 二级菜单栏
   {
-    text: '工具栏',
+    text: '工具页',
     icon: 'ios-contact-outline',
     isSubmenu: true,
     name: '3',
@@ -114,7 +114,7 @@ const Menu = [
   },
   {
     text: '个人页',
-    icon: 'md-grid',
+    icon: 'md-person',
     isSubmenu: true,
     name: '6',
     list: [
