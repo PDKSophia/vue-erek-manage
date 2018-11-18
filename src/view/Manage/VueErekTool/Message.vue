@@ -1,5 +1,5 @@
 <template>
-  <div>系统通知</div>
+    <div>dsasdsa</div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div>宣传栏</div>
+    <div>dsasdsa</div>
 </template>
 
 <script>

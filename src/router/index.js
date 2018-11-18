@@ -15,6 +15,10 @@ import VueErekToolAdvertise from '@/view/Manage/VueErekTool/Advertise'
 import VueErekToolCommonality from '@/view/Manage/VueErekTool/Commonality'
 import VueErekToolWords from '@/view/Manage/VueErekTool/Words'
 
+// 详情页
+import VueErekBaseProfile from '@/view/Manage/VueErekProfile/BasicProfile'
+import VueEreAdvanceProfile from '@/view/Manage/VueErekProfile/AdvanceProfile'
+
 // 错误页
 import VueErekException403 from '@/view/Manage/VueErekException/403'
 import VueErekException404 from '@/view/Manage/VueErekException/404'
@@ -82,6 +86,23 @@ export default new Router({
           meta: {
             keepAlive: false
           }
+        },
+        // 详情页
+        {
+          path: 'erek-profile-basic',
+          name: 'VueErekBaseProfile',
+          component: VueErekBaseProfile,
+          meta: {
+            keepAlive: false
+          } 
+        },
+        {
+          path: 'erek-profile-advance',
+          name: 'VueEreAdvanceProfile',
+          component: VueEreAdvanceProfile,
+          meta: {
+            keepAlive: false
+          } 
         },
         // 列表页
         {

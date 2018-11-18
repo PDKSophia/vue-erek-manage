@@ -1,5 +1,5 @@
 <template>
-  <div>公告栏</div>
+    <div>dsasdsa</div>
 </template>
 
 <script>
