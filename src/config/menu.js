@@ -67,21 +67,41 @@ const Menu = [
     ]
   },
   {
-    text: '列表页',
-    icon: 'md-grid',
+    text: '详情页',
+    icon: 'ios-list-box-outline',
     isSubmenu: true,
     name: '4',
     list: [
       {
-        text: '查询表格',
+        text: '基础详情页',
         hasSubmenu: false, // 是否有子菜单
         name: '4-1',
+        _to: '/erek-manage/erek-profile-basic' // 跳转的链接
+      },
+      {
+        text: '高级详情页',
+        hasSubmenu: false, // 是否有子菜单
+        name: '4-2',
+        _to: '/erek-manage/erek-profile-advance' // 跳转的链接
+      },
+    ]
+  },
+  {
+    text: '列表页',
+    icon: 'md-grid',
+    isSubmenu: true,
+    name: '5',
+    list: [
+      {
+        text: '查询表格',
+        hasSubmenu: false, // 是否有子菜单
+        name: '5-1',
         _to: '/erek-manage/erek-list-table' // 跳转的链接
       },
       {
         text: '标准列表',
         hasSubmenu: false, // 是否有子菜单
-        name: '4-2',
+        name: '5-2',
         _to: '/erek-manage/erek-list-standard' // 跳转的链接
       },
     ]
@@ -90,24 +110,24 @@ const Menu = [
     text: '错误页',
     icon: 'md-warning',
     isSubmenu: true,
-    name: '5',
+    name: '6',
     list: [
       {
         text: '403',
         hasSubmenu: false, // 是否有子菜单
-        name: '5-1',
+        name: '6-1',
         _to: '/erek-manage/erek-exception/403' // 跳转的链接
       },
       {
         text: '404',
         hasSubmenu: false, // 是否有子菜单
-        name: '5-2',
+        name: '6-2',
         _to: '/erek-manage/erek-exception/404' // 跳转的链接
       },
       {
         text: '500',
         hasSubmenu: false, // 是否有子菜单
-        name: '5-3',
+        name: '6-3',
         _to: '/erek-manage/erek-exception/500' // 跳转的链接
       },
     ]
@@ -116,18 +136,18 @@ const Menu = [
     text: '个人页',
     icon: 'md-person',
     isSubmenu: true,
-    name: '6',
+    name: '7',
     list: [
       {
         text: '个人中心',
         hasSubmenu: false, // 是否有子菜单
-        name: '6-1',
+        name: '7-1',
         _to: '/erek-manage/erek-user/information' // 跳转的链接
       },
       {
         text: '个人设置',
         hasSubmenu: false, // 是否有子菜单
-        name: '6-2',
+        name: '7-2',
         _to: '/erek-manage/erek-user/setting' // 跳转的链接
       },
     ]

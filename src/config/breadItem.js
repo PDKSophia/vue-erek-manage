@@ -4,6 +4,8 @@ const BreadItem = {
   '/erek-manage/erek-tool-advertise': '工具栏-宣传栏',
   '/erek-manage/erek-tool-commonality': '工具栏-公告栏',
   '/erek-manage/erek-tool-words': '工具栏-工作留言',
+  '/erek-manage/erek-profile-basic': '详情页-基础详情页',
+  '/erek-manage/erek-profile-advance': '详情页-高级详情页',
   '/erek-manage/erek-list-table': '列表页-查询表格',
   '/erek-manage/erek-list-standard': '列表页-标准列表',
   '/erek-manage/erek-exception/403': '错误页-403',
