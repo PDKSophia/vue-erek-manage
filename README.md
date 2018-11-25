@@ -76,6 +76,8 @@
 
 - [badge 徽章](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%BE%BD%E7%AB%A0)
 
+- [如何快速使用](https://github.com/PDKSophia/vue-erek-manage/wiki)
+
 ## 页面展示
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-1.png'>
@@ -97,9 +99,6 @@
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-user-2.png'>
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-user-3.png'>
-
-## 其他页面请点击这里 [Wiki 文档](https://github.com/PDKSophia/vue-erek-manage/wiki)
-
 
 ## 其他链接
 
