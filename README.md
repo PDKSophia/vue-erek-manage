@@ -1,11 +1,18 @@
 简体中文 | [English](./README.en.md)
-# Vue-Erek-Manage
+
+<div align='center'>
+
+  <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/logo.png' width=280 height=220>
 
 ![](https://img.shields.io/badge/vue-2.5.2-blue.svg)
 ![](https://img.shields.io/badge/license-MIT-orange.svg)
 ![](https://img.shields.io/badge/echarts-4.1.0-yellow.svg)
 ![](https://img.shields.io/badge/iView-3.1.3-green.svg)
 ![](https://img.shields.io/badge/axios-0.18.0-red.svg)
+
+</div>
+
+# Vue-Erek-Manage
 
 ## 介绍
 `Vue-Erek-Manage` 是一款基于 `Vue 2.5` + `iView UI` 的后台管理, 借鉴模仿 `pro-ant-design`的设计，适用于小型项目后台管理，个人维护项目
