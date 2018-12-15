@@ -74,7 +74,7 @@
 │   ├── assets                          
 │   │                    
 │   ├── components                  
-│   │    ├─BadgeComponents                
+│   │    ├─BadgeComponents             
 │   │    ├─DividerComponents            
 │   │    ├─EchartsComponents                   
 │   │    │    ├─Line                    
