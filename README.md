@@ -74,16 +74,101 @@
   4. npm run serve
 ```
 
+## 文件架构
+```
+·
+├── package.json
+│ 
+├── public                              打包的数据  
+│ 
+├── src
+│   ├── assets                          图片等资源文件
+│   │                    
+│   ├── components                  
+│   │    ├─BadgeComponents              封装的Badge组件，实例: 个人中心    
+│   │    ├─DividerComponents            封装的Divider组件   
+│   │    ├─EchartsComponents                   
+│   │    │    ├─Line                    封装的折线图组件
+│   │    │    ├─Pie                     封装的饼图组件
+│   │    │    ├─Radar                   封装的雷达图组件
+│   │    │    └─ ... 
+│   │    ├─FormComponents                   
+│   │    │    ├─LoginForm               封装的登陆表单组件
+│   │    │    └─ ... 
+│   │    ├─PageComponents                   
+│   │    │    ├─Index                   封装的部分页面组件
+│   │    │    └─ ...    
+│   │    ├─ScaleCardComponents          封装的带有放大的卡片组件      
+│   │    ├─StarCardComponents           封装的带有星星的卡片组件
+│   │    └─ ... 
+│   │
+│   ├── config
+│   │    ├─app.js                       应用配置   
+│   │    ├─echarts                      图表的配置   
+│   │    │    ├─line.config.js             
+│   │    │    ├─pie.config.js             
+│   │    │    ├─radar.config.js             
+│   │    │    └─ ...    
+│   │    ├─breadItem.js                 面包屑配置   
+│   │    ├─menu.js                      菜单栏配置   
+│   │    ├─tab.js                       放大卡片的配置
+│   │    ├─theme.js                     主题配置   
+│   │    └─ ...    
+│   │ 
+│   ├── mock
+│   │    ├─index.js                     mock模拟请求
+│   │    ├─data.js                  
+│   │    └─ ...    
+│   │ 
+│   ├── pages                    
+│   │    ├─Canvas                       Canvas动画背景
+│   │    ├─Layouts                      Layouts布局
+│   │    ├─List                         列表页
+│   │    └─ ... 
+│   │
+│   ├── router                          路由
+│   │
+│   ├── service                         与服务器相关文件
+│   │    ├─api                      
+│   │    ├─request                  
+│   │    └─ ...  
+│   │       
+│   ├── store                           vuex模块化 
+│   │      
+│   ├── utils                    
+│   │    ├─tool.js                      全局函数文件，比如 加载框，提示框等
+│   │    ├─utils.js                     其他函数处理文件  
+│   │    ├─vue-token.js             
+│   │    └─ ... 
+│   │             
+│   ├── view
+│   │    ├─Login                        登陆页
+│   │    ├─Manage                       
+│   │    │    ├─VueErekException        错误页     
+│   │    │    ├─VueErekIndex            仪表盘
+│   │    │    ├─VueErekList             列表页
+│   │    │    ├─VueErekProfile          详情页
+│   │    │    ├─VueErekTool             工具页
+│   │    │    ├─VueErekUser             个人页
+│   │    │    ├─Router            
+│   │    │    └─ ...                    
+│   │    └─ ...    
+│   │
+│   └─
+│ 
+├── main.js                            
+│  
+├── App.vue                            
+│                   
+└─
+```
+
+
 ## Wiki 使用文档
-- [Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
-
-- [theme、menu、breadItem 配置](https://github.com/PDKSophia/vue-erek-manage/wiki/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
-
-- [table、standlist 列表页](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%88%97%E8%A1%A8%E9%A1%B5)
-
-- [badge 徽章](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%BE%BD%E7%AB%A0)
-
-- [如何快速使用](https://github.com/PDKSophia/vue-erek-manage/wiki)
+* [Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
+    * [theme、menu、breadItem 配置](https://github.com/PDKSophia/vue-erek-manage/wiki/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
+    * [table、standlist 列表页](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%88%97%E8%A1%A8%E9%A1%B5)
+    * [badge 徽章](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%BE%BD%E7%AB%A0)
 
 ## 页面展示
 

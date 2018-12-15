@@ -63,14 +63,101 @@
   4. npm run serve
 ```
 
-## Docs
-- [Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
+## 文件架构
+```
+·
+├── package.json
+│ 
+├── public                               
+│ 
+├── src
+│   ├── assets                          
+│   │                    
+│   ├── components                  
+│   │    ├─BadgeComponents                
+│   │    ├─DividerComponents            
+│   │    ├─EchartsComponents                   
+│   │    │    ├─Line                    
+│   │    │    ├─Pie                     
+│   │    │    ├─Radar                   
+│   │    │    └─ ... 
+│   │    ├─FormComponents                   
+│   │    │    ├─LoginForm               
+│   │    │    └─ ... 
+│   │    ├─PageComponents                   
+│   │    │    ├─Index                  
+│   │    │    └─ ...    
+│   │    ├─ScaleCardComponents           
+│   │    ├─StarCardComponents           
+│   │    └─ ... 
+│   │
+│   ├── config
+│   │    ├─app.js                      
+│   │    ├─echarts                      
+│   │    │    ├─line.config.js             
+│   │    │    ├─pie.config.js             
+│   │    │    ├─radar.config.js             
+│   │    │    └─ ...    
+│   │    ├─breadItem.js                  
+│   │    ├─menu.js                     
+│   │    ├─tab.js                      
+│   │    ├─theme.js                    
+│   │    └─ ...    
+│   │ 
+│   ├── mock
+│   │    ├─index.js                    
+│   │    ├─data.js                  
+│   │    └─ ...    
+│   │ 
+│   ├── pages                    
+│   │    ├─Canvas                      
+│   │    ├─Layouts                   
+│   │    ├─List                       
+│   │    └─ ... 
+│   │
+│   ├── router                          
+│   │
+│   ├── service                         
+│   │    ├─api                      
+│   │    ├─request                  
+│   │    └─ ...  
+│   │       
+│   ├── store                          
+│   │      
+│   ├── utils                    
+│   │    ├─tool.js                      
+│   │    ├─utils.js                     
+│   │    ├─vue-token.js             
+│   │    └─ ... 
+│   │             
+│   ├── view
+│   │    ├─Login                        
+│   │    ├─Manage                       
+│   │    │    ├─VueErekException            
+│   │    │    ├─VueErekIndex            
+│   │    │    ├─VueErekList             
+│   │    │    ├─VueErekProfile         
+│   │    │    ├─VueErekTool             
+│   │    │    ├─VueErekUser             
+│   │    │    ├─Router            
+│   │    │    └─ ...                    
+│   │    └─ ...    
+│   │
+│   └─
+│ 
+├── main.js                            
+│  
+├── App.vue                            
+│                   
+└─
+```
 
-- [theme、menu、breadItem ConfigPage](https://github.com/PDKSophia/vue-erek-manage/wiki/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
 
-- [table、standlist ListPage](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%88%97%E8%A1%A8%E9%A1%B5)
-
-- [badge Page](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%BE%BD%E7%AB%A0)
+## Wiki Docs
+* [Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
+    * [theme、menu、breadItem ConfigPage](https://github.com/PDKSophia/vue-erek-manage/wiki/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
+    * [table、standlist ListPage](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%88%97%E8%A1%A8%E9%A1%B5)
+    * [badge Page](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%BE%BD%E7%AB%A0)
 
 ## Display Picture
 
