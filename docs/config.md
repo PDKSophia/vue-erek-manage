@@ -16,7 +16,7 @@
     colorVueErek: '#f1f1f1', // layout menu 颜色
   }
 ```
-__注意__ ：如果修改上边 `layoutMenu` 的配置，修改背景色之后，需要到 `erekPages / Layouts / Sider.vue` 中修改下边字段
+__注意__ ：如果修改上边 `layoutMenu` 的配置，修改背景色之后，需要到 `pages / Layouts / Sider.vue` 中修改下边字段
 ```css
   .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
     background: #242427 !important; // 对应上边 layoutMenu.baVueErek 的值
@@ -99,7 +99,7 @@ __注意__ ：如果修改上边 `layoutMenu` 的配置，修改背景色之后�
 ```
 
 #### BreadItem 面包屑
-配置文件在 ` src / config / breadItem.js `中，找到对应文件，进行修改，需要路由与menu中的文字一一对应，<storng>如果一开始的面包屑不是 "仪表盘"， 需到 src / erekPages / Layouts / Sider.vue 中修改 breadList : [' 仪表盘 '] </strong>
+配置文件在 ` src / config / breadItem.js `中，找到对应文件，进行修改，需要路由与menu中的文字一一对应，<storng>如果一开始的面包屑不是 "仪表盘"， 需到 src / pages / Layouts / Sider.vue 中修改 breadList : [' 仪表盘 '] </strong>
 
 ```javascript
   // 菜单栏配置

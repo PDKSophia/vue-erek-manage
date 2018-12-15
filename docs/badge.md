@@ -1,5 +1,5 @@
 ### 用户徽章
-徽章配置在文件夹 `src / erekComponents / VueErekUserBadge` 中，可能不怎么好，如果有bug问题，请提issue，或者加入我，一起共同维护这个项目。
+徽章配置在文件夹 `src / components / VueErekUserBadge` 中，可能不怎么好，如果有bug问题，请提issue，或者加入我，一起共同维护这个项目。
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/docs/docs-badge-1.png'>
 
@@ -39,7 +39,7 @@ badgeData | Object | { } | 显示的数据
   </template>
 
   <script>
-    import VueUserBadge from '../../../erekComponents/VueErekUserBadge/vue-user-badge.vue'
+    import VueUserBadge from '../../../components/BadgeComponents/vue-user-badge.vue'
 
     export default {
       components: {

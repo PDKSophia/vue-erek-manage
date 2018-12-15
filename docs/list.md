@@ -1,5 +1,5 @@
 ### 关于列表
-所有 `vue-erek-manage` 列表页均在文件夹 src / erekPages 中，如果有bug问题，请提issue，或者加入我，一起共同维护这个项目。
+所有 `vue-erek-manage` 列表页均在文件夹 src / pages 中，如果有bug问题，请提issue，或者加入我，一起共同维护这个项目。
 
 #### 表格列表
 你可以新建一个 .vue 文件，将 `erek / TableList / Index.vue` 的代码copy到你的文件中，也可以直接在 TableList / Index.vue 文件中修改
@@ -70,7 +70,7 @@ tableData | Array | [ ] | 显示的数据
   </template>
 
   <script>
-    import ErekTable from '../../../erekPages/TableList/Index.vue' 
+    import ErekTable from '../../../pages/TableList/Index.vue' 
     
     export default {
       components: {
@@ -158,7 +158,7 @@ standlist | Array | [ ] | 显示的数据
   </template>
 
   <script>
-    import ErekStandList from '../../../erekPages/StandardList/Index.vue'
+    import ErekStandList from '../../../pages/StandardList/Index.vue'
     
     export default {
       components: {
