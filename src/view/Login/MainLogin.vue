@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import VueErekMainText from '../../erekComponents/VueErekMainText/Index.vue'
-import VueErekLoginForm from '../../erekComponents/VueErekForm/LoginForm.vue'
+import VueErekMainText from '../../components/PageComponents/Index/MainText.vue'
+import VueErekLoginForm from '../../components/FormComponents/LoginForm/Index.vue'
 import { getEmailCode, setAuthorityToken } from '../../utils/vue-token'
 
 export default {

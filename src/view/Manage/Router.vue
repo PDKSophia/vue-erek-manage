@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import ErekHeader from '../../erekPages/Layouts/Header.vue'
-import ErekSider from '../../erekPages/Layouts/Sider.vue'
+import ErekHeader from '../../pages/Layouts/Header.vue'
+import ErekSider from '../../pages/Layouts/Sider.vue'
 import Menu from '../../config/menu'
 import BreadItem from '../../config/breadItem'
 import VueErekTheme from '../../config/theme'

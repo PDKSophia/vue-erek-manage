@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import ErekBaseSetting from '../../../erekComponents/VueErekUserTabs/vue-erek-base-setting.vue'
-import ErekSafeSetting from '../../../erekComponents/VueErekUserTabs/vue-erek-safe-setting.vue'
-import ErekAccountSetting from '../../../erekComponents/VueErekUserTabs/vue-erek-account-setting.vue'
-import ErekMessageNotice from '../../../erekComponents/VueErekUserTabs/vue-erek-message-notice.vue'
+import ErekBaseSetting from '../../../components/VueErekUserTabs/vue-erek-base-setting.vue'
+import ErekSafeSetting from '../../../components/VueErekUserTabs/vue-erek-safe-setting.vue'
+import ErekAccountSetting from '../../../components/VueErekUserTabs/vue-erek-account-setting.vue'
+import ErekMessageNotice from '../../../components/VueErekUserTabs/vue-erek-message-notice.vue'
 export default {
   name: 'ErekPersonSetting',
   components: {

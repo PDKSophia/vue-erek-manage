@@ -1,59 +1,59 @@
 <template>
   <div>
     <div class="vue-erek-home-up">
-      <vue-erek-echarts-line
+      <echarts-line
         :xAxis='xAxis'
         :yAxis='yAxis'
         :series='lineSeries'
         :itemList='itemList'
         :width='lineWidth'
         :height='lineHeight'
-      ></vue-erek-echarts-line>
+      ></echarts-line>
       <div class="vue-erek-right-box" :style="{height: 'height'}">
         <p class='vue-erek-right-box-title'>数据卡片
         </p>
         <vue-scale-card :tabArray='tabArray'/>
       </div>
     </div>
-    <vue-erek-br :bgColor='hrObj.bgColor' :height='hrObj.height'></vue-erek-br>
+    <vue-divider :bgColor='hrObj.bgColor' :height='hrObj.height'></vue-divider>
     <div class="vue-erek-home-down">
-      <vue-erek-echarts-radar
+      <echarts-radar
         :series="radarSeries"
         :indicator='radarIndicator'
         :width='radarWidth'
         :height='radarHeight'
-      ></vue-erek-echarts-radar>
-      <vue-erek-echarts-pie
+      ></echarts-radar>
+      <echarts-pie
         :series="pieSeries"
         :width='pieWidth'
         :height='pieHeight'
-      ></vue-erek-echarts-pie>
-      <vue-erek-echarts-radar
+      ></echarts-pie>
+      <echarts-radar
         :series="radarSeries"
         :indicator='radarIndicator'
         :width='radarWidth'
         :height='radarHeight'
-      ></vue-erek-echarts-radar>
+      ></echarts-radar>
     </div>
   </div>
 </template>
 
 <script>
-import VueErekEchartsLine from '../../../erekComponents/VueErekEcharts/erek-line.vue'
-import VueErekEchartsPie from '../../../erekComponents/VueErekEcharts/erek-pie.vue'
-import VueErekEchartsRadar from '../../../erekComponents/VueErekEcharts/erek-radar.vue'
-import VueScaleCard from '../../../erekComponents/VueErekScaleCard/ScaleCard.vue'
-import VueErekBr from '../../../erekComponents/VueErekBr/vue-erek-br.vue'
+import EchartsLine from '../../../components/EchartsComponents/Line.vue'
+import EchartsPie from '../../../components/EchartsComponents/Pie.vue'
+import EchartsRadar from '../../../components/EchartsComponents/Radar.vue'
+import VueScaleCard from '../../../components/ScaleCardComponents/Index.vue'
+import VueDivider from '../../../components/DividerComponents/Divider.vue'
 import tabconfig from '../../../config/tab'
 
 export default {
   name: 'ErekManageHome',
   components: {
-    VueErekEchartsLine,
-    VueErekEchartsPie,
-    VueErekEchartsRadar,
+    EchartsLine,
+    EchartsPie,
+    EchartsRadar,
     VueScaleCard,
-    VueErekBr
+    VueDivider
   },
   data () {
     return {

@@ -26,20 +26,20 @@
         </ul>
       </div>
     </div>
-    <vue-erek-br :bgColor='hrObj.bgColor' :height='hrObj.height' />
+    <vue-divider :bgColor='hrObj.bgColor' :height='hrObj.height' />
     <div class="vue-erek-article">
       <div class="vue-erek-badge-left">
         <vue-user-badge :badgeData='badgeData' />
       </div>
       <div class="vue-erek-content-right">
-        <vue-erek-echarts-line
+        <echarts-line
           :xAxis='xAxis'
           :yAxis='yAxis'
           :series='lineSeries'
           :itemList='itemList'
           :width='lineWidth'
           :height='lineHeight'
-        ></vue-erek-echarts-line>
+        ></echarts-line>
       </div>
     </div>
     <div class="vue-erek-meta-item-cell">
@@ -57,20 +57,20 @@
 </template>
 
 <script>
-import VueErekBr from '../../../erekComponents/VueErekBr/vue-erek-br.vue'
-import VueUserBadge from '../../../erekComponents/VueErekUserBadge/vue-user-badge.vue'
-import VueErekEchartsLine from '../../../erekComponents/VueErekEcharts/erek-line.vue'
-import VueErekEchartsRadar from '../../../erekComponents/VueErekEcharts/erek-radar.vue'
-import VueUserCardItem from '../../../erekComponents/VueErekUserCardItem/CardRankItem.vue'
+import VueDivider from '../../../components/DividerComponents/Divider.vue'
+import VueUserBadge from '../../../components/BadgeComponents/Index.vue'
+import EchartsLine from '../../../components/EchartsComponents/Line.vue'
+import EchartsRadar from '../../../components/EchartsComponents/Radar.vue'
+import VueUserCardItem from '../../../components/StarCardComponents/Index.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'ErelUserInformation',
   components: {
-    VueErekBr,
+    VueDivider,
     VueUserBadge,
-    VueErekEchartsLine,
-    VueErekEchartsRadar,
+    EchartsLine,
+    EchartsRadar,
     VueUserCardItem
   },
   computed: mapState({
