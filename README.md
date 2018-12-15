@@ -85,8 +85,8 @@
 │   ├── assets                          图片等资源文件
 │   │                    
 │   ├── components                  
-│   │    ├─BadgeComponents              封装的Badge组件，实例: 个人中心    
-│   │    ├─DividerComponents            封装的Divider组件   
+│   │    ├─BadgeComponents              封装的Badge组件，实例: 个人中心    
+│   │    ├─DividerComponents            封装的Divider组件   
 │   │    ├─EchartsComponents                   
 │   │    │    ├─Line                    封装的折线图组件
 │   │    │    ├─Pie                     封装的饼图组件
@@ -98,8 +98,8 @@
 │   │    ├─PageComponents                   
 │   │    │    ├─Index                   封装的部分页面组件
 │   │    │    └─ ...    
-│   │    ├─ScaleCardComponents          封装的带有放大的卡片组件      
-│   │    ├─StarCardComponents           封装的带有星星的卡片组件
+│   │    ├─ScaleCardComponents          封装的带有放大的卡片组件      
+│   │    ├─StarCardComponents           封装的带有星星的卡片组件
 │   │    └─ ... 
 │   │
 │   ├── config
