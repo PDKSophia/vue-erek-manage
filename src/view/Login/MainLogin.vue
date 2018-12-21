@@ -87,7 +87,7 @@ export default {
       } else if (getEmailCode() != values.code) {
         this.$tool.toastTips('error', '验证码错误', 1.5);
       } else {
-        this.$api.fetchOauthAdminLogin(JSON.stringify(values)).then(res => {
+        this.$api.user.fetchOauthAdminLogin(JSON.stringify(values)).then(res => {
           this.loginForm.loginVisible = false;
           setAuthorityToken(res.token);
           setTimeout(() => {

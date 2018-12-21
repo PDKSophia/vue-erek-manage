@@ -1,9 +1,9 @@
-import index from './index.js'
 import data from './data.js'
 import list from './list.js'
+import user from './user.js'
 
 export default {
-  index,
   data,
-  list
+  list,
+  user
 }

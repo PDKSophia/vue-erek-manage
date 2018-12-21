@@ -46,8 +46,5 @@ export default {
   height: 100%;
   width: 100%;
   background-color: #f5f7f9;
-
-  > .erek-card-list {
-  }
 }
 </style>

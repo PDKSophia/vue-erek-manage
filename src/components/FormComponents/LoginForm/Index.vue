@@ -38,8 +38,8 @@
         </FormItem>
       </Form>
       <div slot="footer">
-        <Button type="default" size="small" @click="onHandleClickCancle("loginform")">取消</Button>
-        <Button type="primary" size="small" @click="onHandleClickSubmit("loginform")">登陆</Button>
+        <Button type="default" size="small" @click="onHandleClickCancle('loginform')">取消</Button>
+        <Button type="primary" size="small" @click="onHandleClickSubmit('loginform')">登陆</Button>
       </div>
     </Modal>
   </div>
@@ -96,7 +96,7 @@ export default {
     handleSendCode() {
       if (this.$utils.checkEmail(this.loginform.email)) {
         this.setCountDownTime()
-        this.$api.fetchValidateCode(this.loginform.email).then((res) => {
+        this.$api.user.fetchValidateCode(this.loginform.email).then((res) => {
           this.$Notice.open({
             title: `您的验证码是 : ${res.code}`
           });

@@ -114,7 +114,7 @@ export default {
     // 请求拿到 `卡片数据`
     this.$api.app.fetchAllTabData().then(res => {
       for (let q = 0; q < res.length; q++) {
-        let bgColor = this.$utils.getColorFromArray();
+        let bgColor = this.$utils.getColorFromArray()
         let conf = Object.assign({}, tabconfig, {
           width: '50%',
           bgColor: bgColor,

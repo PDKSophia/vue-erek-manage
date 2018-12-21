@@ -32,7 +32,6 @@ export default {
     $route: {
       // 路由监听
       handler: function (val) {
-        // console.log('新路由: ', val)
         for (let key in BreadItem) {
           if (val.path == key) {
             this.BreadItem = BreadItem[key]
@@ -56,7 +55,7 @@ export default {
       });
     } else {
       // 获取用户信息
-      this.$api.app.fetchCurrentUser().then(res => {
+      this.$api.user.fetchCurrentUser().then(res => {
         this.setErekUser(res);
       });
     }
