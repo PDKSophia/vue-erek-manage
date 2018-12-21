@@ -36,5 +36,8 @@ export default {
 <style scoped lang="scss">
 .vue-erek-person-setting-container {
   padding: 16px 22px;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
 }
 </style>

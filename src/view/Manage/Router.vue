@@ -8,13 +8,13 @@
 </template>
 
 <script>
-import ErekHeader from '../../pages/Layouts/Header.vue';
-import ErekSider from '../../pages/Layouts/Sider.vue';
-import Menu from '../../config/menu';
-import BreadItem from '../../config/breadItem';
-import VueErekTheme from '../../config/theme';
-import { getAuthorityToken } from '../../utils/vue-token';
-import { mapActions } from 'vuex';
+import ErekHeader from '../../pages/Layouts/Header.vue'
+import ErekSider from '../../pages/Layouts/Sider.vue'
+import Menu from '../../config/menu'
+import BreadItem from '../../config/breadItem'
+import VueErekTheme from '../../config/theme'
+import { getAuthorityToken } from '../../utils/vue-token'
+import { mapActions } from 'vuex'
 export default {
   name: 'ErekManageContainer',
   components: {

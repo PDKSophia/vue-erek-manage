@@ -112,7 +112,7 @@ export default {
   },
   mounted() {
     // 发送请求获取所有个人中心的数据
-    this.$api.fetchAllListData().then(res => {
+    this.$api.app.fetchAllListData().then(res => {
       this.badgeData = Object.assign(
         {},
         {
@@ -197,6 +197,8 @@ export default {
 .vue-erek-person-container {
   width: 100%;
   color: rgba(0, 0, 0, 0.45);
+  height: 100%;
+  background-color: #fff;
 
   > .vue-user-item {
     width: 100%;

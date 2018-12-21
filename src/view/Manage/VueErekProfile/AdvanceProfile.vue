@@ -26,7 +26,7 @@
               <Col span="12">
                 <p>所属组织 : Github</p>
                 <p>所属分类 : Erek-Net</p>
-                <p>备注 : Erek-Net下的一款开源后台管理快速开发框架</p>
+                <p class="meta-desc">备注 : Erek-Net下的一款开源后台管理快速开发框架</p>
               </Col>
             </Row>
           </div>
@@ -50,13 +50,31 @@
 
 <script>
 export default {
-  name: 'VueErekAdvanceProfile'
+  name: 'VueErekAdvanceProfile',
+  methods: {
+    handleActionOne() {
+      this.$tool.toastTips(
+        'info',
+        `点击操作1`,
+        1
+      )
+    },
+    handleActionTwo() {
+      this.$tool.toastTips(
+        'info',
+        `点击操作2`,
+        1
+      )
+    },
+  },
 }
 </script>
 
 <style lang='scss' scoped>
 .vue-erek-profile-container {
   width: 100%;
+  height: 100%;
+  background-color: #fff;
 
   .vue-erek-meta-header {
     padding: 30px 40px;
@@ -77,11 +95,18 @@ export default {
   }
 
   .vue-erek-meta-content {
-    width: 63%;
+    width: 60%;
     padding-left: 10px;
     line-height: 32px;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.55);
+
+    p.meta-desc {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 
   .vue-erek-meta-extraContent {
