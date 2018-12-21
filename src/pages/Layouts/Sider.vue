@@ -40,11 +40,14 @@
           </div>
         </Menu>
       </Sider>
-      <Layout class="erek-right-layout" :style="{ padding: '0px 24px 24px' }">
-        <Breadcrumb :style="{margin: '24px 0'}">
-          <BreadcrumbItem v-for="(item, index) in breadList" :key="index">{{ item }}</BreadcrumbItem>
-        </Breadcrumb>
-        <Content class="erek-layout-content">
+      <Layout class="erek-right-layout">
+        <div class="layout-bread-crumb">
+          <Breadcrumb>
+            <BreadcrumbItem v-for="(item, index) in breadList" :key="index">{{ item }}</BreadcrumbItem>
+          </Breadcrumb>
+          <!-- <h1 class="bread-title">嘻嘻嘻</h1> -->
+        </div>
+        <Content class="erek-layout-content" :style="{ padding: '0px 24px 24px' }">
           <keep-alive>
             <router-view v-if="$route.meta.keepAlive"></router-view>
           </keep-alive>
@@ -98,8 +101,20 @@ export default {
 
 <style scoped lang='scss'>
 .erek-right-layout {
+  height: 100%;
+
   > .erek-layout-content {
-    background-color: #fff;
+    background-color: #f5f7f9;
+    height: 100%;
+  }
+}
+.layout-bread-crumb {
+  padding: 24px 24px;
+  background-color: white;
+  margin-bottom: 24px;
+
+  > .bread-title {
+    margin: 12px 0 0;
   }
 }
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
