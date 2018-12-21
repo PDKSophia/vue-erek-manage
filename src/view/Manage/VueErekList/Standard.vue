@@ -8,17 +8,17 @@
       <erek-stand-list
         :data="standConfig.data"
         :pagination="standConfig.pagination"
-        @onHandleClickStandItem="handleEmitClickItem"
+        @onHandleClickStandItem="handleCallback"
       ></erek-stand-list>
     </div>
   </div>
 </template>
 
 <script>
-import VueScaleCard from '../../../components/ScaleCardComponents/Index.vue';
-import VueDivider from '../../../components/DividerComponents/Divider.vue';
-import ErekStandList from '../../../pages/List/Standard.vue';
-import tabconfig from '../../../config/tab';
+import VueScaleCard from '../../../components/ScaleCardComponents/Index.vue'
+import VueDivider from '../../../components/DividerComponents/Divider.vue'
+import ErekStandList from '../../../pages/List/Standard.vue'
+import tabconfig from '../../../config/tab'
 export default {
   name: 'ErekStandardList',
   components: {
@@ -45,10 +45,10 @@ export default {
     };
   },
   methods: {
-    handleEmitClickItem(value, type) {
+    handleCallback(value, type) {
       this.$tool.toastTips(
         'info',
-        `你当前点击 : ${type}, 点击的item id为 : ${value.id}`,
+        `你当前点击类型 : ${type}, 点击的item id为 : ${value.id}`,
         1
       )
     }
@@ -83,6 +83,7 @@ export default {
 .erek-standard-container {
   height: 100%;
   width: 100%;
+  background-color: #fff;
 
   > .erek-standard-list {
     padding: 12px 24px;
