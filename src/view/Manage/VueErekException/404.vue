@@ -21,7 +21,9 @@ export default {
   -webkit-box-align: center;
   -webkit-box-pack: center;
   -webkit-box-orient: horizontal;
-  margin-top: 18%;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
 
   > .error-image {
     width: 200px;
