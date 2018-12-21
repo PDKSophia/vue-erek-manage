@@ -1,6 +1,6 @@
 <template>
   <div class="vue-erek-standlist-container">
-    <div class="vue-flex-item" v-for="(item, index) in standlist" :key="index">
+    <div class="vue-flex-item" v-for="(item, index) in data" :key="index">
       <div class="vue-erek-item-meta">
         <div class="vue-erek-item-meta-avatar">
           <img class="vue-erek-item-meta-avatar-image" :src="item.avatar" alt>
@@ -21,6 +21,16 @@
         </ul>
       </div>
     </div>
+    <div style="margin: 30px 0px; overflow: hidden" v-show="pagination.hasPage">
+      <div style="float: right;">
+        <Page
+          :total="pagination.total"
+          :current="pagination.pageNum"
+          :pageSize="pagination.pageSize"
+          showSizer
+        ></Page>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,12 +38,28 @@
 export default {
   name: 'ErekStandardList',
   props: {
-    standlist: {
+    data: {
       type: Array,
       default: function () {
         return [];
       }
+    },
+    pagination: {
+      type: Object,
+      defualt: function () {
+        return []
+      }
     }
+  },
+  watch: {
+    pagination: {
+      handler(newVal) {
+        console.log(newVal)
+      }
+    }
+  },
+  mounted() {
+    console.log(this.pagination)
   },
   methods: {
     handleOnClickEdit(item) {
@@ -62,7 +88,7 @@ export default {
     > .vue-erek-item-meta {
       align-items: flex-start;
       display: flex;
-      flex: 2 1;
+      width: 60%;
 
       > .vue-erek-item-meta-avatar {
         margin-right: 10px;
@@ -75,8 +101,7 @@ export default {
       }
 
       > .vue-erek-item-meta-content {
-        flex: 1 0;
-
+        width: 80%;
         > .vue-erek-item-meta-title {
           margin-bottom: 4px;
           font-size: 14px;
@@ -87,13 +112,17 @@ export default {
           font-size: 14px;
           line-height: 22px;
           color: rgba(0, 0, 0, 0.45);
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
     }
 
     > .vue-erek-item-content {
       display: flex;
-      flex: 1 1;
+      width: 25%;
       justify-content: flex-end;
       align-items: center;
       font-size: 14px;
@@ -106,7 +135,7 @@ export default {
 
     > .vue-erek-item-action {
       display: flex;
-      flex: 1 0;
+      width: 15%;
       justify-content: flex-end;
       align-items: center;
       font-size: 14px;

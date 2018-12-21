@@ -4,7 +4,7 @@
       <Col span="8">
         <div>
           <span class="erek-span-text">搜索 :</span>
-          <input v-model="keyWords" class="erek-input" :style="{marginLeft: "10px"}" type="text">
+          <input v-model="keyWords" class="erek-input" :style="{marginLeft: '10px'}" type="text">
         </div>
       </Col>
       <Col span="8">
@@ -28,17 +28,13 @@
       </Col>
     </Row>
     <erek-table
-      :border="tableObj.border"
-      :stripe="tableObj.stripe"
-      :size="tableObj.size"
-      :tableData="tableObj.tableData"
+      :border="tableConfig.border"
+      :stripe="tableConfig.stripe"
+      :size="tableConfig.size"
+      :data="tableConfig.data"
+      :pagination="tableConfig.pagination"
       @onHandleClickItem="handleEmitTableValue"
     />
-    <div style="margin: 20px 10px;overflow: hidden">
-      <div style="float: right;">
-        <Page :total="100" :current="1"></Page>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -63,11 +59,17 @@ export default {
           label: '离职'
         }
       ],
-      tableObj: {
-        border: false,
+      tableConfig: {
+        border: true,
         stripe: true,
         size: 'large',
-        tableData: [],
+        data: [],
+        pagination: {
+          hasPage: true,
+          pageNum: 0,
+          pageSize: 0,
+          total: 0
+        }
       },
     }
   },
@@ -90,8 +92,14 @@ export default {
   },
   mounted() {
     // 发送请求获取数据信息
-    this.$api.fetchAllDataList().then((res) => {
-      this.tableObj.tableData = res
+    this.$api.list.fetchRequestTableApi().then((res) => {
+      this.tableConfig.data = res.list
+      this.tableConfig.pagination = {
+        hasPage: true,
+        pageNum: res.current,
+        pageSize: res.size,
+        total: res.total
+      }
     })
   },
 }

@@ -8,6 +8,7 @@ import VueErekManageIndex from '@/view/Manage/VueErekIndex/Index'
 // 列表页
 import VueErekTableList from '@/view/Manage/VueErekList/Table'
 import VueErekStandardList from '@/view/Manage/VueErekList/Standard'
+import VueErekCardList from '@/view/Manage/VueErekList/Card'
 
 // 工具栏
 import VueErekToolMessage from '@/view/Manage/VueErekTool/Message'
@@ -117,6 +118,14 @@ export default new Router({
           path: 'erek-list-standard',
           name: 'VueErekStandardList',
           component: VueErekStandardList,
+          meta: {
+            keepAlive: false
+          }
+        },
+        {
+          path: 'erek-list-card',
+          name: 'VueErekCardList',
+          component: VueErekCardList,
           meta: {
             keepAlive: false
           }

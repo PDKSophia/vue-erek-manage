@@ -187,31 +187,6 @@ Mock.mock('/api/data/getStandAllData', () => {
   }
 })
 
-// 获取搜索待办任务
-Mock.mock('/api/data/getAllTask', () => {
-  let response = {
-    code: 1,
-    msg: '获取所有待办任务',
-    list: [
-      {
-        text: '未完成任务',
-        value: 12
-      },
-      {
-        text: '全部任务',
-        value: 41
-      },
-      {
-        text: '部门任务',
-        value: 25
-      }
-    ]
-  }
-  return {
-    response
-  }
-})
-
 // 获取 `平台日访问量` 和 `日注册人数`
 Mock.mock('/api/data/getPlatFormViewData', () => {
   let response = {

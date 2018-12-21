@@ -81,7 +81,7 @@ export default {
   },
   mounted() {
     // 发送请求拿到 `平台日访问量`
-    this.$api.fetchPlatFormViewData().then(res => {
+    this.$api.app.fetchPlatFormViewData().then(res => {
       for (let i = 0; i < res.timeRange.length; i++) {
         this.xAxis.data.push(res.timeRange[i]);
       }
@@ -112,7 +112,7 @@ export default {
       }
     });
     // 请求拿到 `卡片数据`
-    this.$api.fetchAllTabData().then(res => {
+    this.$api.app.fetchAllTabData().then(res => {
       for (let q = 0; q < res.length; q++) {
         let bgColor = this.$utils.getColorFromArray();
         let conf = Object.assign({}, tabconfig, {
@@ -128,7 +128,7 @@ export default {
       }
     });
     // 请求拿到 `站点访问来源数据`
-    this.$api.fetchAllOriginData().then(res => {
+    this.$api.app.fetchAllOriginData().then(res => {
       let obj = {
         name: '访问来源',
         type: 'pie',
@@ -142,7 +142,7 @@ export default {
       this.pieSeries.push(obj);
     });
     // 请求拿到 `预算开销和实际开销`
-    this.$api.fetchExpenseOriginData().then(res => {
+    this.$api.app.fetchExpenseOriginData().then(res => {
       let obj = {
         name: `预算分配与实际开销`,
         type: 'radar',

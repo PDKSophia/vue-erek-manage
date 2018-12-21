@@ -1,6 +1,16 @@
 <template>
   <div>
-    <Table :border="border" :stripe="stripe" :size="size" :data="tableData" :columns="columns"></Table>
+    <Table :border="border" :stripe="stripe" :size="size" :data="data" :columns="columns"></Table>
+    <div style="margin: 30px 0px;overflow: hidden" v-show="pagination.hasPage">
+      <div style="float: right;">
+        <Page
+          :total="pagination.total"
+          :current="pagination.pageNum"
+          :pageSize="pagination.pageSize"
+          showSizer
+        ></Page>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,49 +30,64 @@ export default {
       type: String,
       default: 'small'
     },
-    tableData: {
+    data: {
       type: Array,
+      defualt: function () {
+        return []
+      }
+    },
+    pagination: {
+      type: Object,
       defualt: function () {
         return []
       }
     }
   },
+  watch: {
+    pagination: {
+      handler(newVal) {
+        console.log(newVal)
+      }
+    }
+  },
   data() {
     return {
+      initPageOption: [10, 20, 30, 50],
       columns: [
         {
           title: '员工ID',
           key: 'id',
           width: 80,
+          align: 'center',
         },
         {
           title: '员工名',
           key: 'username',
           width: 100,
-        },
-        {
-          title: '员工编号',
-          key: 'staffID'
+          align: 'center',
         },
         {
           title: '所属部门',
-          key: 'department'
+          key: 'department',
+          align: 'center',
         },
         {
           title: '所在职位',
-          key: 'type'
+          key: 'type',
+          align: 'center',
         },
         {
           title: '员工状态',
           key: 'status',
+          align: 'center',
           filters: [
             {
               label: '在职',
-              value: 'online'
+              value: '在职'
             },
             {
               label: '离职',
-              value: 'exit'
+              value: '离职'
             }
           ],
           filterMultiple: false,
@@ -72,14 +97,17 @@ export default {
         },
         {
           title: '联系方式',
-          key: 'phone'
+          key: 'phone',
+          align: 'center',
         },
         {
           title: '入职时间',
-          key: 'time'
+          key: 'time',
+          align: 'center',
         },
         {
           title: '操作',
+          align: 'center',
           key: 'action',
           width: 150,
           align: 'center',

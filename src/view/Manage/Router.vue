@@ -56,7 +56,7 @@ export default {
       });
     } else {
       // 获取用户信息
-      this.$api.fetchCurrentUser().then(res => {
+      this.$api.app.fetchCurrentUser().then(res => {
         this.setErekUser(res);
       });
     }
