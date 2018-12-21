@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="logo" class='logo' alt='logo'/>
+    <img :src="logo" class="logo" alt="logo" />
     <p class="vue-erek-title">{{ title }}</p>
     <p class="vue-erek-summary">{{ summary }}</p>
   </div>
@@ -23,39 +23,39 @@ export default {
       default: ''
     }
   },
-  data () {
+  data() {
     return {
       logo: null,
       title: null,
       summary: null
-    }
+    };
   },
   watch: {
     ErekPath(newVal) {
       this.$nextTick(() => {
-        this.logo = newVal
-      })
+        this.logo = newVal;
+      });
     },
     ErekTitle(newVal) {
       this.$nextTick(() => {
-        this.title = newVal
-      })
+        this.title = newVal;
+      });
     },
     ErekSummary(newVal) {
       this.$nextTick(() => {
-        this.summary = newVal
-      })
-    },
+        this.summary = newVal;
+      });
+    }
   },
   mounted() {
-    this.logo = this.ErekPath
-    this.title = this.ErekTitle
-    this.summary = this.ErekSummary
+    this.logo = this.ErekPath;
+    this.title = this.ErekTitle;
+    this.summary = this.ErekSummary;
   }
-}
+};
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 img.logo {
   margin-top: 10%;
   width: 7.2rem;
@@ -63,12 +63,12 @@ img.logo {
 }
 p.vue-erek-title {
   font-weight: 600;
-  font-size : 1.68rem;
+  font-size: 1.68rem;
   color: rgb(250, 251, 252);
   margin-top: 1.82rem;
 }
 p.vue-erek-summary {
-  font-size : 1.24rem;
+  font-size: 1.24rem;
   color: rgb(250, 251, 252);
   margin-top: 2rem;
   margin-bottom: 3rem;
@@ -80,11 +80,11 @@ p.vue-erek-summary {
     height: 6.2rem;
   }
   p.vue-erek-title {
-    font-size : 1.3rem;
-    margin-top: .4rem;
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
   }
   p.vue-erek-summary {
-    font-size : .88rem;
+    font-size: 0.88rem;
     margin-top: 3rem;
   }
 }

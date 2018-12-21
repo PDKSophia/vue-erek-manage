@@ -1,29 +1,32 @@
 <template>
   <div class="vue-exception-error-container">
-    <img class="error-image" src="../../../assets/exception/404.png" alt="403" />
+    <img
+      class="error-image"
+      src="../../../assets/exception/404.png"
+      alt="403"
+    />
     <div class="error-content">
-      <h1>404</h1>
-      <h3>抱歉，你访问的页面不存在</h3>
+      <h1>404</h1> <h3>抱歉，你访问的页面不存在</h3>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'VueErekException403',
-}
+  name: 'VueErekException403'
+};
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .vue-exception-error-container {
   text-align: center;
   display: -webkit-box;
   -webkit-box-align: center;
   -webkit-box-pack: center;
-  -webkit-box-orient:horizontal;
+  -webkit-box-orient: horizontal;
   margin-top: 18%;
 
-  >.error-image {
+  > .error-image {
     width: 200px;
     height: 230px;
   }

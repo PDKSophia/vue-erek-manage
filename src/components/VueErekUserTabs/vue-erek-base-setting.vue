@@ -4,10 +4,10 @@
       <Col span='13'>
         <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80">
           <FormItem label="昵称" prop="username">
-            <Input v-model="formValidate.username" placeholder="修改的名字"></Input>
+            <Input v-model="formValidate.username" placeholder="修改的名字" />
           </FormItem>
           <FormItem label="邮箱" prop="email">
-            <Input v-model="formValidate.email" placeholder="邮箱..."></Input>
+            <Input v-model="formValidate.email" placeholder="邮箱..." />
           </FormItem>
           <FormItem label="国家" prop="city">
               <Select v-model="formValidate.city" placeholder="选择国家">
@@ -29,10 +29,10 @@
               </CheckboxGroup>
           </FormItem>
           <FormItem label="街道地址" prop="address">
-            <Input v-model="formValidate.address" placeholder="地址..."></Input>
+            <Input v-model="formValidate.address" placeholder="地址..." />
           </FormItem>
           <FormItem label="个人简介" prop="desc">
-              <Input v-model="formValidate.desc" type="textarea" :autosize="{minRows: 5,maxRows: 10}" placeholder="个人简介..."></Input>
+              <Input v-model="formValidate.desc" type="textarea" :autosize="{minRows: 5,maxRows: 10}" placeholder="个人简介..." />
           </FormItem>
           <FormItem>
             <Button type="primary" @click="handleSubmit('formValidate')">Submit</Button>
@@ -42,9 +42,10 @@
       </Col>
       <Col span='8'>
         <div class="vue-user-avatar-large">
-          <img :src="formValidate.avatar" alt="" class="avatar">
+          <img :src="formValidate.avatar" alt="" class="avatar" />
           <a class='erek-button-avatar-upload' href='javascript:;'>
-            + 个人头像<input class='erek-button-avatar-input' type='file' name='avatar' id='avatar' @change='handleChangeAvatar' />
+            + 个人头像
+            <input class='erek-button-avatar-input' type='file' name='avatar' id='avatar' @change='handleChangeAvatar' />
           </a>
         </div>
       </Col>

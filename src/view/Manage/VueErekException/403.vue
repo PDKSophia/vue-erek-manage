@@ -1,29 +1,30 @@
 <template>
   <div class="vue-exception-error-container">
-    <img class="error-image" src="../../../assets/exception/403.png" alt="403" />
-    <div>
-      <h1>403</h1>
-      <h3>抱歉，你无权访问该页面</h3>
-    </div>
+    <img
+      class="error-image"
+      src="../../../assets/exception/403.png"
+      alt="403"
+    />
+    <div> <h1>403</h1> <h3>抱歉，你无权访问该页面</h3> </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'VueErekException403',
-}
+  name: 'VueErekException403'
+};
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .vue-exception-error-container {
   text-align: center;
   display: -webkit-box;
   -webkit-box-align: center;
   -webkit-box-pack: center;
-  -webkit-box-orient:horizontal;
+  -webkit-box-orient: horizontal;
   margin-top: 16%;
 
-  >.error-image {
+  > .error-image {
     width: 275px;
     height: 275px;
   }

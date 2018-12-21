@@ -42,17 +42,17 @@ export default {
   padding: 0px 0px 20px 14px;
 }
 h4 {
-  color: rgba(0,0,0,.65);
+  color: rgba(0, 0, 0, 0.65);
   margin-bottom: 4px;
   font-size: 15px;
   line-height: 30px;
 }
 .item-meta-content {
-  color: rgba(0,0,0,.45);
+  color: rgba(0, 0, 0, 0.45);
   font-size: 15px;
 }
 .item-float-action {
-  float:right;
+  float: right;
   color: #3797e0;
 }
 .item-float-action:hover {

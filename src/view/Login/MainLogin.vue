@@ -15,7 +15,8 @@
       </div>
     </article>
     <vue-erek-login-form 
-      @onCallbackForm='handleFetchForm' 
+      @onHandleOnCancle='handleOnCancle'
+      @onHandleOnOk='handleOnOk' 
       :loginVisible='loginForm.loginVisible'
       :width='loginForm.width'
     />
@@ -23,9 +24,9 @@
 </template>
 
 <script>
-import VueErekMainText from '../../components/PageComponents/Index/MainText.vue'
-import VueErekLoginForm from '../../components/FormComponents/LoginForm/Index.vue'
-import { getEmailCode, setAuthorityToken } from '../../utils/vue-token'
+import VueErekMainText from '../../components/PageComponents/Index/MainText.vue';
+import VueErekLoginForm from '../../components/FormComponents/LoginForm/Index.vue';
+import { getEmailCode, setAuthorityToken } from '../../utils/vue-token';
 
 export default {
   name: 'ErekLogin',
@@ -33,7 +34,7 @@ export default {
     VueErekMainText,
     VueErekLoginForm
   },
-  data () {
+  data() {
     return {
       ErekPath: require('../../assets/logo.png'),
       ErekTitle: 'Vue-Erek-Manage',
@@ -56,46 +57,50 @@ export default {
         loginVisible: false,
         width: '380px'
       }
-    }
+    };
   },
   methods: {
-    handleErekLink (status) {
-      console.log(status)
+    handleErekLink(status) {
+      console.log(status);
       switch (status) {
         case 'erek-origincode':
-          window.location.href = 'https://github.com/PDKSophia/vue-erek-manage'
-          break
+          window.location.href = 'https://github.com/PDKSophia/vue-erek-manage';
+          break;
         case 'erek-docs':
-          window.location.href = 'https://github.com/PDKSophia/vue-erek-manage/wiki'
-          break
+          window.location.href =
+            'https://github.com/PDKSophia/vue-erek-manage/wiki';
+          break;
         case 'erek-login':
           this.loginForm.loginVisible = true
-          break
+          break;
       }
     },
-    handleFetchForm (values) {
+    handleOnCancle(value) {
+      if (!value) {
+        this.loginForm.loginVisible = false
+      }
+    },
+    handleOnOk(values) {
       console.log(values)
-      if (!(this.$utils.checkEmail(values.email))) {
+      if (!this.$utils.checkEmail(values.email)) {
         this.$tool.toastTips('warning', '请输入正确邮箱', 1.5)
       } else if (getEmailCode() != values.code) {
-        this.$tool.toastTips('error', '验证码错误', 1.5)
+        this.$tool.toastTips('error', '验证码错误', 1.5);
       } else {
         this.$api.fetchOauthAdminLogin(JSON.stringify(values)).then(res => {
-          this.loginForm.loginVisible = false
-          setAuthorityToken(res.token)
+          this.loginForm.loginVisible = false;
+          setAuthorityToken(res.token);
           setTimeout(() => {
             this.$router.push({
               path: '/erek-manage'
-            })
-          }, 1500)
-        })
+            });
+          }, 1500);
+        });
       }
     }
   },
-  mounted() {
-
-  },
-}
+  mounted() {}
+};
 </script>
 
 <style scoped lang='scss'>
@@ -110,7 +115,7 @@ export default {
   width: 20rem;
   height: 23rem;
   position: absolute;
-  background: rgba(36, 36, 36, .3);
+  background: rgba(36, 36, 36, 0.3);
   z-index: 2018;
   right: 5%;
   top: 25%;
@@ -120,7 +125,6 @@ export default {
   > .erek-form-login {
     padding: 1rem 10%;
   }
-
 }
 .btn-disabled {
   background-color: #ccc;
@@ -134,35 +138,35 @@ export default {
 }
 .erek-resume-navbar {
   margin: 3rem 40%;
-  
-  > ul, li {
+
+  > ul,
+  li {
     list-style: none;
   }
-  
-  > .erek-resume-ul-box{
-      display: flex;
-      flex: 1;
-      flex-wrap: wrap;
-      width: 100%;
-      text-align: center;
-      justify-content: space-around;
-      color: rgb(250, 251, 252);
 
-        
-      > li{
-          font-size: 1rem;
-        }
-        li:hover{
-          color: rgb(250, 251, 252);
-          cursor : pointer;
-        }
-      }
+  > .erek-resume-ul-box {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    justify-content: space-around;
+    color: rgb(250, 251, 252);
+
+    > li {
+      font-size: 1rem;
+    }
+    li:hover {
+      color: rgb(250, 251, 252);
+      cursor: pointer;
+    }
+  }
 }
 @media screen and (min-width: 320px) and (max-width: 420px) {
   .erek-resume-navbar {
     margin: 3rem;
 
-    > .erek-resume-ul-box{
+    > .erek-resume-ul-box {
       > li {
         font-size: 0.88rem;
       }
@@ -173,12 +177,11 @@ export default {
   .erek-resume-navbar {
     margin: 3rem 15rem;
 
-    > .erek-resume-ul-box{
+    > .erek-resume-ul-box {
       > li {
         font-size: 0.88rem;
       }
     }
   }
 }
-
 </style>

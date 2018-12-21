@@ -1,11 +1,20 @@
 <template>
   <div class="erek-flex-container">
-    <div class='erek-card-box' 
-      v-for="(tab, index) in tabArray" 
-      :style='{ backgroundColor: tab.bgColor, color: tab.color, borderColor: tab.borderColor, width: tab.width }'
-      :key="index" >
-       <p class="erek-text">{{ tab.text }}</p>
-       <h1 :style='{ color: tab.valueColor, fontSize: "30px" }'>{{ tab.value }}</h1>
+    <div
+      class="erek-card-box"
+      v-for="(tab, index) in tabArray"
+      :style="{
+        backgroundColor: tab.bgColor,
+        color: tab.color,
+        borderColor: tab.borderColor,
+        width: tab.width
+      }"
+      :key="index"
+    >
+      <p class="erek-text">{{ tab.text }}</p>
+      <h1 :style="{ color: tab.valueColor, fontSize: '30px' }">{{
+        tab.value
+      }}</h1>
     </div>
   </div>
 </template>
@@ -17,16 +26,15 @@ export default {
     tabArray: {
       type: Array,
       default: function() {
-        return []
+        return [];
       }
     }
   },
-  mounted() {
-  },
-}
+  mounted() {}
+};
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .erek-flex-container {
   display: flex;
   width: 100%;
@@ -47,13 +55,12 @@ export default {
     }
   }
 
-  .erek-card-box:hover{
+  .erek-card-box:hover {
     transform: rotate(360deg) scale(1.1);
     -webkit-transform: rotate(360deg) scale(1.1);
     -moz-transform: rotate(360deg) scale(1.1);
     -o-transform: rotate(360deg) scale(1.1);
-    -ms-transform: rotate(360deg) scale(1.1)
+    -ms-transform: rotate(360deg) scale(1.1);
   }
-
 }
 </style>

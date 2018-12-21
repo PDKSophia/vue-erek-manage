@@ -4,7 +4,7 @@
       <Col span="8">
         <div>
           <span class="erek-span-text">搜索 : </span>
-          <input v-model="keyWords"  class='erek-input' :style='{marginLeft: "10px"}' type="text">
+          <input v-model="keyWords"  class='erek-input' :style='{marginLeft: "10px"}' type="text" />
         </div>
       </Col>
       <Col span="8">

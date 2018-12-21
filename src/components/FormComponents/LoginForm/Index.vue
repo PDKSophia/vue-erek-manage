@@ -9,24 +9,24 @@
       >
         <Form ref="loginform" :model="loginform" :rules="ruleValidate" :label-width="80">
           <FormItem label="用户名" prop="username">
-            <Input type="text" v-model="loginform.username" placeholder="Enter your username"></Input>
+            <Input type="text" v-model="loginform.username" placeholder="Enter your username" />
           </FormItem>
           <FormItem  label="密码" prop="password">
-            <Input type="password" v-model="loginform.password" placeholder="Enter your password"></Input>
+            <Input type="password" v-model="loginform.password" placeholder="Enter your password" />
           </FormItem>
           <FormItem label="邮箱" prop="email">
-            <Input type="email" v-model="loginform.email" placeholder="Enter your email"></Input>
+            <Input type="email" v-model="loginform.email" placeholder="Enter your email" />
           </FormItem>
           <FormItem label="验证码" prop="email">
             <Row>
               <Col span="15">
                 <FormItem prop="code">
-                  <Input type="text" v-model="loginform.code" placeholder="Enter your code"></Input>
+                  <Input type="text" v-model="loginform.code" placeholder="Enter your code"/>
                 </FormItem>
               </Col>
               <Col span="8" offset='1'>
                 <Button type='primary' size='small' v-show='sendCode' @click='handleSendCode'>获取验证码</Button>
-                <button type="default" size='small' v-show='!sendCode' class='btn-disabled' disabled>{{ countTime }}s 后重试</button>
+                <Button type="default" size='small' v-show='!sendCode' class='btn-disabled' disabled>{{ countTime }}s 后重试</Button>
               </Col>
             </Row>
           </FormItem>
@@ -103,7 +103,7 @@ export default {
     onHandleClickSubmit (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$emit('onCallbackForm', this.loginform)
+          this.$emit('onHandleOnOk', this.loginform)
         } else {
           console.log('error')
         }
@@ -111,7 +111,7 @@ export default {
     },
     onHandleClickCancle (formName) {
       this.$refs[formName].resetFields()
-      this.$emit('onCallbackForm', this.loginform)
+      this.$emit('onHandleOnCancle', false)
     }
   },
   props: {

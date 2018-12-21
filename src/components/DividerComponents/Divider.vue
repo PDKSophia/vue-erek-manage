@@ -1,5 +1,6 @@
 <template>
-  <div class="vue-erek-br"
+  <div
+    class="vue-erek-br"
     :style="{ backgroundColor: bgColor, height: height }"
   ></div>
 </template>
@@ -17,10 +18,10 @@ export default {
       default: '#f5f7f9'
     }
   }
-}
+};
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .vue-erek-br {
   background: #f5f7f9;
   height: 20px;

@@ -1,15 +1,9 @@
 <template>
-  <div>
-    账号绑定
-  </div>
+  <div> 账号绑定 </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>

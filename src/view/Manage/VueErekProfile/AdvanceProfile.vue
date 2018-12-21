@@ -56,8 +56,8 @@ export default {
 
 <style lang='scss' scoped>
 .vue-erek-profile-container {
-  width: 100%; 
-  
+  width: 100%;
+
   .vue-erek-meta-header {
     padding: 30px 40px;
   }
@@ -67,7 +67,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   font-variant: tabular-nums;
-  color: rgba(0,0,0,.85);
+  color: rgba(0, 0, 0, 0.85);
   box-sizing: border-box;
   margin-bottom: 16px;
   justify-content: space-between;
@@ -81,7 +81,7 @@ export default {
     padding-left: 10px;
     line-height: 32px;
     font-size: 16px;
-    color: rgba(0,0,0,.55);
+    color: rgba(0, 0, 0, 0.55);
   }
 
   .vue-erek-meta-extraContent {
@@ -89,15 +89,15 @@ export default {
     line-height: 36px;
     margin-left: 10px;
     text-align: right;
-    
+
     .meta-extra-label {
-        font-size: 16px;
-        color: rgba(0,0,0,.45);
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.45);
     }
 
     .meta-extra-value {
-        font-size: 22px;
-        color: rgba(0,0,0,.8);
+      font-size: 22px;
+      color: rgba(0, 0, 0, 0.8);
     }
   }
 }

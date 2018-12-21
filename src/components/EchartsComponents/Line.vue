@@ -1,16 +1,27 @@
 <template>
-  <div class='vue-erek-line-container'>
+  <div class="vue-erek-line-container">
     <div class="vue-layout-header-line">
-      <p class='vue-erek-line-title' v-for='(item, index) in itemList' :key="index">
-        <span class="vue-erek-span-badge" :style='{ backgroundColor: item.badgeColor }'></span>{{ item.text }}
+      <p
+        class="vue-erek-line-title"
+        v-for="(item, index) in itemList"
+        :key="index"
+      >
+        <span
+          class="vue-erek-span-badge"
+          :style="{ backgroundColor: item.badgeColor }"
+        ></span
+        >{{ item.text }}
       </p>
     </div>
-    <div ref='erek_line' :style="{ width: width, height: height, marginTop: '-50px' }"></div>
+    <div
+      ref="erek_line"
+      :style="{ width: width, height: height, marginTop: '-50px' }"
+    ></div>
   </div>
 </template>
 
 <script>
-import configOptions from '../../config/echarts/line.config'
+import configOptions from '../../config/echarts/line.config';
 export default {
   name: 'VueErekLine',
   props: {
@@ -24,53 +35,52 @@ export default {
     },
     itemList: {
       type: Array,
-      default: function () {
-        return {}
+      default: function() {
+        return {};
       }
     },
     xAxis: {
       type: Object,
-      default: function () {
-        return {}
+      default: function() {
+        return {};
       }
     },
     yAxis: {
       type: Object,
-      default: function () {
-        return {}
+      default: function() {
+        return {};
       }
     },
     series: {
       type: Array,
-      default: function () {
-        return []
+      default: function() {
+        return [];
       }
     }
   },
-  data () {
-    return {
-    }
+  data() {
+    return {};
   },
   methods: {
     drawLineEcharts() {
-      let lineEcharts = this.$echarts.init(this.$refs.erek_line)
+      let lineEcharts = this.$echarts.init(this.$refs.erek_line);
       let newOptions = Object.assign(configOptions, {
         series: this.series,
         xAxis: this.xAxis,
         yAxis: this.yAxis
-      })
-      lineEcharts.setOption(newOptions)
+      });
+      lineEcharts.setOption(newOptions);
     }
   },
   mounted() {
     setTimeout(() => {
-      this.drawLineEcharts()
-    }, 1000)
-  },
-}
+      this.drawLineEcharts();
+    }, 1000);
+  }
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .vue-erek-line-container {
   width: 100%;
   padding: 24px;
