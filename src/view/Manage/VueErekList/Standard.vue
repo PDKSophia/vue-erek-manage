@@ -1,14 +1,11 @@
 <template>
   <div class="erek-standard-container">
-    <vue-scale-card :tabArray="tabArray" />
-    <vue-divider :bgColor="hrObj.bgColor" :height="hrObj.height" />
+    <vue-scale-card :tabArray="tabArray"/>
+    <vue-divider :bgColor="hrObj.bgColor" :height="hrObj.height"/>
     <div class="erek-standard-list">
       <h3>所有待办任务</h3>
       <Button type="dashed" long icon="ios-add">新增</Button>
-      <erek-stand-list
-        :standlist="standlist"
-        @onHandleClickStandItem="handleEmitClickItem"
-      ></erek-stand-list>
+      <erek-stand-list :standlist="standlist" @onHandleClickStandItem="handleEmitClickItem"></erek-stand-list>
     </div>
   </div>
 </template>

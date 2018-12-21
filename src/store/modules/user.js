@@ -5,14 +5,14 @@ const state = {
 }
 
 const actions = {
-  setErekUser ({ commit }, payload) {
+  setErekUser({ commit }, payload) {
     commit(types.SET_EREK_USER_INFO, { data: payload })
   }
 }
 
 const mutations = {
-  [types.SET_EREK_USER_INFO] (state, payload) {
-    state.erekUser = {...payload.data}
+  [types.SET_EREK_USER_INFO](state, payload) {
+    state.erekUser = { ...payload.data }
   }
 }
 

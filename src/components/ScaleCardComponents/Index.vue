@@ -12,9 +12,11 @@
       :key="index"
     >
       <p class="erek-text">{{ tab.text }}</p>
-      <h1 :style="{ color: tab.valueColor, fontSize: '30px' }">{{
+      <h1 :style="{ color: tab.valueColor, fontSize: '30px' }">
+        {{
         tab.value
-      }}</h1>
+        }}
+      </h1>
     </div>
   </div>
 </template>
@@ -25,12 +27,12 @@ export default {
   props: {
     tabArray: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     }
   },
-  mounted() {}
+  mounted() { }
 };
 </script>
 

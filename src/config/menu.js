@@ -83,7 +83,7 @@ const Menu = [
         hasSubmenu: false, // 是否有子菜单
         name: '4-2',
         _to: '/erek-manage/erek-profile-advance' // 跳转的链接
-      },
+      }
     ]
   },
   {
@@ -103,7 +103,7 @@ const Menu = [
         hasSubmenu: false, // 是否有子菜单
         name: '5-2',
         _to: '/erek-manage/erek-list-standard' // 跳转的链接
-      },
+      }
     ]
   },
   {
@@ -129,7 +129,7 @@ const Menu = [
         hasSubmenu: false, // 是否有子菜单
         name: '6-3',
         _to: '/erek-manage/erek-exception/500' // 跳转的链接
-      },
+      }
     ]
   },
   {
@@ -149,7 +149,7 @@ const Menu = [
         hasSubmenu: false, // 是否有子菜单
         name: '7-2',
         _to: '/erek-manage/erek-user/setting' // 跳转的链接
-      },
+      }
     ]
   }
 ]

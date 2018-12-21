@@ -27,7 +27,7 @@ export default {
       }
     }
   },
-  data () {
+  data() {
     return {
       columns: [
         {
@@ -66,7 +66,7 @@ export default {
             }
           ],
           filterMultiple: false,
-          filterMethod (value, row) {
+          filterMethod(value, row) {
             return row.status.indexOf(value) > -1;
           }
         },
@@ -125,5 +125,4 @@ export default {
 </script>
 
 <style>
-
 </style>

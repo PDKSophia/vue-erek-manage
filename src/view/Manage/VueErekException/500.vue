@@ -1,11 +1,10 @@
 <template>
   <div class="vue-exception-error-container">
-    <img
-      class="error-image"
-      src="../../../assets/exception/500.png"
-      alt="403"
-    />
-    <div> <h1>500</h1> <h3>抱歉，服务器出错了</h3> </div>
+    <img class="error-image" src="../../../assets/exception/500.png" alt="403">
+    <div>
+      <h1>500</h1>
+      <h3>抱歉，服务器出错了</h3>
+    </div>
   </div>
 </template>
 

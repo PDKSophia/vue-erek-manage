@@ -34,8 +34,8 @@ const checkStatus = response => {
  * 封装的请求函数
  * @param  {string} url
  * @param  {object} [option]
- * @return {object} 
-*/
+ * @return {object}
+ */
 export default function request(url, option) {
   const options = {
     ...option
@@ -43,7 +43,7 @@ export default function request(url, option) {
   const defaultOptions = {
     credentials: 'include'
   }
-  const newOptions = {...defaultOptions, ...options}
+  const newOptions = { ...defaultOptions, ...options }
   if (
     newOptions.method === 'POST' ||
     newOptions.method === 'PUT' ||
@@ -53,7 +53,7 @@ export default function request(url, option) {
       newOptions.headers = {
         Accept: 'application/json',
         'Content-Type': 'application/json; charset=utf-8',
-        ...newOptions.headers,
+        ...newOptions.headers
       }
       newOptions.body = JSON.stringify(newOptions.body)
     } else {

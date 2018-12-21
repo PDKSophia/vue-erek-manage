@@ -1,24 +1,24 @@
 <template>
-  <div class="erek-wrapper-box" >
+  <div class="erek-wrapper-box">
     <header>
-      <vue-erek-main-text
-        :ErekPath='ErekPath'
-        :ErekTitle='ErekTitle'
-        :ErekSummary='ErekSummary'
-      />
+      <vue-erek-main-text :ErekPath="ErekPath" :ErekTitle="ErekTitle" :ErekSummary="ErekSummary"/>
     </header>
     <article>
       <div class="erek-resume-navbar">
-        <ul class="erek-resume-ul-box" >
-          <li v-for='(item, index) in actualData' :key="index" @click="handleErekLink(item.status)">{{ item.text }}</li>
+        <ul class="erek-resume-ul-box">
+          <li
+            v-for="(item, index) in actualData"
+            :key="index"
+            @click="handleErekLink(item.status)"
+          >{{ item.text }}</li>
         </ul>
       </div>
     </article>
-    <vue-erek-login-form 
-      @onHandleOnCancle='handleOnCancle'
-      @onHandleOnOk='handleOnOk' 
-      :loginVisible='loginForm.loginVisible'
-      :width='loginForm.width'
+    <vue-erek-login-form
+      @onHandleOnCancle="handleOnCancle"
+      @onHandleOnOk="handleOnOk"
+      :loginVisible="loginForm.loginVisible"
+      :width="loginForm.width"
     />
   </div>
 </template>
@@ -99,7 +99,7 @@ export default {
       }
     }
   },
-  mounted() {}
+  mounted() { }
 };
 </script>
 

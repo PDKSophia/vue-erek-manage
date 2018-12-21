@@ -1,12 +1,9 @@
 <template>
   <div class="vue-exception-error-container">
-    <img
-      class="error-image"
-      src="../../../assets/exception/404.png"
-      alt="403"
-    />
+    <img class="error-image" src="../../../assets/exception/404.png" alt="403">
     <div class="error-content">
-      <h1>404</h1> <h3>抱歉，你访问的页面不存在</h3>
+      <h1>404</h1>
+      <h3>抱歉，你访问的页面不存在</h3>
     </div>
   </div>
 </template>

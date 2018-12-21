@@ -3,27 +3,21 @@
     <div class="vue-flex-item" v-for="(item, index) in standlist" :key="index">
       <div class="vue-erek-item-meta">
         <div class="vue-erek-item-meta-avatar">
-          <img
-            class="vue-erek-item-meta-avatar-image"
-            :src="item.avatar"
-            alt=""
-          />
+          <img class="vue-erek-item-meta-avatar-image" :src="item.avatar" alt>
         </div>
         <div class="vue-erek-item-meta-content">
           <h4 class="vue-erek-item-meta-title">{{ item.username }}</h4>
-          <div class="vue-erek-item-meta-summary"> {{ item.content }} </div>
+          <div class="vue-erek-item-meta-summary">{{ item.content }}</div>
         </div>
       </div>
       <div class="vue-erek-item-content">
-        <div class="vue-erek-list-listContent"> {{ item.department }} </div>
-        <div class="vue-erek-list-listContent"> {{ item.phone }} </div>
+        <div class="vue-erek-list-listContent">{{ item.department }}</div>
+        <div class="vue-erek-list-listContent">{{ item.phone }}</div>
       </div>
       <div class="vue-erek-item-action">
         <ul>
           <li class="vue-erek-edit" @click="handleOnClickEdit(item)">编辑</li>
-          <li class="vue-erek-delete" @click="handleOnClickDelete(item)"
-            >删除</li
-          >
+          <li class="vue-erek-delete" @click="handleOnClickDelete(item)">删除</li>
         </ul>
       </div>
     </div>
@@ -36,7 +30,7 @@ export default {
   props: {
     standlist: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     }

@@ -7,10 +7,10 @@
           <div class="vue-erek-meta-actions">
             <Row :gutter="6">
               <Col span="12">
-                <Button @click='handleActionOne'>操作一</Button>
+                <Button @click="handleActionOne">操作一</Button>
               </Col>
               <Col span="12">
-                <Button @click='handleActionTwo'>操作二</Button>
+                <Button @click="handleActionTwo">操作二</Button>
               </Col>
             </Row>
           </div>
@@ -20,8 +20,8 @@
             <Row :gutter="30">
               <Col span="12">
                 <p>仓库编号 : VErek-2018-1031</p>
-                <p>创建人 :	彭道宽</p>
-                <p>创建时间	: 2018-10-31 19:20</p>
+                <p>创建人 : 彭道宽</p>
+                <p>创建时间 : 2018-10-31 19:20</p>
               </Col>
               <Col span="12">
                 <p>所属组织 : Github</p>
@@ -33,12 +33,12 @@
           <div class="vue-erek-meta-extraContent">
             <Row :gutter="30">
               <Col span="12">
-                <p class='meta-extra-label'>状态</p>
-                <p class='meta-extra-value'>开发中</p>
+                <p class="meta-extra-label">状态</p>
+                <p class="meta-extra-value">开发中</p>
               </Col>
               <Col span="12">
-                <p class='meta-extra-label'>总额</p>
-                <p class='meta-extra-value'>¥498.00</p>
+                <p class="meta-extra-label">总额</p>
+                <p class="meta-extra-value">¥498.00</p>
               </Col>
             </Row>
           </div>

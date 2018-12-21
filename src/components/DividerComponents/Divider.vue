@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="vue-erek-br"
-    :style="{ backgroundColor: bgColor, height: height }"
-  ></div>
+  <div class="vue-erek-br" :style="{ backgroundColor: bgColor, height: height }"></div>
 </template>
 
 <script>

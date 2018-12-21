@@ -1,38 +1,43 @@
 <template>
-  <div class="vue-base-tabs-container" v-if='!initDataLoading'>
-    <Row :gutter='16'>
-      <Col span='13'>
+  <div class="vue-base-tabs-container" v-if="!initDataLoading">
+    <Row :gutter="16">
+      <Col span="13">
         <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80">
           <FormItem label="昵称" prop="username">
-            <Input v-model="formValidate.username" placeholder="修改的名字" />
+            <Input v-model="formValidate.username" placeholder="修改的名字"/>
           </FormItem>
           <FormItem label="邮箱" prop="email">
-            <Input v-model="formValidate.email" placeholder="邮箱..." />
+            <Input v-model="formValidate.email" placeholder="邮箱..."/>
           </FormItem>
           <FormItem label="国家" prop="city">
-              <Select v-model="formValidate.city" placeholder="选择国家">
-                  <Option value="China">中国</Option>
-              </Select>
+            <Select v-model="formValidate.city" placeholder="选择国家">
+              <Option value="China">中国</Option>
+            </Select>
           </FormItem>
           <FormItem label="性别" prop="gender">
-              <RadioGroup v-model="formValidate.gender">
-                  <Radio label="male">钢铁直男</Radio>
-                  <Radio label="female">小家碧玉</Radio>
-              </RadioGroup>
+            <RadioGroup v-model="formValidate.gender">
+              <Radio label="male">钢铁直男</Radio>
+              <Radio label="female">小家碧玉</Radio>
+            </RadioGroup>
           </FormItem>
           <FormItem label="爱好" prop="tag">
-              <CheckboxGroup v-model="formValidate.tag">
-                  <Checkbox label="Vue-Erek-Manage 开发者"></Checkbox>
-                  <Checkbox label="前端工程师"></Checkbox>
-                  <Checkbox label="平台维护者"></Checkbox>
-                  <Checkbox label="平台设计师"></Checkbox>
-              </CheckboxGroup>
+            <CheckboxGroup v-model="formValidate.tag">
+              <Checkbox label="Vue-Erek-Manage 开发者"></Checkbox>
+              <Checkbox label="前端工程师"></Checkbox>
+              <Checkbox label="平台维护者"></Checkbox>
+              <Checkbox label="平台设计师"></Checkbox>
+            </CheckboxGroup>
           </FormItem>
           <FormItem label="街道地址" prop="address">
-            <Input v-model="formValidate.address" placeholder="地址..." />
+            <Input v-model="formValidate.address" placeholder="地址..."/>
           </FormItem>
           <FormItem label="个人简介" prop="desc">
-              <Input v-model="formValidate.desc" type="textarea" :autosize="{minRows: 5,maxRows: 10}" placeholder="个人简介..." />
+            <Input
+              v-model="formValidate.desc"
+              type="textarea"
+              :autosize="{minRows: 5,maxRows: 10}"
+              placeholder="个人简介..."
+            />
           </FormItem>
           <FormItem>
             <Button type="primary" @click="handleSubmit('formValidate')">Submit</Button>
@@ -40,12 +45,18 @@
           </FormItem>
         </Form>
       </Col>
-      <Col span='8'>
+      <Col span="8">
         <div class="vue-user-avatar-large">
-          <img :src="formValidate.avatar" alt="" class="avatar" />
-          <a class='erek-button-avatar-upload' href='javascript:;'>
+          <img :src="formValidate.avatar" alt class="avatar">
+          <a class="erek-button-avatar-upload" href="javascript:;">
             + 个人头像
-            <input class='erek-button-avatar-input' type='file' name='avatar' id='avatar' @change='handleChangeAvatar' />
+            <input
+              class="erek-button-avatar-input"
+              type="file"
+              name="avatar"
+              id="avatar"
+              @change="handleChangeAvatar"
+            >
           </a>
         </div>
       </Col>
@@ -60,7 +71,7 @@ export default {
   computed: mapState({
     erekUser: state => state.user.erekUser
   }),
-  data () {
+  data() {
     return {
       formValidate: {
         username: '',
@@ -105,7 +116,7 @@ export default {
       'setErekUser'
     ]),
     // 修改头像
-    handleChangeAvatar () {
+    handleChangeAvatar() {
       var box = document.getElementById('avatar')
       var headimg = box.files
       var imgName = headimg[0].name
@@ -126,7 +137,7 @@ export default {
         this.formValidate.avatar = window.URL.createObjectURL(headimg[0])
       }
     },
-    handleSubmit (name) {
+    handleSubmit(name) {
       this.$refs[name].validate((valid) => {
         if (valid) {
           this.$tool.toastTips('success', '修改成功!', 1.5);
@@ -136,14 +147,14 @@ export default {
         }
       })
     },
-    handleReset (name) {
+    handleReset(name) {
       this.$refs[name].resetFields();
     }
   },
   mounted() {
     if (this.initDataLoading) {
       this.$tool.loadingTips('loading', 0, 2000)
-      this.formValidate = {...this.erekUser}
+      this.formValidate = { ...this.erekUser }
       setTimeout(() => {
         this.initDataLoading = false
       }, 1500)

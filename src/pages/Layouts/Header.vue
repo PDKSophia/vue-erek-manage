@@ -1,22 +1,24 @@
 <template>
   <div>
-    <Header :style='{ height: `${theme.height} !important` }'>
-      <Menu mode="horizontal"
-        theme="dark" 
+    <Header :style="{ height: `${theme.height} !important` }">
+      <Menu
+        mode="horizontal"
+        theme="dark"
         active-name="1"
-        :style='{ backgroundColor: theme.bgVueErek, color: `${theme.colorVueErek} !important`, height: `${theme.height} !important` }'
+        :style="{ backgroundColor: theme.bgVueErek, color: `${theme.colorVueErek} !important`, height: `${theme.height} !important` }"
       >
-        <div class="layout-logo" :style='{ backgroundColor: theme.bgLogoVueErek }'>
-          <p class="erek-vue-manage" :style='{ color: `${theme.colorVueErek} !important` }'>Vue Erek Manage</p>
+        <div class="layout-logo" :style="{ backgroundColor: theme.bgLogoVueErek }">
+          <p
+            class="erek-vue-manage"
+            :style="{ color: `${theme.colorVueErek} !important` }"
+          >Vue Erek Manage</p>
         </div>
-        <div class="layout-nav" :style='{ color: `${theme.colorVueErek} !important` }'>
+        <div class="layout-nav" :style="{ color: `${theme.colorVueErek} !important` }">
           <MenuItem name="1">
-            <Icon type="ios-navigate"></Icon>
-            Item 1
+            <Icon type="ios-navigate"></Icon>Item 1
           </MenuItem>
           <MenuItem name="2">
-            <Icon type="ios-keypad"></Icon>
-            Item 2
+            <Icon type="ios-keypad"></Icon>Item 2
           </MenuItem>
         </div>
       </Menu>

@@ -1,13 +1,8 @@
-const state = {
-}
+const state = {}
 
-const actions = {
+const actions = {}
 
-}
-
-const mutations = {
-
-}
+const mutations = {}
 
 export default {
   state,

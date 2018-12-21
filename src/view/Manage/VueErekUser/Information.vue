@@ -3,21 +3,16 @@
     <div class="vue-user-item">
       <div class="vue-user-item-meta">
         <div class="vue-user-item-meta-avatar">
-          <img
-            :src="erekUser.avatar"
-            class="vue-user-item-meta-avatar-image"
-            alt=""
-          />
+          <img :src="erekUser.avatar" class="vue-user-item-meta-avatar-image" alt>
         </div>
         <div class="vue-user-item-meta-content">
           <h4 class="vue-user-item-meta-title">{{ erekUser.username }}</h4>
           <div class="vue-user-item-meta-summary">
-            <span v-for="(tag, index) in erekUser.tag" :key="index"
-              >{{ tag
-              }}<Divider
-                v-if="index !== erekUser.tag.length - 1"
-                type="vertical"
-            /></span>
+            <span v-for="(tag, index) in erekUser.tag" :key="index">
+              {{ tag
+              }}
+              <Divider v-if="index !== erekUser.tag.length - 1" type="vertical"/>
+            </span>
           </div>
         </div>
       </div>
@@ -31,15 +26,15 @@
             class="vue-erek-link"
           >
             {{ item.text }}
-            <Divider v-if="key !== erekUser.link.length - 1" type="vertical" />
+            <Divider v-if="key !== erekUser.link.length - 1" type="vertical"/>
           </a>
         </ul>
       </div>
     </div>
-    <vue-divider :bg-color="hrObj.bgColor" :height="hrObj.height" />
+    <vue-divider :bg-color="hrObj.bgColor" :height="hrObj.height"/>
     <div class="vue-erek-article">
       <div class="vue-erek-badge-left">
-        <vue-user-badge :badge-data="badgeData" />
+        <vue-user-badge :badge-data="badgeData"/>
       </div>
       <div class="vue-erek-content-right">
         <echarts-line
@@ -54,13 +49,13 @@
     </div>
     <div class="vue-erek-meta-item-cell">
       <div class="vue-erek-card-item-middle">
-        <vue-user-card-item :card-item="bookCardItem" />
+        <vue-user-card-item :card-item="bookCardItem"/>
       </div>
       <div class="vue-erek-card-item-middle">
-        <vue-user-card-item :card-item="bookCardItem" />
+        <vue-user-card-item :card-item="bookCardItem"/>
       </div>
       <div class="vue-erek-card-item-middle">
-        <vue-user-card-item :card-item="bookCardItem" />
+        <vue-user-card-item :card-item="bookCardItem"/>
       </div>
     </div>
   </div>

@@ -1,22 +1,12 @@
 <template>
   <div class="vue-erek-line-container">
     <div class="vue-layout-header-line">
-      <p
-        class="vue-erek-line-title"
-        v-for="(item, index) in itemList"
-        :key="index"
-      >
-        <span
-          class="vue-erek-span-badge"
-          :style="{ backgroundColor: item.badgeColor }"
-        ></span
-        >{{ item.text }}
+      <p class="vue-erek-line-title" v-for="(item, index) in itemList" :key="index">
+        <span class="vue-erek-span-badge" :style="{ backgroundColor: item.badgeColor }"></span>
+        {{ item.text }}
       </p>
     </div>
-    <div
-      ref="erek_line"
-      :style="{ width: width, height: height, marginTop: '-50px' }"
-    ></div>
+    <div ref="erek_line" :style="{ width: width, height: height, marginTop: '-50px' }"></div>
   </div>
 </template>
 
@@ -35,25 +25,25 @@ export default {
     },
     itemList: {
       type: Array,
-      default: function() {
+      default: function () {
         return {};
       }
     },
     xAxis: {
       type: Object,
-      default: function() {
+      default: function () {
         return {};
       }
     },
     yAxis: {
       type: Object,
-      default: function() {
+      default: function () {
         return {};
       }
     },
     series: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     }

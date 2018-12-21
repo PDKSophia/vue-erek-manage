@@ -13,15 +13,15 @@ export default {
   /**
    * desc: 验证码获取
    * @param {String} Email
-   * @return {String} Code 
-  */
-  fetchValidateCode: (email) => {
+   * @return {String} Code
+   */
+  fetchValidateCode: email => {
     return request(`${baseUrl}/oauth/send-validate-code`, {
       method: 'POST',
       data: {
         email: email
       }
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         Message.success({
@@ -43,12 +43,12 @@ export default {
    * @param {String} PassWord
    * @param {String} Code
    * @return {String} Token
-  */
-  fetchOauthAdminLogin: (jsondata) => {
+   */
+  fetchOauthAdminLogin: jsondata => {
     return request(`${baseUrl}/oauth/login`, {
       method: 'POST',
       data: jsondata
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         Message.success({
@@ -66,13 +66,13 @@ export default {
   },
   /**
    * desc: 获取用户信息
-   * @return {*} 
-  */
+   * @return {*}
+   */
   fetchCurrentUser: () => {
     return request(`${baseUrl}/erek-user/getCurrentUser`, {
       method: 'GET',
       token: getAuthorityToken()
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         return response.data
@@ -86,13 +86,13 @@ export default {
   },
   /**
    * desc: 获取所有数据信息
-   * @return {*} 
-  */
+   * @return {*}
+   */
   fetchAllDataList: () => {
     return request(`${baseUrl}/data/getAllData`, {
       method: 'GET',
       token: getAuthorityToken()
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         return response.list
@@ -106,13 +106,13 @@ export default {
   },
   /**
    * desc: 获取标准列表数据信息
-   * @return {*} 
-  */
+   * @return {*}
+   */
   fetchStandAllDataList: () => {
     return request(`${baseUrl}/data/getStandAllData`, {
       method: 'GET',
       token: getAuthorityToken()
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         return response.list
@@ -126,13 +126,13 @@ export default {
   },
   /**
    * desc: 获取所有待办任务
-   * @return {*} 
-  */
+   * @return {*}
+   */
   getAllTaskList: () => {
     return request(`${baseUrl}/data/getAllTask`, {
       method: 'GET',
       token: getAuthorityToken()
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         // Message.success({
@@ -150,13 +150,13 @@ export default {
   },
   /**
    * desc: 获取 `平台日访问量` 和  `日注册人数`
-   * @return {*} 
-  */
+   * @return {*}
+   */
   fetchPlatFormViewData: () => {
     return request(`${baseUrl}/data/getPlatFormViewData`, {
       method: 'GET',
       token: getAuthorityToken()
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         // Message.success({
@@ -174,13 +174,13 @@ export default {
   },
   /**
    * desc: 获取所有首页tab的卡片数据
-   * @return {*} 
-  */
+   * @return {*}
+   */
   fetchAllTabData: () => {
     return request(`${baseUrl}/data/getAllTabCardList`, {
       method: 'GET',
       token: getAuthorityToken()
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         // Message.success({
@@ -199,13 +199,13 @@ export default {
 
   /**
    * desc: 获取 `站点访问来源数据`
-   * @return {*} 
-  */
+   * @return {*}
+   */
   fetchAllOriginData: () => {
     return request(`${baseUrl}/data/getOriginAllData`, {
       method: 'GET',
       token: getAuthorityToken()
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         // Message.success({
@@ -221,16 +221,16 @@ export default {
       }
     })
   },
-  
+
   /**
    * desc: 获取 `预算开销和实际开销`
-   * @return {*} 
-  */
+   * @return {*}
+   */
   fetchExpenseOriginData: () => {
     return request(`${baseUrl}/data/getExpenseAllData`, {
       method: 'GET',
       token: getAuthorityToken()
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         // Message.success({
@@ -249,13 +249,13 @@ export default {
 
   /**
    * desc: 获取 `个人页 - 个人中心` 数据
-   * @return {*} 
-  */
+   * @return {*}
+   */
   fetchAllListData: () => {
     return request(`${baseUrl}/erek-user-all/getAllData`, {
       method: 'GET',
       token: getAuthorityToken()
-    }).then((res) => {
+    }).then(res => {
       let { response } = res
       if (response.code === 1) {
         return response.list
@@ -268,4 +268,3 @@ export default {
     })
   }
 }
-

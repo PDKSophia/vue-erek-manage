@@ -94,7 +94,7 @@ export default new Router({
           component: VueErekBaseProfile,
           meta: {
             keepAlive: false
-          } 
+          }
         },
         {
           path: 'erek-profile-advance',
@@ -102,7 +102,7 @@ export default new Router({
           component: VueEreAdvanceProfile,
           meta: {
             keepAlive: false
-          } 
+          }
         },
         // 列表页
         {
@@ -111,7 +111,7 @@ export default new Router({
           component: VueErekTableList,
           meta: {
             keepAlive: false
-          } 
+          }
         },
         {
           path: 'erek-list-standard',
@@ -119,7 +119,7 @@ export default new Router({
           component: VueErekStandardList,
           meta: {
             keepAlive: false
-          } 
+          }
         },
         // 错误页
         {
@@ -128,7 +128,7 @@ export default new Router({
           component: VueErekException403,
           meta: {
             keepAlive: false
-          } 
+          }
         },
         {
           path: 'erek-exception/404',
@@ -136,7 +136,7 @@ export default new Router({
           component: VueErekException404,
           meta: {
             keepAlive: false
-          } 
+          }
         },
         {
           path: 'erek-exception/500',
@@ -144,7 +144,7 @@ export default new Router({
           component: VueErekException500,
           meta: {
             keepAlive: false
-          } 
+          }
         },
         // 个人页
         {
@@ -153,7 +153,7 @@ export default new Router({
           component: VueErekUserInformation,
           meta: {
             keepAlive: false
-          } 
+          }
         },
         {
           path: 'erek-user/setting',
@@ -161,8 +161,8 @@ export default new Router({
           component: VueErekUserSetting,
           meta: {
             keepAlive: false
-          } 
-        },
+          }
+        }
       ],
       meta: {
         keepAlive: false

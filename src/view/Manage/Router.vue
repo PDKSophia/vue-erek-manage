@@ -1,12 +1,8 @@
 <template>
   <div id="erek-manage-container">
     <Layout id="erek-layout">
-      <erek-header :theme="layoutTheme.layoutHeader" />
-      <erek-sider
-        :Menu="Menu"
-        :BreadItem="BreadItem"
-        :theme="layoutTheme.layoutMenu"
-      />
+      <erek-header :theme="layoutTheme.layoutHeader"/>
+      <erek-sider :Menu="Menu" :BreadItem="BreadItem" :theme="layoutTheme.layoutMenu"/>
     </Layout>
   </div>
 </template>
@@ -35,11 +31,11 @@ export default {
   watch: {
     $route: {
       // 路由监听
-      handler: function(val) {
+      handler: function (val) {
         // console.log('新路由: ', val)
         for (let key in BreadItem) {
           if (val.path == key) {
-            this.BreadItem = BreadItem[key];
+            this.BreadItem = BreadItem[key]
           }
         }
       },
