@@ -170,6 +170,8 @@ export default {
 <style scoped lang="scss">
 .vue-erek-home-up {
   width: 100%;
+  height: 100%;
+  background-color: #fff;
   display: flex;
   flex: 1;
   justify-content: space-between;
@@ -189,6 +191,8 @@ export default {
 }
 .vue-erek-home-down {
   width: 100%;
+  height: 100%;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
 }

@@ -22,7 +22,7 @@ export default {
   -webkit-box-pack: center;
   -webkit-box-orient: horizontal;
   background-color: #fff;
-  height: 100%;
+  height: 90%;
   width: 100%;
 
   > .error-image {
