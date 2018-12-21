@@ -67,5 +67,25 @@ export default {
         })
       }
     })
+  },
+
+  /**
+   * desc: 获取卡片列表数据
+   * @return {*}
+   */
+  fetchRequestCardApi: () => {
+    return request(`${baseUrl}/erek-list/card`, {
+      method: 'GET',
+      token: getAuthorityToken()
+    }).then(res => {
+      if (res.code === 1) {
+        return res.data
+      } else {
+        Message.error({
+          content: res.msg,
+          duration: 1.5
+        })
+      }
+    })
   }
 }
