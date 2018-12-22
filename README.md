@@ -45,7 +45,6 @@
 - [ ] 列表页
 - [ ] 详情页
 - [ ] 错误页
-- [ ] 工具页
 - [ ] 个人页
 - [ ] 主题设置
 
@@ -104,6 +103,9 @@
 │   │    │    └─ ...
 │   │    ├─PageComponents
 │   │    │    ├─Index                   封装的部分页面组件
+│   │    │    └─ ...
+│   │    ├─ProfileTableComponents
+│   │    │    ├─Table                   封装详情页中的Table组件
 │   │    │    └─ ...
 │   │    ├─ScaleCardComponents          封装的带有放大的卡片组件
 │   │    ├─StarCardComponents           封装的带有星星的卡片组件
@@ -198,6 +200,8 @@
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-4.png'>
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-5.png'>
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-6.png'>
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-exception-403.png'>
 

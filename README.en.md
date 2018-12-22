@@ -186,6 +186,8 @@
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-5.png'>
 
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-6.png'>
+
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-exception-403.png'>
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-exception-404.png'>
