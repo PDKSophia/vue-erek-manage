@@ -129,10 +129,10 @@ export default {
 
 <style scoped lang="scss">
 .vue-erek-table-box {
-  padding: 24px;
-  height: 100%;
+  padding: 24px 24px;
+  // height: 100%;
   width: 100%;
-  background-i-color: #fff;
+  background-color: #fff;
 }
 .erek-span-text {
   font-size: 14px;
