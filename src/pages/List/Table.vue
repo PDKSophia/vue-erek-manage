@@ -1,6 +1,12 @@
 <template>
   <div>
-    <Table :border="border" :stripe="stripe" :size="size" :data="data" :columns="columns"></Table>
+    <Table
+      :border="border"
+      :stripe="stripe"
+      :size="size"
+      :data="data"
+      :columns="columns"
+    ></Table>
     <div style="margin: 30px 0px;overflow: hidden" v-show="pagination.hasPage">
       <div style="float: right;">
         <Page
@@ -32,21 +38,21 @@ export default {
     },
     data: {
       type: Array,
-      defualt: function () {
-        return []
+      defualt: function() {
+        return [];
       }
     },
     pagination: {
       type: Object,
-      defualt: function () {
-        return []
+      defualt: function() {
+        return [];
       }
     }
   },
   watch: {
     pagination: {
       handler(newVal) {
-        console.log(newVal)
+        console.log(newVal);
       }
     }
   },
@@ -58,23 +64,23 @@ export default {
           title: '员工ID',
           key: 'id',
           width: 80,
-          align: 'center',
+          align: 'center'
         },
         {
           title: '员工名',
           key: 'username',
           width: 100,
-          align: 'center',
+          align: 'center'
         },
         {
           title: '所属部门',
           key: 'department',
-          align: 'center',
+          align: 'center'
         },
         {
           title: '所在职位',
           key: 'type',
-          align: 'center',
+          align: 'center'
         },
         {
           title: '员工状态',
@@ -98,59 +104,65 @@ export default {
         {
           title: '联系方式',
           key: 'phone',
-          align: 'center',
+          align: 'center'
         },
         {
-          title: '入职时间',
+          title: '操作时间',
           key: 'time',
-          align: 'center',
+          align: 'center'
         },
         {
           title: '操作',
           align: 'center',
           key: 'action',
           width: 150,
-          align: 'center',
           render: (h, params) => {
             return h('div', [
-              h('Button', {
-                props: {
-                  type: 'primary',
-                  size: 'small'
-                },
-                style: {
-                  marginRight: '5px'
-                },
-                on: {
-                  click: () => {
-                    var index = params.index
-                    this.$emit('onHandleClickItem', index, 'view')
+              h(
+                'Button',
+                {
+                  props: {
+                    type: 'primary',
+                    size: 'small'
+                  },
+                  style: {
+                    marginRight: '5px'
+                  },
+                  on: {
+                    click: () => {
+                      var index = params.index;
+                      this.$emit('onHandleClickItem', index, 'view');
+                    }
                   }
-                }
-              }, '查看'),
-              h('Button', {
-                props: {
-                  type: 'error',
-                  size: 'small'
                 },
-                style: {
-                  marginRight: '5px'
-                },
-                on: {
-                  click: () => {
-                    var index = params.index
-                    this.$emit('onHandleClickItem', index, 'delete')
+                '查看'
+              ),
+              h(
+                'Button',
+                {
+                  props: {
+                    type: 'error',
+                    size: 'small'
+                  },
+                  style: {
+                    marginRight: '5px'
+                  },
+                  on: {
+                    click: () => {
+                      var index = params.index;
+                      this.$emit('onHandleClickItem', index, 'delete');
+                    }
                   }
-                }
-              }, '删除')
-            ])
+                },
+                '删除'
+              )
+            ]);
           }
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
-<style>
-</style>
+<style></style>
