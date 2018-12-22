@@ -1,17 +1,17 @@
 <template>
   <div class="erek-card-list-container">
     <Row :gutter="16">
-      <Col span="8" v-for="(item, index) in data" :key="item.id">
+      <i-col span="8" v-for="item in data" :key="item.id">
         <div class="erek-list-item">
           <div class="ant-list-item-content-single">
             <div class="erek-card-body">
               <div class="erek-card-meta">
                 <div class="erek-card-meta-avatar">
-                  <img class="erek-card-cardAvatar" :src="item.avatar" alt>
+                  <img class="erek-card-cardAvatar" :src="item.avatar" alt />
                 </div>
                 <div class="erek-card-meta-detail">
                   <div class="erek-card-meta-title">
-                    <a>{{ item.departName}}</a>
+                    <a>{{ item.departName }}</a>
                   </div>
                   <div class="erek-card-meta-description">
                     <div class="erek-card-ellipsis">{{ item.departDesc }}</div>
@@ -20,19 +20,13 @@
               </div>
             </div>
             <ul class="erek-card-actions">
-              <li style="width: 33.33%">
-                <span>操作一</span>
-              </li>
-              <li style="width: 33.33%">
-                <span>操作二</span>
-              </li>
-              <li style="width: 33.33%">
-                <span>操作三</span>
-              </li>
+              <li style="width: 33.33%"> <span>操作一</span> </li>
+              <li style="width: 33.33%"> <span>操作二</span> </li>
+              <li style="width: 33.33%"> <span>操作三</span> </li>
             </ul>
           </div>
         </div>
-      </Col>
+      </i-col>
     </Row>
     <div style="margin: 30px 0px; overflow: hidden" v-show="pagination.hasPage">
       <div style="float: right;">
@@ -53,25 +47,25 @@ export default {
   props: {
     data: {
       type: Array,
-      default: function () {
+      default: function() {
         return [];
       }
     },
     pagination: {
       type: Object,
-      defualt: function () {
-        return []
+      defualt: function() {
+        return [];
       }
     }
   },
   watch: {
     pagination: {
       handler(newVal) {
-        console.log(newVal)
+        console.log(newVal);
       }
     }
-  },
-}
+  }
+};
 </script>
 
 <style scoped lang="scss">

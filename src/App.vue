@@ -9,11 +9,11 @@
 
 <script>
 export default {
-  name: 'app',
-}
+  name: 'app'
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 * {
   margin: 0;
   padding: 0;

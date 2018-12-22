@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="logo" class="logo" alt="logo">
+    <img :src="logo" class="logo" alt="logo" />
     <p class="vue-erek-title">{{ title }}</p>
     <p class="vue-erek-summary">{{ summary }}</p>
   </div>

@@ -71,31 +71,33 @@ export default {
             'https://github.com/PDKSophia/vue-erek-manage/wiki';
           break;
         case 'erek-login':
-          this.loginForm.loginVisible = true
+          this.loginForm.loginVisible = true;
           break;
       }
     },
     handleOnCancle(value) {
       if (!value) {
-        this.loginForm.loginVisible = false
+        this.loginForm.loginVisible = false;
       }
     },
     handleOnOk(values) {
-      console.log(values)
+      console.log(values);
       if (!this.$utils.checkEmail(values.email)) {
-        this.$tool.toastTips('warning', '请输入正确邮箱', 1.5)
+        this.$tool.toastTips('warning', '请输入正确邮箱', 1.5);
       } else if (getEmailCode() != values.code) {
         this.$tool.toastTips('error', '验证码错误', 1.5);
       } else {
-        this.$api.user.fetchOauthAdminLogin(JSON.stringify(values)).then(res => {
-          this.loginForm.loginVisible = false;
-          setAuthorityToken(res.token);
-          setTimeout(() => {
-            this.$router.push({
-              path: '/erek-manage'
-            });
-          }, 1500);
-        });
+        this.$api.user
+          .fetchOauthAdminLogin(JSON.stringify(values))
+          .then(res => {
+            this.loginForm.loginVisible = false;
+            setAuthorityToken(res.token);
+            setTimeout(() => {
+              this.$router.push({
+                path: '/erek-manage'
+              });
+            }, 1500);
+          });
       }
     }
   },
@@ -103,7 +105,7 @@ export default {
 };
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .erek-wrapper-box {
   width: 100%;
   height: 100%;
