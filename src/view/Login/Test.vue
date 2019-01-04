@@ -1,7 +1,11 @@
 <template>
   <div class="erek-wrapper-box">
     <header>
-      <vue-erek-main-text :ErekPath="ErekPath" :ErekTitle="ErekTitle" :ErekSummary="ErekSummary"/>
+      <vue-erek-main-text
+        :ErekPath="ErekPath"
+        :ErekTitle="ErekTitle"
+        :ErekSummary="ErekSummary"
+      />
     </header>
     <article>
       <div class="erek-resume-navbar">
@@ -10,7 +14,8 @@
             v-for="(item, index) in actualData"
             :key="index"
             @click="handleErekLink(item.status)"
-          >{{ item.text }}</li>
+            >{{ item.text }}</li
+          >
         </ul>
       </div>
     </article>
@@ -101,7 +106,7 @@ export default {
       }
     }
   },
-  mounted() { }
+  mounted() {}
 };
 </script>
 

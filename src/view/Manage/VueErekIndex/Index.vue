@@ -11,7 +11,7 @@
       ></echarts-line>
       <div class="vue-erek-right-box" :style="{ height: 'height' }">
         <p class="vue-erek-right-box-title">数据卡片</p>
-        <vue-scale-card :tabArray="tabArray"/>
+        <vue-scale-card :tabArray="tabArray" />
       </div>
     </div>
     <vue-divider :bgColor="hrObj.bgColor" :height="hrObj.height"></vue-divider>
@@ -22,7 +22,11 @@
         :width="radarWidth"
         :height="radarHeight"
       ></echarts-radar>
-      <echarts-pie :series="pieSeries" :width="pieWidth" :height="pieHeight"></echarts-pie>
+      <echarts-pie
+        :series="pieSeries"
+        :width="pieWidth"
+        :height="pieHeight"
+      ></echarts-pie>
       <echarts-radar
         :series="radarSeries"
         :indicator="radarIndicator"
@@ -114,7 +118,7 @@ export default {
     // 请求拿到 `卡片数据`
     this.$api.app.fetchAllTabData().then(res => {
       for (let q = 0; q < res.length; q++) {
-        let bgColor = this.$utils.getColorFromArray()
+        let bgColor = this.$utils.getColorFromArray();
         let conf = Object.assign({}, tabconfig, {
           width: '50%',
           bgColor: bgColor,

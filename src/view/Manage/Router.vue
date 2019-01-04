@@ -1,20 +1,24 @@
 <template>
   <div id="erek-manage-container">
     <Layout id="erek-layout">
-      <erek-header :theme="layoutTheme.layoutHeader"/>
-      <erek-sider :Menu="Menu" :BreadItem="BreadItem" :theme="layoutTheme.layoutMenu"/>
+      <erek-header :theme="layoutTheme.layoutHeader" />
+      <erek-sider
+        :Menu="Menu"
+        :BreadItem="BreadItem"
+        :theme="layoutTheme.layoutMenu"
+      />
     </Layout>
   </div>
 </template>
 
 <script>
-import ErekHeader from '../../pages/Layouts/Header.vue'
-import ErekSider from '../../pages/Layouts/Sider.vue'
-import Menu from '../../config/menu'
-import BreadItem from '../../config/breadItem'
-import VueErekTheme from '../../config/theme'
-import { getAuthorityToken } from '../../utils/vue-token'
-import { mapActions } from 'vuex'
+import ErekHeader from '../../pages/Layouts/Header.vue';
+import ErekSider from '../../pages/Layouts/Sider.vue';
+import Menu from '../../config/menu';
+import BreadItem from '../../config/breadItem';
+import VueErekTheme from '../../config/theme';
+import { getAuthorityToken, getAuthorityRole } from '../../utils/vue-token';
+import { mapActions } from 'vuex';
 export default {
   name: 'ErekManageContainer',
   components: {
@@ -31,10 +35,10 @@ export default {
   watch: {
     $route: {
       // 路由监听
-      handler: function (val) {
+      handler: function(val) {
         for (let key in BreadItem) {
           if (val.path == key) {
-            this.BreadItem = BreadItem[key]
+            this.BreadItem = BreadItem[key];
           }
         }
       },
@@ -50,9 +54,16 @@ export default {
       this.$tool.toastTips('error', 'token 已过期，请重新登陆', 1.5);
       setTimeout(() => {
         this.$router.push({
-          path: '/'
+          path: '/login'
         });
-      });
+      }, 1000);
+    } else if (getAuthorityRole() !== 'admin') {
+      this.$tool.toastTips('error', '对不起，您无权访问', 1.5);
+      setTimeout(() => {
+        this.$router.push({
+          path: '/login'
+        });
+      }, 1000);
     } else {
       // 获取用户信息
       this.$api.user.fetchCurrentUser().then(res => {
