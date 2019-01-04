@@ -10,6 +10,6 @@ const BreadItem = {
   '/erek-manage/erek-exception/500': '错误页-500',
   '/erek-manage/erek-user/information': '个人页-个人中心',
   '/erek-manage/erek-user/setting': '个人页-个人设置'
-}
+};
 
-export default BreadItem
+export default BreadItem;

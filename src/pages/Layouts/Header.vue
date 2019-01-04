@@ -5,21 +5,31 @@
         mode="horizontal"
         theme="dark"
         active-name="1"
-        :style="{ backgroundColor: theme.bgVueErek, color: `${theme.colorVueErek} !important`, height: `${theme.height} !important` }"
+        :style="{
+          backgroundColor: theme.bgVueErek,
+          color: `${theme.colorVueErek} !important`,
+          height: `${theme.height} !important`
+        }"
       >
-        <div class="layout-logo" :style="{ backgroundColor: theme.bgLogoVueErek }">
+        <div
+          class="layout-logo"
+          :style="{ backgroundColor: theme.bgLogoVueErek }"
+        >
           <p
             class="erek-vue-manage"
             :style="{ color: `${theme.colorVueErek} !important` }"
-          >Vue Erek Manage</p>
+            >Vue Erek Manage</p
+          >
         </div>
-        <div class="layout-nav" :style="{ color: `${theme.colorVueErek} !important` }">
+        <div
+          class="layout-nav"
+          :style="{ color: `${theme.colorVueErek} !important` }"
+        >
           <MenuItem name="1">
-            <Icon type="ios-navigate"></Icon>Item 1
+            <Icon type="md-person"></Icon>
+            {{ erekUser.username }}
           </MenuItem>
-          <MenuItem name="2">
-            <Icon type="ios-keypad"></Icon>Item 2
-          </MenuItem>
+          <MenuItem name="2"> <Icon type="md-log-out"></Icon>Log out </MenuItem>
         </div>
       </Menu>
     </Header>
@@ -27,20 +37,24 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name: 'ErekManageHeader',
   props: {
     theme: {
       type: Object,
-      default: function () {
-        return {}
+      default: function() {
+        return {};
       }
     }
-  }
-}
+  },
+  computed: mapState({
+    erekUser: state => state.user.erekUser
+  })
+};
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .layout-logo {
   width: 160px;
   height: 30px;

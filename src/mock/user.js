@@ -1,4 +1,4 @@
-const Mock = require('mockjs')
+const Mock = require('mockjs');
 
 // 通过邮箱获取验证码
 Mock.mock('/api/oauth/send-validate-code', () => {
@@ -9,11 +9,11 @@ Mock.mock('/api/oauth/send-validate-code', () => {
       email: '1063137960@qq.com',
       code: Math.floor(Math.random() * 10000)
     }
-  }
+  };
   return {
     response
-  }
-})
+  };
+});
 
 // 登陆获取token，本地缓存
 Mock.mock('/api/oauth/login', () => {
@@ -21,13 +21,14 @@ Mock.mock('/api/oauth/login', () => {
     code: 1,
     msg: '登陆成功',
     data: {
-      token: 'VueErekManageByPengDaoKuan1063137960@qq.com'
+      token: 'VueErekManageByPengDaoKuan1063137960@qq.com',
+      userRole: 'admin'
     }
-  }
+  };
   return {
     response
-  }
-})
+  };
+});
 
 // 通过缓存判断是否过期，并所有请求，都需要携带token
 Mock.mock('/api/erek-user/getCurrentUser', () => {
@@ -67,8 +68,8 @@ Mock.mock('/api/erek-user/getCurrentUser', () => {
         }
       ]
     }
-  }
+  };
   return {
     response
-  }
-})
+  };
+});

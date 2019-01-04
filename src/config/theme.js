@@ -9,6 +9,6 @@ const theme = {
     bgVueErek: '#313335', // layout menu 背景色
     colorVueErek: '#f1f1f1' // layout menu 颜色
   }
-}
+};
 
-export default theme
+export default theme;

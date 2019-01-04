@@ -57,7 +57,7 @@ export default {
 
 <style scoped lang="scss">
 img.logo {
-  margin-top: 10%;
+  margin-top: 11%;
   width: 7.2rem;
   height: 7.2rem;
 }
