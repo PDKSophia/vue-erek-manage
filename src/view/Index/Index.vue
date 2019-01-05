@@ -78,7 +78,7 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: #27292c;
+  background-color: #fafafa;
   text-align: center;
 }
 .erek-admin-login {
@@ -96,16 +96,6 @@ export default {
     padding: 1rem 10%;
   }
 }
-.btn-disabled {
-  background-color: #ccc;
-  color: #232323;
-  border: 1px solid #232323;
-}
-.btn-disabled:hover {
-  background-color: #ccc;
-  color: #232323;
-  border: 1px solid #232323;
-}
 .erek-resume-navbar {
   margin: 3rem 40%;
 
@@ -121,13 +111,13 @@ export default {
     width: 100%;
     text-align: center;
     justify-content: space-around;
-    color: rgb(250, 251, 252);
+    color: #27292c;
 
     > li {
       font-size: 1rem;
     }
     li:hover {
-      color: rgb(250, 251, 252);
+      color: #27292c;
       cursor: pointer;
     }
   }

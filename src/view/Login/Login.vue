@@ -237,8 +237,8 @@ export default {
 }
 .login-button {
   width: 100%;
-  // background-color: #3f51b5;
+  background-color: #3f51b5;
   height: 32px;
-  // border: 1px solid #3f51b5;
+  border: 1px solid #3f51b5;
 }
 </style>
