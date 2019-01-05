@@ -64,12 +64,12 @@ img.logo {
 p.vue-erek-title {
   font-weight: 600;
   font-size: 1.68rem;
-  color: rgb(250, 251, 252);
+  color: rgba(0, 0, 0, 0.7);
   margin-top: 1.82rem;
 }
 p.vue-erek-summary {
   font-size: 1.24rem;
-  color: rgb(250, 251, 252);
+  color: #27292c;
   margin-top: 2rem;
   margin-bottom: 3rem;
 }

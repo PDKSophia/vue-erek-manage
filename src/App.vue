@@ -83,8 +83,9 @@ li {
   font-size: 16px;
   margin-top: -3px;
 }
+// 菜单栏 menu 中每一项的color
 .ivu-menu {
-  color: #f1f1f1 !important;
+  color: #232323 !important;
 }
 
 .ivu-divider,
