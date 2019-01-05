@@ -4,6 +4,6 @@ const tabConfig = {
   borderColor: '#f5f7f9',
   valueColor: 'rgba(0,0,0,.85)',
   width: '33.33%'
-}
+};
 
-export default tabConfig
+export default tabConfig;
