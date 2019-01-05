@@ -174,25 +174,25 @@
 
 ## Display Picture
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-0.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-1.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-1.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-2.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-2.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-3.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-3.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-4.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-4.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-5.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-5.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-6.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-6.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-7.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-exception-403.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-8.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-exception-404.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-9.png'>
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/vue-erek-exception-500.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-10.png'>
 
 ## [Please click here for other pages](https://github.com/PDKSophia/vue-erek-manage/wiki)
 
