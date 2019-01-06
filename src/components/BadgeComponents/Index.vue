@@ -2,7 +2,11 @@
   <div class="vue-erek-meta-achievement">
     <p class="erek-title">{{ badgeData.namespace }}</p>
     <div class="vue-erek-box-badge-box">
-      <div class="vue-erek-badge-cell" v-for="(item, index) in badgeData.data" :key="index">
+      <div
+        class="vue-erek-badge-cell"
+        v-for="(item, index) in badgeData.data"
+        :key="index"
+      >
         <div class="vue-erek-badge-cell-title">
           <p>{{ item.name }}</p>
         </div>
@@ -11,7 +15,8 @@
             <p
               class="vue-erek-badge-cell-content-value"
               :style="{ color: badgeData.valueColor }"
-            >{{ cell.value }}</p>
+              >{{ cell.value }}</p
+            >
             <p class="vue-erek-badge-cell-content-text">{{ cell.text }}</p>
           </div>
         </div>
@@ -26,7 +31,7 @@ export default {
   props: {
     badgeData: {
       type: Object,
-      default: function () {
+      default: function() {
         return {};
       }
     }

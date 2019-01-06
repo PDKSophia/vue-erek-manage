@@ -1,3 +1,6 @@
+/**
+ * @菜单栏配置
+ */
 const Menu = [
   // 一级菜单栏
   {
@@ -83,6 +86,12 @@ const Menu = [
         hasSubmenu: false, // 是否有子菜单
         name: '4-3',
         _to: '/erek-manage/erek-list-card' // 跳转的链接
+      },
+      {
+        text: '头像',
+        hasSubmenu: false, // 是否有子菜单
+        name: '4-4',
+        _to: '/erek-manage/erek-list-avatar' // 跳转的链接
       }
     ]
   },

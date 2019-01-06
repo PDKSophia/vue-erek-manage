@@ -1,6 +1,9 @@
 <template>
   <div class="vue-erek-pie-container">
-    <div ref="erek_pie" :style="{ width: width, height: height, marginTop: '50px' }"></div>
+    <div
+      ref="erek_pie"
+      :style="{ width: width, height: height, marginTop: '50px' }"
+    ></div>
   </div>
 </template>
 
@@ -19,7 +22,7 @@ export default {
     },
     series: {
       type: Array,
-      default: function () {
+      default: function() {
         return [];
       }
     }

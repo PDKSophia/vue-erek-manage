@@ -1,6 +1,9 @@
 <template>
   <div class="vue-erek-radar-container">
-    <div ref="erek_radar" :style="{ width: width, height: height, marginTop: '50px' }"></div>
+    <div
+      ref="erek_radar"
+      :style="{ width: width, height: height, marginTop: '50px' }"
+    ></div>
   </div>
 </template>
 
@@ -19,13 +22,13 @@ export default {
     },
     series: {
       type: Array,
-      default: function () {
+      default: function() {
         return [];
       }
     },
     indicator: {
       type: Array,
-      default: function () {
+      default: function() {
         return {};
       }
     }

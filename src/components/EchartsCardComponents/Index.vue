@@ -13,9 +13,7 @@
     >
       <p class="erek-text">{{ tab.text }}</p>
       <h1 :style="{ color: tab.valueColor, fontSize: '30px' }">
-        {{
-        tab.value
-        }}
+        {{ tab.value }}
       </h1>
     </div>
   </div>
@@ -23,16 +21,16 @@
 
 <script>
 export default {
-  name: 'VueErekTab',
+  name: 'EchartCardComponents',
   props: {
     tabArray: {
       type: Array,
-      default: function () {
+      default: function() {
         return [];
       }
     }
   },
-  mounted() { }
+  mounted() {}
 };
 </script>
 
