@@ -1,4 +1,4 @@
-const Mock = require('mockjs')
+const Mock = require('mockjs');
 
 // 获取所有数据信息
 Mock.mock('/api/data/getAllData', () => {
@@ -11,7 +11,7 @@ Mock.mock('/api/data/getAllData', () => {
         username: '彭道宽',
         staffID: 1982,
         avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',
+          'http://college.bczcdn.com/wapp-res/teacher/attachments/Jacob学长咸蛋英语.png',
         department: '研发部',
         type: '负责人',
         status: 'online',
@@ -23,7 +23,7 @@ Mock.mock('/api/data/getAllData', () => {
         username: '懒羊羊',
         staffID: 2938,
         avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png',
+          'http://college.bczcdn.com/wapp-res/teacher/attachments/Jasmine学姐咸蛋英语.png',
         department: '技术部',
         type: '员工',
         status: 'exit',
@@ -35,8 +35,7 @@ Mock.mock('/api/data/getAllData', () => {
         username: '沸羊羊',
         staffID: 1920,
         avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png',
-        department: '销售部',
+          'http://college.bczcdn.com/wapp-res/teacher/attachments/画板282x.png',
         type: '部长',
         status: 'online',
         phone: '178****8312',
@@ -47,7 +46,7 @@ Mock.mock('/api/data/getAllData', () => {
         username: '喜洋洋',
         staffID: 1231,
         avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
+          'http://college.bczcdn.com/wapp-res/teacher/attachments/桃子学姐咸蛋英语.png',
         department: '研发部',
         type: '员工',
         status: 'online',
@@ -59,7 +58,7 @@ Mock.mock('/api/data/getAllData', () => {
         username: '美羊羊',
         staffID: 2716,
         avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',
+          'http://college.bczcdn.com/wapp-res/teacher/attachments/桃子学姐咸蛋英语.png',
         department: '运营部',
         type: '员工',
         status: 'exit',
@@ -71,7 +70,7 @@ Mock.mock('/api/data/getAllData', () => {
         username: '灰太狼',
         staffID: 4271,
         avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
+          'http://college.bczcdn.com/wapp-res/teacher/attachments/画板282x.png',
         department: '运营部',
         type: '部长',
         status: 'exit',
@@ -83,7 +82,7 @@ Mock.mock('/api/data/getAllData', () => {
         username: '红太狼',
         staffID: 5212,
         avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',
+          'http://college.bczcdn.com/wapp-res/teacher/attachments/画板282x.png',
         department: '销售部',
         type: '经理',
         status: 'online',
@@ -95,7 +94,7 @@ Mock.mock('/api/data/getAllData', () => {
         username: '哆啦A梦',
         staffID: 7612,
         avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
+          'http://college.bczcdn.com/wapp-res/teacher/attachments/画板282x.png',
         department: '编辑部',
         type: '员工',
         status: 'exit',
@@ -107,7 +106,7 @@ Mock.mock('/api/data/getAllData', () => {
         username: '大熊',
         staffID: 2716,
         avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
+          'http://college.bczcdn.com/wapp-res/teacher/attachments/画板282x.png',
         department: '运营部',
         type: 'online',
         status: 'exit',
@@ -119,7 +118,7 @@ Mock.mock('/api/data/getAllData', () => {
         username: '胖虎',
         staffID: 8612,
         avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png',
+          'http://college.bczcdn.com/wapp-res/teacher/attachments/画板282x.png',
         department: '研发部',
         type: 'online',
         status: 'online',
@@ -127,11 +126,11 @@ Mock.mock('/api/data/getAllData', () => {
         time: 1539630042000
       }
     ]
-  }
+  };
   return {
     response
-  }
-})
+  };
+});
 // 获取标准列表数据信息
 Mock.mock('/api/data/getStandAllData', () => {
   let response = {
@@ -181,11 +180,11 @@ Mock.mock('/api/data/getStandAllData', () => {
         department: '研发部'
       }
     ]
-  }
+  };
   return {
     response
-  }
-})
+  };
+});
 
 // 获取 `平台日访问量` 和 `日注册人数`
 Mock.mock('/api/data/getPlatFormViewData', () => {
@@ -214,11 +213,11 @@ Mock.mock('/api/data/getPlatFormViewData', () => {
         }
       ]
     }
-  }
+  };
   return {
     response
-  }
-})
+  };
+});
 
 // 获取首页所有的tab卡片数据
 Mock.mock('/api/data/getAllTabCardList', () => {
@@ -243,11 +242,11 @@ Mock.mock('/api/data/getAllTabCardList', () => {
         value: 225
       }
     ]
-  }
+  };
   return {
     response
-  }
-})
+  };
+});
 
 // 获取 `站点访问来源数据`
 Mock.mock('/api/data/getOriginAllData', () => {
@@ -261,11 +260,11 @@ Mock.mock('/api/data/getOriginAllData', () => {
       { value: 135, name: '视频广告' },
       { value: 1548, name: '搜索引擎' }
     ]
-  }
+  };
   return {
     response
-  }
-})
+  };
+});
 
 // 获取 `预算开销和实际开销` 数据
 Mock.mock('/api/data/getExpenseAllData', () => {
@@ -294,11 +293,11 @@ Mock.mock('/api/data/getExpenseAllData', () => {
         ]
       }
     }
-  }
+  };
   return {
     response
-  }
-})
+  };
+});
 
 // 获取 个人页面 - 个人中心 - 所有数据
 Mock.mock('/api/erek-user-all/getAllData', () => {
@@ -455,8 +454,8 @@ Mock.mock('/api/erek-user-all/getAllData', () => {
         }
       ]
     }
-  }
+  };
   return {
     response
-  }
-})
+  };
+});
