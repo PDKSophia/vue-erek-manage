@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import ErekManageRouter from '@/view/Router';
+
 // 首页
 import ErekManageIndex from '@/view/Index/Index';
 // 登陆页
 import ErekManageLogin from '@/view/Login/Login';
 
-import ErekManageRouter from '@/view/Manage/Router';
 // 后台管理
 import VueErekManageIndex from '@/view/Manage/VueErekIndex/Index';
 
@@ -13,6 +14,7 @@ import VueErekManageIndex from '@/view/Manage/VueErekIndex/Index';
 import VueErekTableList from '@/view/Manage/VueErekList/Table';
 import VueErekStandardList from '@/view/Manage/VueErekList/Standard';
 import VueErekCardList from '@/view/Manage/VueErekList/Card';
+import VueErekAvatarList from '@/view/Manage/VueErekList/Avatar';
 
 // 工具栏
 import VueErekToolMessage from '@/view/Manage/VueErekTool/Message';
@@ -138,6 +140,14 @@ const router = new Router({
           path: 'erek-list-card',
           name: 'VueErekCardList',
           component: VueErekCardList,
+          meta: {
+            keepAlive: false
+          }
+        },
+        {
+          path: 'erek-list-avatar',
+          name: 'VueErekAvatarList',
+          component: VueErekAvatarList,
           meta: {
             keepAlive: false
           }
