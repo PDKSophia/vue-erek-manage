@@ -4,7 +4,7 @@
       <Sider
         hide-trigger
         :style="{
-          background: theme.BG_MENU_COLOR,
+          background: config.BG_MENU_COLOR,
           width: '240px',
           minWidth: '240px',
           maxWidth: '240px',
@@ -15,8 +15,8 @@
           theme="light"
           :active-name="Menu[0].name"
           :style="{
-            background: theme.BG_MENU_COLOR,
-            color: `${theme.FONT_MENU_COLOR} !important`
+            background: config.BG_MENU_COLOR,
+            color: `${config.FONT_MENU_COLOR} !important`
           }"
         >
           <div v-for="(item, index) in Menu" :key="index">
@@ -80,6 +80,7 @@
 </template>
 
 <script>
+import { theme } from '../../config/app';
 export default {
   name: 'ErekManageSider',
   props: {
@@ -92,12 +93,6 @@ export default {
     BreadItem: {
       type: String,
       default: ''
-    },
-    theme: {
-      type: Object,
-      default: function() {
-        return {};
-      }
     }
   },
   watch: {
@@ -114,8 +109,12 @@ export default {
   },
   data() {
     return {
-      breadList: ['仪表盘']
+      breadList: ['仪表盘'],
+      config: {}
     };
+  },
+  mounted() {
+    this.config = { ...theme.APP_THEME.LAYOUT_MENU };
   }
 };
 </script>
@@ -144,7 +143,7 @@ export default {
 }
 .ivu-menu-light.ivu-menu-vertical
   .ivu-menu-item-active:not(.ivu-menu-submenu):after {
-  background: #3f51b5 !important;
+  background: #dbdbdb !important;
   width: 1px !important;
 }
 </style>

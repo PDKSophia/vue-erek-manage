@@ -3,7 +3,7 @@
     <div class="vue-flex-item" v-for="(item, index) in data" :key="index">
       <div class="vue-erek-item-meta">
         <div class="vue-erek-item-meta-avatar">
-          <img class="vue-erek-item-meta-avatar-image" :src="item.avatar" alt>
+          <img class="vue-erek-item-meta-avatar-image" :src="item.avatar" alt />
         </div>
         <div class="vue-erek-item-meta-content">
           <h4 class="vue-erek-item-meta-title">{{ item.username }}</h4>
@@ -17,7 +17,9 @@
       <div class="vue-erek-item-action">
         <ul>
           <li class="vue-erek-edit" @click="handleOnClickEdit(item)">编辑</li>
-          <li class="vue-erek-delete" @click="handleOnClickDelete(item)">删除</li>
+          <li class="vue-erek-delete" @click="handleOnClickDelete(item)"
+            >删除</li
+          >
         </ul>
       </div>
     </div>
@@ -36,31 +38,29 @@
 
 <script>
 export default {
-  name: 'ErekStandardList',
+  name: 'StandardItemComponents',
   props: {
     data: {
       type: Array,
-      default: function () {
+      default: function() {
         return [];
       }
     },
     pagination: {
       type: Object,
-      defualt: function () {
-        return []
+      defualt: function() {
+        return [];
       }
     }
   },
   watch: {
     pagination: {
       handler(newVal) {
-        console.log(newVal)
+        console.log(newVal);
       }
     }
   },
-  mounted() {
-    console.log(this.pagination)
-  },
+  mounted() {},
   methods: {
     handleOnClickEdit(item) {
       this.$emit('onHandleClickStandItem', item, 'edit');

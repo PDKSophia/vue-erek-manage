@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'VueErekTable',
+  name: 'TableItemComponents',
   props: {
     border: {
       type: Boolean,

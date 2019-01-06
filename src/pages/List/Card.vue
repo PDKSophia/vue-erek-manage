@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  name: 'ErekCardItemComponents',
+  name: 'CardItemComponents',
   props: {
     data: {
       type: Array,
