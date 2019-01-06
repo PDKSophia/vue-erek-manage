@@ -11,7 +11,7 @@
       ></echarts-line>
       <div class="vue-erek-right-box" :style="{ height: 'height' }">
         <p class="vue-erek-right-box-title">数据卡片</p>
-        <vue-scale-card :tabArray="tabArray" />
+        <vue-echarts-card :tabArray="tabArray" />
       </div>
     </div>
     <vue-divider :bgColor="hrObj.bgColor" :height="hrObj.height"></vue-divider>
@@ -41,17 +41,15 @@
 import EchartsLine from '../../../components/EchartsComponents/Line.vue';
 import EchartsPie from '../../../components/EchartsComponents/Pie.vue';
 import EchartsRadar from '../../../components/EchartsComponents/Radar.vue';
-import VueScaleCard from '../../../components/ScaleCardComponents/Index.vue';
+import VueEchartsCard from '../../../components/EchartsCardComponents/Index.vue';
 import VueDivider from '../../../components/DividerComponents/Divider.vue';
-import tabconfig from '../../../config/tab';
-
 export default {
   name: 'ErekManageHome',
   components: {
     EchartsLine,
     EchartsPie,
     EchartsRadar,
-    VueScaleCard,
+    VueEchartsCard,
     VueDivider
   },
   data() {
@@ -119,15 +117,18 @@ export default {
     this.$api.app.fetchAllTabData().then(res => {
       for (let q = 0; q < res.length; q++) {
         let bgColor = this.$utils.getColorFromArray();
-        let conf = Object.assign({}, tabconfig, {
-          width: '50%',
-          bgColor: bgColor,
-          color: '#f1f1f1',
-          valueColor: '#f1f1f1',
-          borderColor: bgColor,
-          text: res[q].text,
-          value: res[q].value
-        });
+        let conf = Object.assign(
+          {},
+          {
+            width: '50%',
+            bgColor: bgColor,
+            color: '#f1f1f1',
+            valueColor: '#f1f1f1',
+            borderColor: bgColor,
+            text: res[q].text,
+            value: res[q].value
+          }
+        );
         this.tabArray.push(conf);
       }
     });

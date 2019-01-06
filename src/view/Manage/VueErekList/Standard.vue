@@ -1,7 +1,7 @@
 <template>
   <div class="erek-standard-container">
-    <vue-scale-card :tabArray="tabArray" />
-    <vue-divider :bgColor="hrObj.bgColor" :height="hrObj.height" />
+    <vue-stand-card :taskList="taskList" />
+    <vue-divider :bgColor="divider.bgColor" :height="divider.height" />
     <div class="erek-standard-list">
       <h3>所有待办任务</h3>
       <Button type="dashed" long icon="ios-add">新增</Button>
@@ -15,21 +15,20 @@
 </template>
 
 <script>
-import VueScaleCard from '../../../components/ScaleCardComponents/Index.vue';
+import VueStandCard from '../../../components/StandCardComponents/Index.vue';
 import VueDivider from '../../../components/DividerComponents/Divider.vue';
 import ErekStandList from '../../../pages/List/Standard.vue';
-import tabconfig from '../../../config/tab';
 export default {
   name: 'ErekStandardList',
   components: {
-    VueScaleCard,
+    VueStandCard,
     VueDivider,
     ErekStandList
   },
   data() {
     return {
-      tabArray: [],
-      hrObj: {
+      taskList: [],
+      divider: {
         bgColor: '#f5f7f9',
         height: '30px'
       },
@@ -57,12 +56,7 @@ export default {
     // 请求获取所有任务
     this.$api.list.fetchAllTaskList().then(res => {
       for (let i = 0; i < res.length; i++) {
-        let conf = Object.assign({}, tabconfig, {
-          width: '33.33%',
-          text: res[i].text,
-          value: res[i].value
-        });
-        this.tabArray.push(conf);
+        this.taskList.push(res[i]);
       }
     });
     // 请求获取数据

@@ -41,7 +41,7 @@
         </div>
       </i-col>
     </Row>
-    <erek-table
+    <erek-table-list
       :border="tableConfig.border"
       :stripe="tableConfig.stripe"
       :size="tableConfig.size"
@@ -53,11 +53,11 @@
 </template>
 
 <script>
-import ErekTable from '../../../pages/List/Table.vue';
+import ErekTableList from '../../../pages/List/Table.vue';
 export default {
   name: 'ErekManageTableList',
   components: {
-    ErekTable
+    ErekTableList
   },
   data() {
     return {
