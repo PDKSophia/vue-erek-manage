@@ -13,7 +13,8 @@
       >
         <Menu
           theme="light"
-          :active-name="Menu[0].name"
+          :active-name="activeMenu"
+          :open-names="openName"
           :style="{
             background: config.BG_MENU_COLOR,
             color: `${config.FONT_MENU_COLOR} !important`
@@ -63,7 +64,6 @@
               {{ item }}
             </BreadcrumbItem>
           </Breadcrumb>
-          <!-- <h1 class="bread-title">嘻嘻嘻</h1> -->
         </div>
         <Content
           class="erek-layout-content"
@@ -81,6 +81,7 @@
 
 <script>
 import { theme } from '../../config/app';
+import BreadItem from '../../config/breadItem';
 export default {
   name: 'ErekManageSider',
   props: {
@@ -110,11 +111,48 @@ export default {
   data() {
     return {
       breadList: ['仪表盘'],
-      config: {}
+      config: {},
+      activeMenu: '',
+      openName: ['4']
     };
   },
   mounted() {
+    const history = this.$router.history;
+    for (let key in BreadItem) {
+      if (history.current.path == key) {
+        this.BreadItem = BreadItem[key];
+      }
+    }
     this.config = { ...theme.APP_THEME.LAYOUT_MENU };
+    this.Menu.map(item => {
+      if (item._to === history.current.path) {
+        this.openName = [];
+        let name = item.name;
+        this.openName[0] = name;
+        this.activeMenu = item.name;
+      } else if (item.isSubmenu) {
+        item.list.map(idx => {
+          if (idx._to === history.current.path) {
+            this.openName = [];
+            let name = item.name;
+            this.openName[0] = name;
+            this.activeMenu = idx.name;
+          } else if (idx.hasSubmenu) {
+            idx.submenu.map(last => {
+              if (last._to === history.current.path) {
+                this.activeMenu = last.name;
+              }
+            });
+          }
+        });
+      } else {
+        this.openName.push(this.Menu[0].name);
+        this.activeMenu = this.Menu[0].name;
+      }
+    });
+
+    // console.log(this.activeMenu);
+    console.log(this.openName);
   }
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="erek-avatar-list-container">
-    <Row :gutter="20">
+    <Row :gutter="26">
       <i-col
         v-for="(item, index) in data"
         :xs="MEDIA.XS"
@@ -17,6 +17,7 @@
             <h4 class="erek-pager-text-4">员工号: {{ item.staffID }}</h4>
           </div>
           <div class="erek-paper-action-5">
+            <button class="erek-button-base-6 update-button">查看</button>
             <button class="erek-button-base-6 update-button">编辑</button>
             <button class="erek-button-base-6 delete-button">删除</button>
           </div>
@@ -59,7 +60,7 @@ export default {
         XS: 12,
         SM: 8,
         MD: 7,
-        LG: 5
+        LG: 6
       }
     };
   }
@@ -73,7 +74,7 @@ export default {
   padding-top: 12px;
 
   .erek-paper-container-1 {
-    margin: 8px;
+    margin: 12px;
     width: 100%;
     border-radius: 4px;
     background-color: #fff;
@@ -85,13 +86,14 @@ export default {
     padding: 0;
 
     > .erek-paper-content-2 {
-      padding: 16px;
+      padding: 30px 16px;
       text-align: center;
 
       > .erek-paper-avatar-3 {
         width: 100px;
         height: 100px;
-        margin-bottom: 5px;
+        border-radius: 10px;
+        margin-bottom: 15px;
       }
       > .erek-pager-text-4 {
         color: rgba(0, 0, 0, 0.87);

@@ -33,6 +33,11 @@ export default {
         for (let key in BreadItem) {
           if (val.path == key) {
             this.BreadItem = BreadItem[key];
+          } else {
+            console.log('不是正确的路由');
+            // this.$router.push({
+            //   path: '/'
+            // })
           }
         }
       },
