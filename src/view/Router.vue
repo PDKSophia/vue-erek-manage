@@ -2,7 +2,7 @@
   <div id="erek-manage-container">
     <Layout id="erek-layout">
       <erek-header />
-      <erek-sider :Menu="Menu" :BreadItem="BreadItem" />
+      <erek-sider :Menu="Menu" />
     </Layout>
   </div>
 </template>
@@ -30,14 +30,10 @@ export default {
     $route: {
       // 路由监听
       handler: function(val) {
+        this.setHistroyUrl(val.path);
         for (let key in BreadItem) {
           if (val.path == key) {
-            this.BreadItem = BreadItem[key];
-          } else {
-            console.log('不是正确的路由');
-            // this.$router.push({
-            //   path: '/'
-            // })
+            this.recevieBreadItem(BreadItem[key]);
           }
         }
       },
@@ -45,7 +41,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['setErekUser'])
+    ...mapActions(['setErekUser', 'setHistroyUrl', 'recevieBreadItem'])
   },
   mounted() {
     if (getAuthorityToken() == undefined || getAuthorityToken() == '') {

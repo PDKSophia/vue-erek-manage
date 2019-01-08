@@ -3,15 +3,21 @@
     <div class="vue-user-item">
       <div class="vue-user-item-meta">
         <div class="vue-user-item-meta-avatar">
-          <img :src="erekUser.avatar" class="vue-user-item-meta-avatar-image" alt>
+          <img
+            :src="erekUser.avatar"
+            class="vue-user-item-meta-avatar-image"
+            alt
+          />
         </div>
         <div class="vue-user-item-meta-content">
           <h4 class="vue-user-item-meta-title">{{ erekUser.username }}</h4>
           <div class="vue-user-item-meta-summary">
             <span v-for="(tag, index) in erekUser.tag" :key="index">
-              {{ tag
-              }}
-              <Divider v-if="index !== erekUser.tag.length - 1" type="vertical"/>
+              {{ tag }}
+              <Divider
+                v-if="index !== erekUser.tag.length - 1"
+                type="vertical"
+              />
             </span>
           </div>
         </div>
@@ -26,15 +32,15 @@
             class="vue-erek-link"
           >
             {{ item.text }}
-            <Divider v-if="key !== erekUser.link.length - 1" type="vertical"/>
+            <Divider v-if="key !== erekUser.link.length - 1" type="vertical" />
           </a>
         </ul>
       </div>
     </div>
-    <vue-divider :bg-color="hrObj.bgColor" :height="hrObj.height"/>
+    <vue-divider :bg-color="divider.bgColor" :height="divider.height" />
     <div class="vue-erek-article">
       <div class="vue-erek-badge-left">
-        <vue-user-badge :badge-data="badgeData"/>
+        <vue-user-badge :config="badgeConfig" />
       </div>
       <div class="vue-erek-content-right">
         <echarts-line
@@ -47,16 +53,28 @@
         />
       </div>
     </div>
-    <div class="vue-erek-meta-item-cell">
-      <div class="vue-erek-card-item-middle">
-        <vue-user-card-item :card-item="bookCardItem"/>
+    <vue-divider :bg-color="divider.bgColor" :height="divider.height" />
+    <div class="vue-erek-article">
+      <div class="vue-erek-badge-left divider-right">
+        <div class="vue-erek-pyq-1">动态</div>
+        <div class="vue-erek-pyq-2">
+          <div class="pyq-3-list-item">
+            <div class="pyq-4-list-meta">
+              <div class="pyq-5-avatar-left">
+                <img
+                  class="images-avatar"
+                  src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+                  alt
+                />
+              </div>
+              <div class="pyq-6-avatar-right">
+                <p>曲丽丽 在 高逼格设计天团 新建项目 六月迭代</p> <p>4小时前</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="vue-erek-card-item-middle">
-        <vue-user-card-item :card-item="bookCardItem"/>
-      </div>
-      <div class="vue-erek-card-item-middle">
-        <vue-user-card-item :card-item="bookCardItem"/>
-      </div>
+      <div class="vue-erek-content-right">团队</div>
     </div>
   </div>
 </template>
@@ -65,8 +83,6 @@
 import VueDivider from '../../../components/DividerComponents/Divider.vue';
 import VueUserBadge from '../../../components/BadgeComponents/Index.vue';
 import EchartsLine from '../../../components/EchartsComponents/Line.vue';
-import EchartsRadar from '../../../components/EchartsComponents/Radar.vue';
-import VueUserCardItem from '../../../components/StarCardComponents/Index.vue';
 import { mapState } from 'vuex';
 
 export default {
@@ -74,20 +90,18 @@ export default {
   components: {
     VueDivider,
     VueUserBadge,
-    EchartsLine,
-    EchartsRadar,
-    VueUserCardItem
+    EchartsLine
   },
   computed: mapState({
     erekUser: state => state.user.erekUser
   }),
   data() {
     return {
-      hrObj: {
+      divider: {
         bgColor: '#f5f7f9',
         height: '20px'
       },
-      badgeData: {}, // 徽章
+      badgeConfig: {}, // 徽章
       xAxis: {
         // x轴
         data: []
@@ -113,14 +127,6 @@ export default {
   mounted() {
     // 发送请求获取所有个人中心的数据
     this.$api.app.fetchAllListData().then(res => {
-      this.badgeData = Object.assign(
-        {},
-        {
-          namespace: '获得的徽章',
-          valueColor: '#52cdb7',
-          data: res.data
-        }
-      );
       // 折线图 - 近期日访问量
       let loginStep = res.loginStep;
       for (let i = 0; i < loginStep.timeRange.length; i++) {
@@ -189,6 +195,15 @@ export default {
       }
       this.bookCardItem = JSON.parse(JSON.stringify(bookObj));
     });
+
+    // Step1. 请求获取 “徽章”
+    this.$api.user.fetchBadgeList().then(res => {
+      this.badgeConfig = {
+        namespace: '获得的徽章',
+        valueColor: '#6f80da',
+        data: { ...res }
+      };
+    });
   }
 };
 </script>
@@ -197,7 +212,6 @@ export default {
 .vue-erek-person-container {
   width: 100%;
   color: rgba(0, 0, 0, 0.45);
-  height: 100%;
   background-color: #fff;
 
   > .vue-user-item {
@@ -255,7 +269,7 @@ export default {
         align-items: center;
 
         > .vue-erek-link {
-          color: #2894ff;
+          color: #6f80da;
         }
       }
     }
@@ -264,14 +278,55 @@ export default {
 .vue-erek-article {
   display: flex;
   width: 100%;
-  margin-bottom: 30px;
 
   > .vue-erek-badge-left {
     flex: 3 0;
+
+    > .vue-erek-pyq-1 {
+      padding: 16px 0 16px 14px;
+      font-size: 16px;
+      min-height: 48px;
+      color: rgba(0, 0, 0, 0.65);
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    > .vue-erek-pyq-2 {
+      padding: 0 16px;
+
+      .pyq-3-list-item {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        align-items: center;
+        display: flex;
+        border-bottom: 1px solid #e8e8e8;
+
+        .pyq-4-list-meta {
+          display: flex;
+          width: 100%;
+
+          > .pyq-5-avatar-left {
+            width: 13%;
+            > .images-avatar {
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+            }
+          }
+
+          > .pyq-6-avatar-right {
+            width: 85%;
+          }
+        }
+      }
+    }
   }
 
   > .vue-erek-content-right {
     flex: 2 1;
+  }
+
+  > .divider-right {
+    border-right: 20px solid #f5f7f9;
   }
 }
 
