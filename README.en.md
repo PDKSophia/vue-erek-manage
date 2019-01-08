@@ -182,23 +182,59 @@
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-1.png'>
 
+---
+
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-2.png'>
+
+---
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-3.png'>
 
+---
+
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-4.png'>
+
+---
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-5.png'>
 
+---
+
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-6.png'>
+
+---
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-7.png'>
 
+---
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-11.png'>
+
+---
+
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-8.png'>
+
+---
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-9.png'>
 
+---
+
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-10.png'>
+
+---
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-12.png'>
+
+---
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-13.png'>
+
+---
+
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-14.png'>
+
+---
 
 ## [Please click here for other pages](https://github.com/PDKSophia/vue-erek-manage/wiki)
 
