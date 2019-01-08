@@ -1,10 +1,10 @@
 <template>
   <div class="vue-erek-meta-achievement">
-    <p class="erek-title">{{ badgeData.namespace }}</p>
+    <p class="erek-title">{{ config.namespace }}</p>
     <div class="vue-erek-box-badge-box">
       <div
         class="vue-erek-badge-cell"
-        v-for="(item, index) in badgeData.data"
+        v-for="(item, index) in config.data"
         :key="index"
       >
         <div class="vue-erek-badge-cell-title">
@@ -14,7 +14,7 @@
           <div v-for="(cell, key) in item.data" :key="key">
             <p
               class="vue-erek-badge-cell-content-value"
-              :style="{ color: badgeData.valueColor }"
+              :style="{ color: config.valueColor }"
               >{{ cell.value }}</p
             >
             <p class="vue-erek-badge-cell-content-text">{{ cell.text }}</p>
@@ -29,10 +29,21 @@
 export default {
   name: 'VueErekBadge',
   props: {
-    badgeData: {
+    config: {
       type: Object,
       default: function() {
-        return {};
+        return {
+          data: [],
+          namespace: 'Erek-Badge',
+          valueColor: '#3f51b5'
+        };
+      }
+    }
+  },
+  watch: {
+    config: {
+      handler(newVal) {
+        console.log(newVal);
       }
     }
   }
@@ -45,8 +56,9 @@ export default {
   padding: 10px;
 
   > .erek-title {
-    padding: 10px 0 20px 14px;
+    padding: 16px 0 16px 14px;
     font-size: 16px;
+    min-height: 48px;
     color: rgba(0, 0, 0, 0.65);
   }
 
