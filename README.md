@@ -2,7 +2,7 @@
 
 <div align='center'>
 
-  <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/logo.png' width=280 height=220>
+  <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/logo-2.png' width=280 height=220>
 
 ![](https://img.shields.io/badge/vue-2.5.2-blue.svg)
 ![](https://img.shields.io/badge/license-MIT-orange.svg)

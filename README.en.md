@@ -1,12 +1,18 @@
 [简体中文](./README.md) | English
 
-# Vue-Erek-Manage
+<div align='center'>
+
+  <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/logo-1.png' width=280 height=220>
 
 ![](https://img.shields.io/badge/vue-2.5.2-blue.svg)
 ![](https://img.shields.io/badge/license-MIT-orange.svg)
 ![](https://img.shields.io/badge/echarts-4.1.0-yellow.svg)
 ![](https://img.shields.io/badge/iView-3.1.3-green.svg)
 ![](https://img.shields.io/badge/axios-0.18.0-red.svg)
+
+</div>
+
+# Vue-Erek-Manage
 
 ## Introduce
 
