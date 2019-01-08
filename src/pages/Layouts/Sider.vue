@@ -61,9 +61,9 @@
       <Layout class="erek-right-layout">
         <div class="layout-bread-crumb">
           <Breadcrumb>
-            <BreadcrumbItem v-for="(item, index) in breadItem" :key="index">
-              {{ item }}
-            </BreadcrumbItem>
+            <BreadcrumbItem v-for="(item, index) in breadItem" :key="index">{{
+              item
+            }}</BreadcrumbItem>
           </Breadcrumb>
         </div>
         <Content
@@ -75,6 +75,7 @@
           </keep-alive>
           <router-view v-if="!$route.meta.keepAlive"></router-view>
         </Content>
+        <footer-layout />
       </Layout>
     </Layout>
   </div>
@@ -83,10 +84,14 @@
 <script>
 import { theme } from '../../config/app';
 import BreadItem from '../../config/breadItem';
+import FooterLayout from './Footer';
 import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'ErekManageSider',
+  components: {
+    FooterLayout
+  },
   props: {
     Menu: {
       type: Array,
@@ -129,7 +134,7 @@ export default {
 
   > .erek-layout-content {
     background-color: #f5f7f9;
-    height: 100%;
+    // height: 100%;
   }
 }
 .layout-bread-crumb {
