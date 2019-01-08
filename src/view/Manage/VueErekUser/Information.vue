@@ -56,7 +56,7 @@
     <vue-divider :bg-color="divider.bgColor" :height="divider.height" />
     <div class="vue-erek-article">
       <div class="vue-erek-badge-left divider-right">
-        <div class="vue-erek-pyq-1">动态</div>
+        <div class="vue-erek-pyq-title">动态</div>
         <div class="vue-erek-pyq-2">
           <div class="pyq-3-list-item">
             <div class="pyq-4-list-meta">
@@ -68,13 +68,85 @@
                 />
               </div>
               <div class="pyq-6-avatar-right">
-                <p>曲丽丽 在 高逼格设计天团 新建项目 六月迭代</p> <p>4小时前</p>
+                <p class="text-sty-0">
+                  <span class="text-sty-1">曲丽丽</span> 在
+                  <span class="text-sty-2">高逼格设计天团</span>
+                  新建项目六月迭代
+                </p>
+                <p>4小时前</p>
+              </div>
+            </div>
+          </div>
+          <div class="pyq-3-list-item">
+            <div class="pyq-4-list-meta">
+              <div class="pyq-5-avatar-left">
+                <img
+                  class="images-avatar"
+                  src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+                  alt
+                />
+              </div>
+              <div class="pyq-6-avatar-right">
+                <p class="text-sty-0">
+                  <span class="text-sty-1">曲丽丽</span> 在
+                  <span class="text-sty-2">高逼格设计天团</span>
+                  新建项目六月迭代
+                </p>
+                <p>4小时前</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="vue-erek-content-right">团队</div>
+      <div class="vue-erek-content-right">
+        <div class="vue-erek-pyq-title">团队</div>
+        <div class="erek-team-1">
+          <div class="erek-team-2">
+            <Card>
+              <div style="text-align:center">
+                <img
+                  class="team-image"
+                  src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+                />
+                <h3>Vue.js</h3>
+              </div>
+            </Card>
+          </div>
+          <div class="erek-team-2">
+            <Card>
+              <div style="text-align:center">
+                <img
+                  class="team-image"
+                  src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+                />
+                <h3>React.js</h3>
+              </div>
+            </Card>
+          </div>
+          <div class="erek-team-2">
+            <Card>
+              <div style="text-align:center">
+                <img
+                  class="team-image"
+                  src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+                />
+                <h3>Vue.js</h3>
+              </div>
+            </Card>
+          </div>
+          <div class="erek-team-2">
+            <Card>
+              <div style="text-align:center">
+                <img
+                  class="team-image"
+                  src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+                />
+                <h3>Vue.js</h3>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -114,14 +186,7 @@ export default {
       itemList: [],
       lineWidth: '100%',
       lineHeight: '250px',
-      lineSeries: [], // 折线数据
-
-      radarWidth: '100%',
-      radarHeight: '300px',
-      radarSeries: [], // 雷达图数据
-      radarIndicator: [], // 雷达图配置
-      movieCardItem: {},
-      bookCardItem: {}
+      lineSeries: [] // 折线数据
     };
   },
   mounted() {
@@ -136,10 +201,9 @@ export default {
       this.yAxis.max = loginStep.countRange[1];
 
       for (let j = 0; j < loginStep.data.length; j++) {
-        let normalColor = this.$utils.getColorFromArray();
         let config = {
           text: loginStep.data[j].text,
-          badgeColor: normalColor
+          badgeColor: '#00c099'
         };
         this.itemList.push(config);
         let obj = {
@@ -148,52 +212,13 @@ export default {
           barWidth: 15,
           itemStyle: {
             normal: {
-              color: normalColor // 设置折线点颜色
+              color: '#00c099' // 设置折线点颜色
             }
           },
           smooth: true // 折线 圆滑
         };
         this.lineSeries.push(obj);
       }
-      // 雷达图 - 个人技能
-      let skill = res.skill;
-      let radObj = {
-        type: 'radar',
-        data: []
-      };
-      Object.keys(skill.mySkill).forEach(key => {
-        let dataObj = {
-          value: [],
-          name: skill.mySkill[key]
-        };
-        for (let j = 0; j < skill.mySkill.data.length; j++) {
-          dataObj.value.push(skill.mySkill.data[j].value);
-          this.radarIndicator.push(skill.mySkill.data[j].name);
-        }
-        radObj.data.push(dataObj);
-      });
-      this.radarSeries.push(radObj);
-      this.radarIndicator = this.$utils.uniqueArray(this.radarIndicator);
-      // 喜欢的电影列表
-      let movieObj = {
-        title: '喜欢的电影',
-        subtitle: '更多',
-        data: []
-      };
-      for (let n = 0; n < res.MovieList.length; n++) {
-        movieObj.data.push(res.MovieList[n]);
-      }
-      this.movieCardItem = JSON.parse(JSON.stringify(movieObj));
-      // 喜欢的书籍列表
-      let bookObj = {
-        title: '喜欢的书籍',
-        subtitle: '购买',
-        data: []
-      };
-      for (let n = 0; n < res.BookList.length; n++) {
-        bookObj.data.push(res.BookList[n]);
-      }
-      this.bookCardItem = JSON.parse(JSON.stringify(bookObj));
     });
 
     // Step1. 请求获取 “徽章”
@@ -282,14 +307,6 @@ export default {
   > .vue-erek-badge-left {
     flex: 3 0;
 
-    > .vue-erek-pyq-1 {
-      padding: 16px 0 16px 14px;
-      font-size: 16px;
-      min-height: 48px;
-      color: rgba(0, 0, 0, 0.65);
-      border-bottom: 1px solid #e8e8e8;
-    }
-
     > .vue-erek-pyq-2 {
       padding: 0 16px;
 
@@ -299,17 +316,20 @@ export default {
         align-items: center;
         display: flex;
         border-bottom: 1px solid #e8e8e8;
+        flex-wrap: wrap;
 
         .pyq-4-list-meta {
           display: flex;
           width: 100%;
 
           > .pyq-5-avatar-left {
-            width: 13%;
+            width: 8%;
             > .images-avatar {
               width: 30px;
               height: 30px;
               border-radius: 50%;
+              float: right;
+              margin-right: 10px;
             }
           }
 
@@ -323,6 +343,23 @@ export default {
 
   > .vue-erek-content-right {
     flex: 2 1;
+
+    > .erek-team-1 {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      > .erek-team-2 {
+        width: 50%;
+
+        .team-image {
+          width: 50px;
+          height: 50%;
+          border-radius: 50%;
+          margin: 5px 0;
+        }
+      }
+    }
   }
 
   > .divider-right {
@@ -338,5 +375,26 @@ export default {
   > .vue-erek-card-item-middle {
     flex: 1 0;
   }
+}
+
+.vue-erek-pyq-title {
+  padding: 16px 0 16px 14px;
+  font-size: 16px;
+  min-height: 48px;
+  color: rgba(0, 0, 0, 0.65);
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.text-sty-0 {
+  margin-bottom: 3px;
+}
+.text-sty-1 {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+}
+.text-sty-2 {
+  color: #1890ff;
 }
 </style>

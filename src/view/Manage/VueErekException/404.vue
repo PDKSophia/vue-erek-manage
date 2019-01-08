@@ -1,9 +1,12 @@
 <template>
   <div class="vue-exception-error-container">
-    <img class="error-image" src="../../../assets/exception/404.png" alt="403">
+    <img
+      class="error-image"
+      src="../../../assets/exception/404.png"
+      alt="403"
+    />
     <div class="error-content">
-      <h1>404</h1>
-      <h3>抱歉，你访问的页面不存在</h3>
+      <h1>404</h1> <h3>抱歉，你访问的页面不存在</h3>
     </div>
   </div>
 </template>
@@ -22,7 +25,7 @@ export default {
   -webkit-box-pack: center;
   -webkit-box-orient: horizontal;
   background-color: #fff;
-  height: 90%;
+  height: 660px;
   width: 100%;
 
   > .error-image {

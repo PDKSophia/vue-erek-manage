@@ -1,9 +1,12 @@
 <template>
   <div class="vue-exception-error-container">
-    <img class="error-image" src="../../../assets/exception/403.png" alt="403">
+    <img
+      class="error-image"
+      src="../../../assets/exception/403.png"
+      alt="403"
+    />
     <div style="marginTop: -3%">
-      <h1>403</h1>
-      <h3>抱歉，你无权访问该页面</h3>
+      <h1>403</h1> <h3>抱歉，你无权访问该页面</h3>
     </div>
   </div>
 </template>
@@ -22,7 +25,7 @@ export default {
   -webkit-box-pack: center;
   -webkit-box-orient: horizontal;
   background-color: #fff;
-  height: 90%;
+  height: 660px;
   width: 100%;
 
   > .error-image {

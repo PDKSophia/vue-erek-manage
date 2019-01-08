@@ -44,8 +44,8 @@ Mock.mock('/api/erek-user/getCurrentUser', () => {
     data: {
       username: '彭道宽',
       email: '1063137960@qq.com',
-      avatar: 'https://avatars0.githubusercontent.com/u/29560420?s=460&v=4',
-      address: '海南省海口市琼山区府城xx街道xx小区xx栋xx楼xx号',
+      avatar: 'https://www.pengdaokuan.cn/static/assets/userpdk.jpeg',
+      address: '海南省海口市xx区府城xx街道xx小区xx栋xx楼xx号',
       gender: 'male',
       city: 'China',
       interest: ['吃', '喝', '买'],

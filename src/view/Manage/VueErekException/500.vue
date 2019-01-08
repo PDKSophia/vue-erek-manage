@@ -1,10 +1,11 @@
 <template>
   <div class="vue-exception-error-container">
-    <img class="error-image" src="../../../assets/exception/500.png" alt="403">
-    <div style="marginTop: -4%">
-      <h1>500</h1>
-      <h3>抱歉，服务器出错了</h3>
-    </div>
+    <img
+      class="error-image"
+      src="../../../assets/exception/500.png"
+      alt="403"
+    />
+    <div style="marginTop: -4%"> <h1>500</h1> <h3>抱歉，服务器出错了</h3> </div>
   </div>
 </template>
 
@@ -22,7 +23,7 @@ export default {
   -webkit-box-pack: center;
   -webkit-box-orient: horizontal;
   background-color: #fff;
-  height: 90%;
+  height: 660px;
   width: 100%;
 
   > .error-image {
