@@ -3,8 +3,8 @@
     <Header :style="{ height: `${config.HEADER_HEADER} !important` }">
       <Menu
         mode="horizontal"
-        theme="drink"
         active-name="1"
+        :theme="menuTheme"
         :style="{
           backgroundColor: config.BG_HEADER_COLOR,
           color: `${config.FONT_HEADER_COLOR} !important`,
@@ -54,7 +54,8 @@ export default {
   data() {
     return {
       appname: '',
-      config: {}
+      config: {},
+      menuTheme: 'dark'
     };
   },
   methods: {

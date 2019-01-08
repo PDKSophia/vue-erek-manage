@@ -12,7 +12,8 @@
         }"
       >
         <Menu
-          theme="light"
+          res="menu"
+          :theme="menuTheme"
           :active-name="activeMenu"
           :open-names="openName"
           :style="{
@@ -60,7 +61,7 @@
       <Layout class="erek-right-layout">
         <div class="layout-bread-crumb">
           <Breadcrumb>
-            <BreadcrumbItem v-for="(item, index) in breadList" :key="index">
+            <BreadcrumbItem v-for="(item, index) in breadItem" :key="index">
               {{ item }}
             </BreadcrumbItem>
           </Breadcrumb>
@@ -82,6 +83,8 @@
 <script>
 import { theme } from '../../config/app';
 import BreadItem from '../../config/breadItem';
+import { mapState, mapActions } from 'vuex';
+
 export default {
   name: 'ErekManageSider',
   props: {
@@ -90,69 +93,32 @@ export default {
       default: function() {
         return [];
       }
-    },
-    BreadItem: {
-      type: String,
-      default: ''
     }
   },
-  watch: {
-    BreadItem(params) {
-      let arr = params.split('-');
-      this.breadList = [];
-      for (let i = 0; i < arr.length; i++) {
-        this.breadList.push(arr[i]);
-      }
-      this.$nextTick(() => {
-        console.log('dom is update');
-      });
-    }
-  },
+  computed: mapState({
+    breadItem: state => state.global.breadItem
+  }),
   data() {
     return {
       breadList: ['仪表盘'],
       config: {},
       activeMenu: '',
-      openName: ['4']
+      openName: [],
+      menuTheme: 'light'
     };
+  },
+  methods: {
+    ...mapActions(['setHistroyUrl', 'recevieBreadItem'])
   },
   mounted() {
     const history = this.$router.history;
+    this.setHistroyUrl(history.current.path);
     for (let key in BreadItem) {
       if (history.current.path == key) {
-        this.BreadItem = BreadItem[key];
+        this.recevieBreadItem(BreadItem[key]);
       }
     }
     this.config = { ...theme.APP_THEME.LAYOUT_MENU };
-    this.Menu.map(item => {
-      if (item._to === history.current.path) {
-        this.openName = [];
-        let name = item.name;
-        this.openName[0] = name;
-        this.activeMenu = item.name;
-      } else if (item.isSubmenu) {
-        item.list.map(idx => {
-          if (idx._to === history.current.path) {
-            this.openName = [];
-            let name = item.name;
-            this.openName[0] = name;
-            this.activeMenu = idx.name;
-          } else if (idx.hasSubmenu) {
-            idx.submenu.map(last => {
-              if (last._to === history.current.path) {
-                this.activeMenu = last.name;
-              }
-            });
-          }
-        });
-      } else {
-        this.openName.push(this.Menu[0].name);
-        this.activeMenu = this.Menu[0].name;
-      }
-    });
-
-    // console.log(this.activeMenu);
-    console.log(this.openName);
   }
 };
 </script>
