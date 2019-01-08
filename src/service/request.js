@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
@@ -16,19 +16,19 @@ const codeMessage = {
   502: '网关错误。',
   503: '服务不可用，服务器暂时过载或维护。',
   504: '网关超时。'
-}
+};
 
 const checkStatus = response => {
   if (response.status >= 200 && response.status < 300) {
-    return response
+    return response;
   }
-  const errortext = codeMessage[response.status] || response.statusText
+  const errortext = codeMessage[response.status] || response.statusText;
   // 弹窗通知报错
-  const error = new Error(errortext)
-  error.name = response.status
-  error.response = response
-  throw error
-}
+  const error = new Error(errortext);
+  error.name = response.status;
+  error.response = response;
+  throw error;
+};
 
 /**
  * 封装的请求函数
@@ -39,11 +39,11 @@ const checkStatus = response => {
 export default function request(url, option) {
   const options = {
     ...option
-  }
+  };
   const defaultOptions = {
     credentials: 'include'
-  }
-  const newOptions = { ...defaultOptions, ...options }
+  };
+  const newOptions = { ...defaultOptions, ...options };
   if (
     newOptions.method === 'POST' ||
     newOptions.method === 'PUT' ||
@@ -54,13 +54,13 @@ export default function request(url, option) {
         Accept: 'application/json',
         'Content-Type': 'application/json; charset=utf-8',
         ...newOptions.headers
-      }
-      newOptions.body = JSON.stringify(newOptions.body)
+      };
+      newOptions.body = JSON.stringify(newOptions.body);
     } else {
       newOptions.headers = {
         Accept: 'application/json',
         ...newOptions.headers
-      }
+      };
     }
   }
 
@@ -68,22 +68,22 @@ export default function request(url, option) {
   return axios(url, newOptions)
     .then(checkStatus)
     .then(response => {
-      return response.data
+      return response.data;
       // return response
     })
     .catch(err => {
-      let status = err.name
+      let status = err.name;
       if (status === 401) {
-        console.log('未经授权, 错误码:', status)
+        console.log('未经授权, 错误码:', status);
       }
       if (status === 403) {
-        console.log('禁止访问, 错误码:', status)
+        console.log('禁止访问, 错误码:', status);
       }
       if (status <= 504 && status >= 500) {
-        console.log('服务器错误, 错误码:', status)
+        console.log('服务器错误, 错误码:', status);
       }
       if (status >= 404 && status < 422) {
-        console.log('找不到资源路径, 错误码 :', status)
+        console.log('找不到资源路径, 错误码 :', status);
       }
-    })
+    });
 }
