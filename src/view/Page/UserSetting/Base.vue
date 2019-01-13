@@ -78,7 +78,7 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 export default {
-  name: 'VueErekBaseTabs',
+  name: 'UserBaseSetting',
   computed: mapState({
     erekUser: state => state.user.erekUser
   }),

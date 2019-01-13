@@ -76,6 +76,7 @@ export default {
     setTimeout(() => {
       this.drawLineEcharts();
     }, 1000);
+    console.log(222);
   }
 };
 </script>

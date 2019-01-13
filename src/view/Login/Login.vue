@@ -80,6 +80,7 @@ import {
   setAuthorityRole
 } from '../../utils/vue-token';
 
+import { User } from '../../model/User';
 export default {
   name: 'ErekManageLogin',
   data() {
@@ -160,6 +161,10 @@ export default {
         }
       });
     }
+  },
+  mounted() {
+    console.log(User.parse({}));
+    console.log(User);
   }
 };
 </script>

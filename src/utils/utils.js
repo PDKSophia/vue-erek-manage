@@ -1,8 +1,6 @@
-// import { Message } from 'iview'
-
 export default {
   /**
-   * desc: 邮箱验证
+   * @邮箱验证
    * @param {String} text
    * @return {Boolean}
    */
@@ -15,7 +13,7 @@ export default {
     }
   },
   /**
-   * desc: 随机生成颜色
+   * @随机生成颜色
    * @return {String}
    */
   randomColor: () => {
@@ -23,7 +21,7 @@ export default {
     return `hsla(${colorAngle}, 100%, 50%, .4)`;
   },
   /**
-   * desc: 从制定的颜色中返回
+   * @从制定的颜色中返回
    * @return {String}
    */
   getColorFromArray: () => {
@@ -43,7 +41,7 @@ export default {
     return colorArray[index];
   },
   /**
-   * desc: 数组去重
+   * @数组去重
    * @param {Array} array
    * @return {String}
    */
@@ -58,5 +56,11 @@ export default {
       }
     }
     return newArray;
+  },
+  /**
+   * @解析路由参数
+   */
+  checkUrlQuery: url => {
+    console.log(url);
   }
 };

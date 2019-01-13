@@ -2,19 +2,15 @@
   <div class="erek-flex-container">
     <div
       class="erek-card-box"
-      v-for="(tab, index) in tabArray"
+      v-for="(tab, index) in data"
       :style="{
-        backgroundColor: tab.bgColor,
-        color: tab.color,
-        borderColor: tab.borderColor,
         width: tab.width
       }"
+      :class="tab.classes"
       :key="index"
     >
       <p class="erek-text">{{ tab.text }}</p>
-      <h1 :style="{ color: tab.valueColor, fontSize: '30px' }">
-        {{ tab.value }}
-      </h1>
+      <h1 class="values_text">{{ tab.value }}</h1>
     </div>
   </div>
 </template>
@@ -23,7 +19,7 @@
 export default {
   name: 'EchartCardComponents',
   props: {
-    tabArray: {
+    data: {
       type: Array,
       default: function() {
         return [];
@@ -45,22 +41,45 @@ export default {
   align-items: center;
 
   > .erek-card-box {
-    border: 1px solid #f5f7f9;
-    background-color: #f5f7f9;
     padding: 24px 0;
 
     > .erek-text {
       font-size: 15px;
       margin-bottom: 5px;
     }
+
+    > h1.values_text {
+      font-size: 36px;
+      color: #ffffff;
+    }
   }
 
   .erek-card-box:hover {
-    transform: rotate(360deg) scale(1.1);
-    -webkit-transform: rotate(360deg) scale(1.1);
-    -moz-transform: rotate(360deg) scale(1.1);
-    -o-transform: rotate(360deg) scale(1.1);
-    -ms-transform: rotate(360deg) scale(1.1);
+    transform: rotate(360deg) scale(1.06);
+    -webkit-transform: rotate(360deg) scale(1.06);
+    -moz-transform: rotate(360deg) scale(1.06);
+    -o-transform: rotate(360deg) scale(1.06);
+    -ms-transform: rotate(360deg) scale(1.06);
   }
+}
+.card_paper_0 {
+  background-color: #3498d9;
+  color: #ffffff;
+  border-color: #3498d9;
+}
+.card_paper_1 {
+  background-color: #00c099;
+  color: #ffffff;
+  border-color: #00c099;
+}
+.card_paper_2 {
+  background-color: #85d4f0;
+  color: #ffffff;
+  border-color: #85d4f0;
+}
+.card_paper_3 {
+  background-color: #7289c7;
+  color: #ffffff;
+  border-color: #7289c7;
 }
 </style>
