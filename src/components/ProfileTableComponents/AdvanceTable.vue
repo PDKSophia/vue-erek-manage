@@ -22,7 +22,7 @@
 
 <script>
 export default {
-  name: 'VueProfileTable',
+  name: 'VueAdvanceTable',
   props: {
     border: {
       type: Boolean,

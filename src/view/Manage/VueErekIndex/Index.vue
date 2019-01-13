@@ -1,20 +1,16 @@
 <template>
   <div>
     <div class="vue-erek-home-up">
-      <echarts-line
-        :xAxis="xAxis"
-        :yAxis="yAxis"
-        :series="lineSeries"
-        :itemList="itemList"
-        :width="lineWidth"
-        :height="lineHeight"
-      ></echarts-line>
+      <hoc-echarts-line :lineData="{ lineData }" v-if="showLine" />
       <div class="vue-erek-right-box" :style="{ height: 'height' }">
         <p class="vue-erek-right-box-title">数据卡片</p>
-        <vue-echarts-card :tabArray="tabArray" />
+        <hoc-echarts-card :data="tabData" />
       </div>
     </div>
-    <vue-divider :bgColor="hrObj.bgColor" :height="hrObj.height"></vue-divider>
+    <vue-divider
+      :bgColor="divider.bgColor"
+      :height="divider.height"
+    ></vue-divider>
     <div class="vue-erek-home-down">
       <echarts-radar
         :series="radarSeries"
@@ -38,40 +34,29 @@
 </template>
 
 <script>
-import EchartsLine from '../../../components/EchartsComponents/Line.vue';
+import HocEchartsLine from '../../../components/HigherOrderComponent/HOC-EchartLine.vue';
 import EchartsPie from '../../../components/EchartsComponents/Pie.vue';
 import EchartsRadar from '../../../components/EchartsComponents/Radar.vue';
-import VueEchartsCard from '../../../components/EchartsCardComponents/Index.vue';
+import HocEchartsCard from '../../../components/HigherOrderComponent/HOC-EchartCard.vue';
 import VueDivider from '../../../components/DividerComponents/Divider.vue';
 export default {
   name: 'ErekManageHome',
   components: {
-    EchartsLine,
+    HocEchartsLine,
     EchartsPie,
     EchartsRadar,
-    VueEchartsCard,
+    HocEchartsCard,
     VueDivider
   },
   data() {
     return {
-      xAxis: {
-        // x轴
-        data: []
-      },
-      yAxis: {
-        // y轴
-        min: null,
-        max: null
-      },
-      itemList: [],
-      lineWidth: '100%',
-      lineHeight: '300px',
-      lineSeries: [], // 折线数据
-      tabArray: [], // 数据卡片
+      showLine: false, // 是否显示折线图
+      lineData: {}, // 折线数据
+      tabData: [], // 数据卡片
       pieSeries: [], // 饼图数据
       pieWidth: '100%',
       pieHeight: '300px',
-      hrObj: {
+      divider: {
         bgColor: '#f5f7f9',
         height: '30px'
       },
@@ -82,55 +67,14 @@ export default {
     };
   },
   mounted() {
-    // 发送请求拿到 `平台日访问量`
-    this.$api.app.fetchPlatFormViewData().then(res => {
-      for (let i = 0; i < res.timeRange.length; i++) {
-        this.xAxis.data.push(res.timeRange[i]);
-      }
-      this.yAxis.min = res.countRange[0];
-      this.yAxis.max = res.countRange[1];
-      for (let j = 0; j < res.data.length; j++) {
-        let normalColor = this.$utils.getColorFromArray();
-        let lineStyle = this.$utils.getColorFromArray();
-        let config = {
-          text: res.data[j].text,
-          badgeColor: lineStyle
-        };
-        this.itemList.push(config);
-        let obj = {
-          data: res.data[j].data,
-          type: 'line',
-          itemStyle: {
-            normal: {
-              color: normalColor, // 设置折线点颜色
-              lineStyle: {
-                color: lineStyle // 设置折线颜色
-              }
-            }
-          },
-          smooth: true // 折线 圆滑
-        };
-        this.lineSeries.push(obj);
-      }
+    // 请求 `获取平台近7天的访问量与注册量`
+    this.$api.echarts.fetchPlatformView(7).then(res => {
+      this.lineData = { ...res };
+      this.showLine = true;
     });
     // 请求拿到 `卡片数据`
-    this.$api.app.fetchAllTabData().then(res => {
-      for (let q = 0; q < res.length; q++) {
-        let bgColor = this.$utils.getColorFromArray();
-        let conf = Object.assign(
-          {},
-          {
-            width: '50%',
-            bgColor: bgColor,
-            color: '#f1f1f1',
-            valueColor: '#f1f1f1',
-            borderColor: bgColor,
-            text: res[q].text,
-            value: res[q].value
-          }
-        );
-        this.tabArray.push(conf);
-      }
+    this.$api.list.fetchTotalCardList().then(res => {
+      this.tabData = [...res];
     });
     // 请求拿到 `站点访问来源数据`
     this.$api.app.fetchAllOriginData().then(res => {

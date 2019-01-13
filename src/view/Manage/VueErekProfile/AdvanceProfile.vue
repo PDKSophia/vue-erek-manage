@@ -130,7 +130,7 @@
 
 <script>
 import DividerLine from '../../../components/DividerComponents/Divider';
-import ErekTable from '../../../components/ProfileTableComponents/Table.vue';
+import ErekTable from '../../../components/ProfileTableComponents/AdvanceTable.vue';
 export default {
   name: 'VueErekAdvanceProfile',
   components: {
