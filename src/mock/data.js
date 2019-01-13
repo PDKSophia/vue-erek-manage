@@ -1,3 +1,13 @@
+/**
+ * other data
+ *
+ * @summary other data Mock
+ * @author PDK
+ *
+ * Created at     : 2018-12-05
+ * Last modified  : 2019-01-11
+ */
+
 const Mock = require('mockjs');
 
 // 获取所有数据信息
@@ -124,60 +134,6 @@ Mock.mock('/api/data/getAllData', () => {
         status: 'online',
         phone: '138****8321',
         time: 1539630042000
-      }
-    ]
-  };
-  return {
-    response
-  };
-});
-// 获取标准列表数据信息
-Mock.mock('/api/data/getStandAllData', () => {
-  let response = {
-    code: 1,
-    msg: '获取成功',
-    list: [
-      {
-        id: 1,
-        username: '彭道宽',
-        content: '那是一种内在的东西， 他们到达不了，也无法触及的',
-        staffID: 1982,
-        avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',
-        phone: '189****8869',
-        department: '研发部'
-      },
-      {
-        id: 2,
-        username: '懒羊羊',
-        content:
-          '土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。',
-        staffID: 2938,
-        avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png',
-        phone: '182****8321',
-        department: '研发部'
-      },
-      {
-        id: 3,
-        username: '沸羊羊',
-        content:
-          '这世界要是没有爱情，它在我们心中还会有什么意义！这就如一盏没有亮光的走马灯',
-        staffID: 1920,
-        avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/dURIMkkrRFpPgTuzkwnB.png',
-        phone: '178****8312',
-        department: '研发部'
-      },
-      {
-        id: 4,
-        username: '喜洋洋',
-        content: '时间是一切财富中最宝贵的财富',
-        staffID: 1231,
-        avatar:
-          'https://gw.alipayobjects.com/zos/rmsportal/sfjbOqnsXXJgNCjCzDBL.png',
-        phone: '182****8321',
-        department: '研发部'
       }
     ]
   };

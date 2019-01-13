@@ -1,3 +1,13 @@
+/**
+ * 用户mock数据设计
+ *
+ * @summary User Mock
+ * @author PDK
+ *
+ * Created at     : 2019-12-10
+ * Last modified  : 2019-01-11
+ */
+
 const Mock = require('mockjs');
 
 /**

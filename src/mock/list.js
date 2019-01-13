@@ -1,3 +1,13 @@
+/**
+ * 列表mock数据设计
+ *
+ * @summary List Mock
+ * @author PDK
+ *
+ * Created at     : 2019-12-10
+ * Last modified  : 2019-01-11
+ */
+
 const Mock = require('mockjs');
 
 // 获取 `列表 - 表格` 数据
@@ -155,7 +165,7 @@ Mock.mock('/api/erek-list/table', () => {
   };
 });
 
-// 获取 `标准列表` 待办任务
+// 获取 `列表 - 待办任务` 数据
 Mock.mock('/api/erek-list/standard/all-task', () => {
   return {
     code: 1,
@@ -369,6 +379,76 @@ Mock.mock('/api/erek-list/card', () => {
           departId: 410,
           avatar:
             'https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png'
+        }
+      ]
+    }
+  };
+});
+
+// 获取 `详情 - 标准详情` 数据
+Mock.mock('/api/erek-profile/basic?commo_id=10001', () => {
+  return {
+    code: 1,
+    msg: '获取成功',
+    data: {
+      detail: {
+        id: '9865192617124',
+        status: '已取货',
+        sell_id: '4716201',
+        child_id: '867192'
+      },
+      user: {
+        name: '打不死的小强',
+        address: '四川省成都市天府新区天府软件园',
+        phone: '176****2442',
+        postman: '顺丰快递',
+        desc: '顺带帮我带一杯奶茶'
+      },
+      goodlist: [
+        {
+          id: 1,
+          commo_id: '2713',
+          commo_title: '矿泉水550ml',
+          commo_qrcode: '#7261hgs81641#9712',
+          single_price: 2,
+          commo_count: 35,
+          all_price: 70
+        },
+        {
+          id: 2,
+          commo_id: '7512',
+          commo_title: '康师傅藤椒牛肉面',
+          commo_qrcode: '#ifya123saad2#9712',
+          single_price: 4.5,
+          commo_count: 18,
+          all_price: 81
+        },
+        {
+          id: 3,
+          commo_id: '3152',
+          commo_title: '呀土豆',
+          commo_qrcode: '#nh4971jsu123#5123',
+          single_price: 5.5,
+          commo_count: 10,
+          all_price: 55
+        },
+        {
+          id: 4,
+          commo_id: '9712',
+          commo_title: '奥利奥饼干',
+          commo_qrcode: '#8nsYhs714#412521',
+          single_price: 8,
+          commo_count: 10,
+          all_price: 80
+        },
+        {
+          id: 5,
+          commo_id: '8656',
+          commo_title: '卫龙亲嘴烧',
+          commo_qrcode: '#dggasp8916Twk123',
+          single_price: 3.5,
+          commo_count: 110,
+          all_price: 385
         }
       ]
     }

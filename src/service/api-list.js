@@ -87,5 +87,46 @@ export default {
         });
       }
     });
+  },
+
+  /**
+   * @获取某一商品退款的标准详情数据
+   * @param {Number} commo_id
+   * @return {*}
+   */
+  fetchCommodityProfile: commo_id => {
+    return request(`${baseUrl}/erek-profile/basic?commo_id=${commo_id}`, {
+      method: 'GET',
+      token: getAuthorityToken()
+    }).then(res => {
+      if (res.code === 1) {
+        return res.data;
+      } else {
+        Message.error({
+          content: res.msg,
+          duration: 1.5
+        });
+      }
+    });
+  },
+
+  /**
+   * @获取首页数据卡片
+   * @return {*}
+   */
+  fetchTotalCardList: () => {
+    return request(`${baseUrl}/card/total`, {
+      method: 'GET',
+      token: getAuthorityToken()
+    }).then(res => {
+      if (res.code === 1) {
+        return res.data;
+      } else {
+        Message.error({
+          content: res.msg,
+          duration: 1.5
+        });
+      }
+    });
   }
 };

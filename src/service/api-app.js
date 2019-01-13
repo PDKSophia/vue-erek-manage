@@ -1,17 +1,17 @@
-import request from './request'
-import { Message } from 'iview'
-import { getAuthorityToken } from '../utils/vue-token'
+import request from './request';
+import { Message } from 'iview';
+import { getAuthorityToken } from '../utils/vue-token';
 
-let baseUrl = ''
+let baseUrl = '';
 if (process.env.NODE_ENV !== 'production') {
-  baseUrl = '/api'
+  baseUrl = '/api';
 } else {
   // baseUrl = 'http://yun.pengdaokuan.cn/'
 }
 
 export default {
   /**
-   * desc: 获取所有数据信息
+   * @获取所有数据信息
    * @return {*}
    */
   fetchAllDataList: () => {
@@ -19,19 +19,19 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res
+      let { response } = res;
       if (response.code === 1) {
-        return response.list
+        return response.list;
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        })
+        });
       }
-    })
+    });
   },
   /**
-   * desc: 获取标准列表数据信息
+   * @获取标准列表数据信息
    * @return {*}
    */
   fetchStandAllDataList: () => {
@@ -39,19 +39,19 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res
+      let { response } = res;
       if (response.code === 1) {
-        return response.list
+        return response.list;
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        })
+        });
       }
-    })
+    });
   },
   /**
-   * desc: 获取 `平台日访问量` 和  `日注册人数`
+   * @获取 `平台日访问量` 和  `日注册人数`
    * @return {*}
    */
   fetchPlatFormViewData: () => {
@@ -59,23 +59,19 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res
+      let { response } = res;
       if (response.code === 1) {
-        // Message.success({
-        //   content: response.msg,
-        //   duration: 1.5
-        // })
-        return response.list
+        return response.list;
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        })
+        });
       }
-    })
+    });
   },
   /**
-   * desc: 获取所有首页tab的卡片数据
+   * @获取所有首页的卡片数据
    * @return {*}
    */
   fetchAllTabData: () => {
@@ -83,24 +79,20 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res
+      let { response } = res;
       if (response.code === 1) {
-        // Message.success({
-        //   content: response.msg,
-        //   duration: 1.5
-        // })
-        return response.list
+        return response.list;
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        })
+        });
       }
-    })
+    });
   },
 
   /**
-   * desc: 获取 `站点访问来源数据`
+   * @获取 `站点访问来源数据`
    * @return {*}
    */
   fetchAllOriginData: () => {
@@ -108,24 +100,20 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res
+      let { response } = res;
       if (response.code === 1) {
-        // Message.success({
-        //   content: response.msg,
-        //   duration: 1.5
-        // })
-        return response.list
+        return response.list;
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        })
+        });
       }
-    })
+    });
   },
 
   /**
-   * desc: 获取 `预算开销和实际开销`
+   * @获取 `预算开销和实际开销`
    * @return {*}
    */
   fetchExpenseOriginData: () => {
@@ -133,24 +121,20 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res
+      let { response } = res;
       if (response.code === 1) {
-        // Message.success({
-        //   content: response.msg,
-        //   duration: 1.5
-        // })
-        return response.list
+        return response.list;
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        })
+        });
       }
-    })
+    });
   },
 
   /**
-   * desc: 获取 `个人页 - 个人中心` 数据
+   * @获取 `个人页 - 个人中心` 数据
    * @return {*}
    */
   fetchAllListData: () => {
@@ -158,15 +142,15 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res
+      let { response } = res;
       if (response.code === 1) {
-        return response.list
+        return response.list;
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        })
+        });
       }
-    })
+    });
   }
-}
+};
