@@ -16,7 +16,7 @@
 
 ## Introduce
 
-`Vue-Erek-Manage` is a backstage management system based on `Vue 2.0` and `iView UI`，It draws on `pro-ant-design` framework. It applies to background management for small projects
+`Vue-Erek-Manage` is a backstage management system based on `Vue 2.0` and `iView UI`，It draws on `pro-ant-design` framework. 👉 It applies to background management for small projects
 
 ## Characteristic
 
@@ -51,6 +51,7 @@
 - [ ] Data Card
 - [ ] Pie Echarts
 - [ ] Radar Echarts
+- [ ] ...(after doing QAQ)
 
 ## Project Environment
 
@@ -75,6 +76,12 @@
   4. npm run serve
 ```
 
+## Wiki Docs
+
+> The use of the document is being written, please rest assured, as simple as possible, so that the big brothers are easy to get started, there is a saying that is good: **Refactoring is a daily thing, don't wait for the amount of code to come up, and cumbersome and then refactoring**
+
+> please Don't leave me, I will speed up the progress, and if you think I am OK, give me a star ✨, it is an encouragement to me, love you.❤️
+
 ```
 ·
 ├── package.json
@@ -87,45 +94,59 @@
 │   ├── components
 │   │    ├─BadgeComponents
 │   │    ├─DividerComponents
+│   │    ├─EchartsCardComponents
 │   │    ├─EchartsComponents
 │   │    │    ├─Line
 │   │    │    ├─Pie
 │   │    │    ├─Radar
 │   │    │    └─ ...
+│   │    ├─FloatButtonComponents
 │   │    ├─FormComponents
 │   │    │    ├─LoginForm
 │   │    │    └─ ...
+│   │    ├─HigherOrderComponents
+│   │    │    ├─HOC-EchartCard
+│   │    │    ├─HOC-EchartLine
+│   │    │    ├─HOC-EchartPie
+│   │    │    ├─HOC-EchartRadar
+│   │    │    └─ ...
 │   │    ├─PageComponents
 │   │    │    ├─Index
+│   │    │    └─ ...
+│   │    ├─ProfileTableComponents
+│   │    │    ├─BaseTable
+│   │    │    ├─AdvanceTable
 │   │    │    └─ ...
 │   │    ├─ScaleCardComponents
 │   │    ├─StarCardComponents
 │   │    └─ ...
 │   │
 │   ├── config
-│   │    ├─app.js
 │   │    ├─echarts
 │   │    │    ├─line.config.js
 │   │    │    ├─pie.config.js
 │   │    │    ├─radar.config.js
 │   │    │    └─ ...
+│   │    ├─app.js
 │   │    ├─breadItem.js
+│   │    ├─global.js
 │   │    ├─menu.js
-│   │    ├─tab.js
-│   │    ├─theme.js
 │   │    └─ ...
 │   │
 │   ├── mock
 │   │    ├─app.js
+│   │    ├─card.js
 │   │    ├─data.js
-│   │    ├─index.js
+│   │    ├─echarts.js
 │   │    ├─list.js
+│   │    ├─user.js
 │   │    └─ ...
 │   │
 │   ├── pages
 │   │    ├─Canvas
 │   │    ├─Layouts
 │   │    ├─List
+│   │    │   ├─Avatar
 │   │    │   ├─Card
 │   │    │   ├─Standard
 │   │    │   ├─Table
@@ -136,7 +157,9 @@
 │   │
 │   ├── service
 │   │    ├─api-app.js
+│   │    ├─api-echarts.js
 │   │    ├─api-list.js
+│   │    ├─api-user.js
 │   │    ├─index.js
 │   │    ├─request.js
 │   │    └─ ...
@@ -171,13 +194,6 @@
 └─
 ```
 
-## Wiki Docs
-
-- [Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
-  - [theme、menu、breadItem ConfigPage](https://github.com/PDKSophia/vue-erek-manage/wiki/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
-  - [table、standlist ListPage](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%88%97%E8%A1%A8%E9%A1%B5)
-  - [badge Page](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%BE%BD%E7%AB%A0)
-
 ## Display Picture
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-1.png'>
@@ -208,7 +224,7 @@
 
 ---
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-11.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-15.png'>
 
 ---
 
@@ -236,19 +252,13 @@
 
 ---
 
-## [Please click here for other pages](https://github.com/PDKSophia/vue-erek-manage/wiki)
+---
 
 ## Related links
-
-v1.1 YunResume: http://yun.pengdaokuan.cn/YunResume
-
-v2.0 ErekResume: http://yun.pengdaokuan.cn/erek-resume
 
 blog: https://github.com/PDKSophia/blog.io
 
 juejin: https://juejin.im/user/594ca8a35188250d892f4139
-
-erek-editor: https://github.com/PDKSophia/erek-editror
 
 pro-ant-design: https://pro.ant.design/index-cn
 

@@ -16,16 +16,13 @@
 
 ## 介绍
 
-`Vue-Erek-Manage` 是一款基于 `Vue 2.5` + `iView UI` 的后台管理, 借鉴模仿 `pro-ant-design`的设计，适用于小型项目后台管理，个人维护项目
+`Vue-Erek-Manage` 是一款基于 `Vue 2.5` + `iView UI` 的后台管理, 借鉴模仿 `pro-ant-design`的设计，👉 适用于小型项目后台管理，个人维护项目
 
 ## 特性
 
 - 直接配置 `Menu菜单栏` 和 `BreadItem面包屑`
 - 仿`pro-ant-design`框架, 提供`Echarts图标` `Table表格列表`等页面借鉴
 - 使用 `npm + webpack + babel` 的工作流，支持 `ES6`
-
-<!-- ## Display Link -->
-<!-- Link: http://yun.pengdaokuan.cn/erek-manage -->
 
 ## 技术栈
 
@@ -54,7 +51,7 @@
 - [ ] 数据卡片
 - [ ] 饼图
 - [ ] 雷达图
-- [ ] 柱图
+- [ ] ...(QAQ 后期还在做)
 
 ## 项目环境
 
@@ -79,6 +76,10 @@
   4. npm run serve
 ```
 
+## Wiki 使用文档
+
+> 使用文档正在写中，请放心，尽可能简单，让大哥们容易上手，有句话说的好: **重构是每天的事情，不要等代码量上来了，并且笨重了再进行重构**，请大哥们不要离开我，我会加快进度，同时如果你觉得我 OK 的话，给我点个星星 ✨ 吧，算是对我的一个鼓励，爱你们 ❤️
+
 ## 文件架构
 
 ```
@@ -93,48 +94,59 @@
 │   ├── components
 │   │    ├─BadgeComponents              封装的Badge组件，实例: 个人中心
 │   │    ├─DividerComponents            封装的Divider组件
+│   │    ├─EchartsCardComponents        封装的卡片数据组件
 │   │    ├─EchartsComponents
 │   │    │    ├─Line                    封装的折线图组件
 │   │    │    ├─Pie                     封装的饼图组件
 │   │    │    ├─Radar                   封装的雷达图组件
 │   │    │    └─ ...
+│   │    ├─FloatButtonComponents        封装的圆圈按钮组件
 │   │    ├─FormComponents
 │   │    │    ├─LoginForm               封装的登陆表单组件
+│   │    │    └─ ...
+│   │    ├─HigherOrderComponents
+│   │    │    ├─HOC-EchartCard          封装的数据卡片中间层组件
+│   │    │    ├─HOC-EchartLine          封装的折线图中间层组件
+│   │    │    ├─HOC-EchartPie           封装的饼图中间层组件
+│   │    │    ├─HOC-EchartRadar         封装的雷达图中间层组件
 │   │    │    └─ ...
 │   │    ├─PageComponents
 │   │    │    ├─Index                   封装的部分页面组件
 │   │    │    └─ ...
 │   │    ├─ProfileTableComponents
-│   │    │    ├─Table                   封装详情页中的Table组件
+│   │    │    ├─BaseTable               封装基本详情页中的Table组件
+│   │    │    ├─AdvanceTable            封装高级详情页中的Table组件
 │   │    │    └─ ...
 │   │    ├─ScaleCardComponents          封装的带有放大的卡片组件
 │   │    ├─StarCardComponents           封装的带有星星的卡片组件
 │   │    └─ ...
 │   │
 │   ├── config
-│   │    ├─app.js                       应用配置
 │   │    ├─echarts                      图表的配置
 │   │    │    ├─line.config.js
 │   │    │    ├─pie.config.js
 │   │    │    ├─radar.config.js
 │   │    │    └─ ...
+│   │    ├─app.js                       应用配置
 │   │    ├─breadItem.js                 面包屑配置
+│   │    ├─global.js                    全部的部分配置
 │   │    ├─menu.js                      菜单栏配置
-│   │    ├─tab.js                       放大卡片的配置
-│   │    ├─theme.js                     主题配置
 │   │    └─ ...
 │   │
-│   ├── mock
-│   │    ├─app.js                     mock模拟请求
+│   ├── mock                            mock模拟请求
+│   │    ├─app.js
+│   │    ├─card.js
 │   │    ├─data.js
-│   │    ├─index.js
+│   │    ├─echarts.js
 │   │    ├─list.js
+│   │    ├─user.js
 │   │    └─ ...
 │   │
 │   ├── pages
 │   │    ├─Canvas                       Canvas动画背景
 │   │    ├─Layouts                      Layouts布局
 │   │    ├─List                         列表页
+│   │    │   ├─Avatar
 │   │    │   ├─Card
 │   │    │   ├─Standard
 │   │    │   ├─Table
@@ -145,7 +157,9 @@
 │   │
 │   ├── service                         与服务器相关文件
 │   │    ├─api-app.js
+│   │    ├─api-echarts.js
 │   │    ├─api-list.js
+│   │    ├─api-user.js
 │   │    ├─index.js
 │   │    ├─request.js
 │   │    └─ ...
@@ -180,13 +194,6 @@
 └─
 ```
 
-## Wiki 使用文档
-
-- [Vue-Erek-Manage](https://github.com/PDKSophia/vue-erek-manage/wiki/Vue-Erek-Manage-%E6%96%87%E6%A1%A3)
-  - [theme、menu、breadItem 配置](https://github.com/PDKSophia/vue-erek-manage/wiki/%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3)
-  - [table、standlist 列表页](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%88%97%E8%A1%A8%E9%A1%B5)
-  - [badge 徽章](https://github.com/PDKSophia/vue-erek-manage/wiki/%E5%BE%BD%E7%AB%A0)
-
 ## 页面展示
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-1.png'>
@@ -217,7 +224,7 @@
 
 ---
 
-<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-11.png'>
+<img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-15.png'>
 
 ---
 
@@ -253,15 +260,9 @@
 
 ## 其他链接
 
-v1.1 YunResume: http://yun.pengdaokuan.cn/YunResume
-
-v2.0 ErekResume: http://yun.pengdaokuan.cn/erek-resume
-
 blog: https://github.com/PDKSophia/blog.io
 
 juejin: https://juejin.im/user/594ca8a35188250d892f4139
-
-erek-editor: https://github.com/PDKSophia/erek-editror
 
 pro-ant-design: https://pro.ant.design/index-cn
 
