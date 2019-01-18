@@ -1,6 +1,6 @@
 <template>
   <div class="erek-card-list-container">
-    <Row :gutter="16">
+    <Row :gutter="22">
       <i-col span="8" v-for="item in data" :key="item.id">
         <div class="erek-list-item">
           <div class="ant-list-item-content-single">
@@ -98,7 +98,6 @@ export default {
         zoom: 1;
 
         .erek-card-meta {
-          margin: -4px 0;
           zoom: 1;
 
           .erek-card-meta-avatar {
@@ -116,7 +115,7 @@ export default {
             overflow: hidden;
             font-size: 14px;
             font-variant: tabular-nums;
-            line-height: 1.5;
+            line-height: 1.8;
             color: rgba(0, 0, 0, 0.65);
 
             .erek-card-meta-title {
@@ -146,6 +145,7 @@ export default {
                 display: -webkit-box;
                 word-break: break-all;
                 width: 100%;
+                height: 70px;
               }
             }
           }

@@ -23,6 +23,7 @@
         </ul>
       </div>
     </div>
+    <Spin size="large" fix v-if="isFetching"></Spin>
     <div style="margin: 30px 0px; overflow: hidden" v-show="pagination.hasPage">
       <div style="float: right;">
         <Page
@@ -37,8 +38,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name: 'StandardItemComponents',
+  computed: mapState({
+    isFetching: state => state.global.isFetching
+  }),
   props: {
     data: {
       type: Array,
@@ -60,7 +65,6 @@ export default {
       }
     }
   },
-  mounted() {},
   methods: {
     handleOnClickEdit(item) {
       this.$emit('onHandleClickStandItem', item, 'edit');
@@ -76,11 +80,12 @@ export default {
 .vue-erek-standlist-container {
   width: 100%;
   color: rgba(0, 0, 0, 0.45);
+  position: relative;
 
   > .vue-flex-item {
     width: 100%;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 22px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #e8e8e8;
     display: flex;
     align-items: center;

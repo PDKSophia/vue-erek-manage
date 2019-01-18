@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="table-container">
     <Table
       :border="border"
       :stripe="stripe"
@@ -7,6 +7,7 @@
       :data="data"
       :columns="columns"
     ></Table>
+    <Spin size="large" fix v-if="isFetching"></Spin>
     <div style="margin: 30px 0px;overflow: hidden" v-show="pagination.hasPage">
       <div style="float: right;">
         <Page
@@ -21,8 +22,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name: 'TableItemComponents',
+  computed: mapState({
+    isFetching: state => state.global.isFetching
+  }),
   props: {
     border: {
       type: Boolean,
@@ -165,4 +170,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.table-container {
+  position: relative;
+}
+</style>

@@ -54,11 +54,20 @@
 
 <script>
 import ErekTableList from '../../../pages/List/Table.vue';
+import { mapState, mapActions } from 'vuex';
+
 export default {
   name: 'ErekManageTableList',
   components: {
     ErekTableList
   },
+  computed: mapState({
+    isFetch: state => state.table.isFetch,
+    list: state => state.table.list,
+    pageNum: state => state.table.pageNum,
+    pageSize: state => state.table.pageSize,
+    total: state => state.table.total
+  }),
   data() {
     return {
       keyWords: '',
@@ -88,6 +97,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['startFetch', 'stopFetch', 'retrieveTableList']),
     handleSearchValue() {
       if (this.keyWords && this.selectValue) {
         this.$tool.toastTips(
@@ -113,16 +123,32 @@ export default {
     }
   },
   mounted() {
-    // 发送请求获取数据信息
-    this.$api.list.fetchRequestTableApi().then(res => {
-      this.tableConfig.data = res.list;
+    console.log('aha', this.isFetch);
+    if (this.isFetch) {
+      this.tableConfig.data = [...this.list];
       this.tableConfig.pagination = {
         hasPage: true,
-        pageNum: res.current,
-        pageSize: res.size,
-        total: res.total
+        pageNum: this.pageNum,
+        pageSize: this.pageSize,
+        total: this.total
       };
-    });
+    } else {
+      this.startFetch();
+      // 发送请求获取数据信息
+      this.$api.list.fetchRequestTableApi().then(res => {
+        this.tableConfig.data = res.list;
+        this.tableConfig.pagination = {
+          hasPage: true,
+          pageNum: res.current,
+          pageSize: res.size,
+          total: res.total
+        };
+        this.retrieveTableList(res);
+        setTimeout(() => {
+          this.stopFetch();
+        }, 1000);
+      });
+    }
   }
 };
 </script>
