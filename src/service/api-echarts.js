@@ -28,5 +28,43 @@ export default {
         });
       }
     });
+  },
+  /**
+   * @获取平台来源数据
+   * @return {*}
+   */
+  fetchPlatformOrigin: () => {
+    return request(`${baseUrl}/platform/getOrigin`, {
+      method: 'GET',
+      token: getAuthorityToken()
+    }).then(res => {
+      if (res.code === 1) {
+        return res.data;
+      } else {
+        Message.error({
+          content: res.msg,
+          duration: 1.5
+        });
+      }
+    });
+  },
+  /**
+   * @获取实际开销与预算开销
+   * @return {*}
+   */
+  fetchPlatformExpense: () => {
+    return request(`${baseUrl}/platform/getExpense`, {
+      method: 'GET',
+      token: getAuthorityToken()
+    }).then(res => {
+      if (res.code === 1) {
+        return res.data;
+      } else {
+        Message.error({
+          content: res.msg,
+          duration: 1.5
+        });
+      }
+    });
   }
 };

@@ -1,22 +1,22 @@
 <template>
   <div class="hoc-element">
-    <echarts-line
+    <!-- <echarts-line
       :xAxis="xAxis"
       :yAxis="yAxis"
       :series="lineSeries"
       :itemList="itemList"
       :width="lineWidth"
       :height="lineHeight"
-    ></echarts-line>
+    ></echarts-line>-->
   </div>
 </template>
 
 <script>
-import EchartsLine from '../EchartsComponents/Line';
+// import EchartsRadar from '../EchartsComponents/Radar';
 export default {
-  name: 'HOCEchartsLine',
+  name: 'HOCEchartsRadar',
   components: {
-    EchartsLine
+    // EchartsRadar
   },
   props: {
     lineData: {

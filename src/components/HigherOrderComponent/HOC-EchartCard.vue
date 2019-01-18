@@ -26,6 +26,7 @@ export default {
     data: {
       handler(newVal) {
         if (newVal) {
+          this.list = [];
           const newData = newVal.map((item, index) => {
             return {
               width: '50%',
