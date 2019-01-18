@@ -283,6 +283,28 @@ Mock.mock('/api/erek-list/standard', () => {
             'https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png',
           phone: '189****8869',
           department: '研发部'
+        },
+        {
+          id: 9,
+          username: '何发涛',
+          content:
+            '这世界要是没有爱情，它在我们心中还会有什么意义！这就如一盏没有亮光的走马灯',
+          staffID: 8712,
+          avatar:
+            'https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png',
+          phone: '189****8869',
+          department: '研发部'
+        },
+        {
+          id: 10,
+          username: '戴治家',
+          content:
+            '这世界要是没有爱情，它在我们心中还会有什么意义！这就如一盏没有亮光的走马灯',
+          staffID: 6519,
+          avatar:
+            'https://gw.alipayobjects.com/zos/rmsportal/nxkuOJlFJuAUhzlMTCEe.png',
+          phone: '189****8869',
+          department: '研发部'
         }
       ]
     }

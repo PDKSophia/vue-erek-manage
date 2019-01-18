@@ -142,35 +142,6 @@ Mock.mock('/api/data/getAllData', () => {
   };
 });
 
-// 获取首页所有的tab卡片数据
-Mock.mock('/api/data/getAllTabCardList', () => {
-  let response = {
-    code: 1,
-    msg: '获取所有首页tab的卡片数据',
-    list: [
-      {
-        text: '使用量',
-        value: 131
-      },
-      {
-        text: '下载量',
-        value: 382
-      },
-      {
-        text: '围观量',
-        value: 89
-      },
-      {
-        text: '推广量',
-        value: 225
-      }
-    ]
-  };
-  return {
-    response
-  };
-});
-
 // 获取 个人页面 - 个人中心 - 所有数据
 Mock.mock('/api/erek-user-all/getAllData', () => {
   let response = {
