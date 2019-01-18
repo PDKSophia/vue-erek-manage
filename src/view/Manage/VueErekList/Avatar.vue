@@ -52,7 +52,6 @@ export default {
 <style lang="scss" scoped>
 .vue-erek-avatar-box {
   padding: 24px 24px;
-  // height: 100%;
   width: 100%;
   background-color: #fff;
 

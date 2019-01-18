@@ -1,25 +1,23 @@
 <template>
   <div class="hoc-element">
-    <!-- <echarts-line
-      :xAxis="xAxis"
-      :yAxis="yAxis"
-      :series="lineSeries"
-      :itemList="itemList"
-      :width="lineWidth"
-      :height="lineHeight"
-    ></echarts-line>-->
+    <echarts-radar
+      :series="radarSeries"
+      :indicator="radarIndicator"
+      :width="radarWidth"
+      :height="radarHeight"
+    ></echarts-radar>
   </div>
 </template>
 
 <script>
-// import EchartsRadar from '../EchartsComponents/Radar';
+import EchartsRadar from '../EchartsComponents/Radar';
 export default {
   name: 'HOCEchartsRadar',
   components: {
-    // EchartsRadar
+    EchartsRadar
   },
   props: {
-    lineData: {
+    radarData: {
       type: Object,
       default: function() {
         return {};
@@ -28,82 +26,46 @@ export default {
   },
   data() {
     return {
-      xAxis: {
-        // x轴
-        data: []
-      },
-      yAxis: {
-        // y轴
-        min: -1,
-        max: -1
-      },
-      itemList: [], // 头部badge
-      lineWidth: '100%',
-      lineHeight: '300px',
-      lineSeries: [] // 折线数据
+      radarWidth: '100%',
+      radarHeight: '300px',
+      radarSeries: [], // 雷达图数据
+      radarIndicator: [] // 雷达图配置
     };
   },
   watch: {
-    lineData: {
+    radarData: {
       handler(newVal) {
+        this.resetFields();
         if (newVal) {
-          this.resetFields();
-          const { countRange = [], list = [], timeRange = [] } = newVal;
-          // 设置x轴
-          for (let i = 0; i < timeRange.length; i++) {
-            this.xAxis.data.push(timeRange[i]);
-          }
-          // 设置y轴
-          this.yAxis.min = countRange[0];
-          this.yAxis.max = countRange[1];
-
-          for (let i = 0; i < list.length; i++) {
-            let normalColor = this.$utils.getColorFromArray();
-            let lineStyle = this.$utils.getColorFromArray();
-
-            let badgeItem = {
-              text: list[i].text,
-              badgeColor: lineStyle
+          let obj = {
+            name: `预算分配与实际开销`,
+            type: 'radar',
+            data: [],
+            itemStyle: { normal: { areaStyle: { type: 'default' } } }
+          };
+          Object.keys(newVal).forEach(key => {
+            let dataObj = {
+              value: [],
+              name: newVal[key].name
             };
-            this.itemList.push(badgeItem);
-
-            // 折线样式及数据设置
-            let obj = {
-              data: list[i].data,
-              type: 'line',
-              itemStyle: {
-                normal: {
-                  color: normalColor, // 设置折线点颜色
-                  lineStyle: {
-                    color: normalColor // 设置折线颜色
-                  }
-                }
-              },
-              smooth: true // 折线 圆滑
-            };
-            this.lineSeries.push(obj);
-          }
-        } else {
-          this.lineData = {};
+            for (let j = 0; j < newVal[key].data.length; j++) {
+              dataObj.value.push(newVal[key].data[j].value);
+              this.radarIndicator.push(newVal[key].data[j].name);
+            }
+            obj.data.push(dataObj);
+          });
+          this.radarSeries.push(obj);
+          this.radarIndicator = this.$utils.uniqueArray(this.radarIndicator);
         }
       }
     }
   },
   methods: {
     resetFields() {
-      (this.xAxis = {
-        // x轴
-        data: []
-      }),
-        (this.yAxis = {
-          // y轴
-          min: -1,
-          max: -1
-        }),
-        (this.itemList = []), // 头部badge
-        (this.lineWidth = '100%'),
-        (this.lineHeight = '300px'),
-        (this.lineSeries = []); // 折线数据
+      this.radarWidth = '100%';
+      this.radarHeight = '300px';
+      this.radarSeries = []; // 雷达图数据
+      this.radarIndicator = []; // 雷达图配置
     }
   }
 };

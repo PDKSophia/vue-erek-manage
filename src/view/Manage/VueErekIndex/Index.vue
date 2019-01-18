@@ -12,19 +12,8 @@
       :height="divider.height"
     ></vue-divider>
     <div class="vue-erek-home-down">
-      <!-- <echarts-radar
-        :series="radarSeries"
-        :indicator="radarIndicator"
-        :width="radarWidth"
-        :height="radarHeight"
-      ></echarts-radar>-->
+      <hoc-echarts-radar :radarData="radarData" />
       <hoc-echarts-pie :pieData="pieData"></hoc-echarts-pie>
-      <!-- <echarts-radar
-        :series="radarSeries"
-        :indicator="radarIndicator"
-        :width="radarWidth"
-        :height="radarHeight"
-      ></echarts-radar>-->
       <hoc-echarts-radar :radarData="radarData" />
     </div>
   </div>
@@ -54,18 +43,13 @@ export default {
         bgColor: '#f5f7f9',
         height: '30px'
       },
-      radarData: {}, // 雷达图数据
-      radarWidth: '100%',
-      radarHeight: '300px',
-      radarSeries: [], // 雷达图数据
-      radarIndicator: [] // 雷达图配置
+      radarData: {} // 雷达图数据
     };
   },
   mounted() {
     // 请求 `获取平台近7天的访问量与注册量`
     this.$api.echarts.fetchPlatformView(7).then(res => {
       this.lineData = { ...res };
-      console.log('@@@@', this.lineData);
     });
     // 请求拿到 `卡片数据`
     this.$api.list.fetchTotalCardList().then(res => {
@@ -77,26 +61,7 @@ export default {
     });
     // 请求拿到 `预算开销和实际开销`
     this.$api.echarts.fetchPlatformExpense().then(res => {
-      console.log('@@@@@@@@@@########', res);
-      let obj = {
-        name: `预算分配与实际开销`,
-        type: 'radar',
-        data: [],
-        itemStyle: { normal: { areaStyle: { type: 'default' } } }
-      };
-      Object.keys(res).forEach(key => {
-        let dataObj = {
-          value: [],
-          name: res[key].name
-        };
-        for (let j = 0; j < res[key].data.length; j++) {
-          dataObj.value.push(res[key].data[j].value);
-          this.radarIndicator.push(res[key].data[j].name);
-        }
-        obj.data.push(dataObj);
-      });
-      this.radarSeries.push(obj);
-      this.radarIndicator = this.$utils.uniqueArray(this.radarIndicator);
+      this.radarData = { ...res };
     });
   }
 };
