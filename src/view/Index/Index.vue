@@ -13,8 +13,8 @@
           <li
             v-for="(item, index) in actualData"
             :key="index"
-            @click="handleErekLink(item.status)"
-            >{{ item.text }}</li
+            @click="handleErekLink(item.STATUS)"
+            >{{ item.TEXT }}</li
           >
         </ul>
       </div>
@@ -24,7 +24,7 @@
 
 <script>
 import VueErekMainText from '../../components/PageComponents/Index/MainText.vue';
-
+import { app } from '../../config/app.js';
 export default {
   name: 'ErekLogin',
   components: {
@@ -32,28 +32,14 @@ export default {
   },
   data() {
     return {
-      ErekPath: require('../../assets/logo.png'),
-      ErekTitle: 'Vue-Erek-Manage',
-      ErekSummary: '一套基于 iView UI 的 Vue.js 后台管理系统',
-      actualData: [
-        {
-          text: '文档',
-          status: 'erek-docs'
-        },
-        {
-          text: 'Github',
-          status: 'erek-origincode'
-        },
-        {
-          text: '登陆',
-          status: 'erek-login'
-        }
-      ]
+      ErekPath: '',
+      ErekTitle: '',
+      ErekSummary: '',
+      actualData: []
     };
   },
   methods: {
     handleErekLink(status) {
-      console.log(status);
       switch (status) {
         case 'erek-origincode':
           window.location.href = 'https://github.com/PDKSophia/vue-erek-manage';
@@ -62,13 +48,19 @@ export default {
           window.location.href =
             'https://github.com/PDKSophia/vue-erek-manage/wiki';
           break;
-        case 'erek-login':
+        default:
           this.$router.push({
             path: '/login'
           });
           break;
       }
     }
+  },
+  mounted() {
+    this.ErekPath = app.APP_LOGO;
+    this.ErekTitle = app.APP_NAME;
+    this.ErekSummary = app.APP_SUMMARY;
+    this.actualData = [...app.APP_MENU];
   }
 };
 </script>

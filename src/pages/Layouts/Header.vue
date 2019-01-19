@@ -13,7 +13,7 @@
       >
         <div
           class="layout-logo"
-          :style="{ backgroundColor: config.bgLogoVueErek }"
+          :style="{ backgroundColor: config.BG_LOGO_COLOR }"
         >
           <p
             class="erek-vue-manage"
