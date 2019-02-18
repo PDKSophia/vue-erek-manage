@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "wiki:dev": "vuepress dev wiki",
+    "wiki-docs:dev": "vuepress dev wiki-docs",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
