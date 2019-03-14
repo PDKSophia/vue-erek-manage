@@ -1,11 +1,7 @@
 <template>
   <div class="erek-wrapper-box">
     <header>
-      <vue-erek-main-text
-        :ErekPath="ErekPath"
-        :ErekTitle="ErekTitle"
-        :ErekSummary="ErekSummary"
-      />
+      <vue-erek-main-text :ErekPath="ErekPath" :ErekTitle="ErekTitle" :ErekSummary="ErekSummary"/>
     </header>
     <article>
       <div class="erek-resume-navbar">
@@ -14,8 +10,7 @@
             v-for="(item, index) in actualData"
             :key="index"
             @click="handleErekLink(item.STATUS)"
-            >{{ item.TEXT }}</li
-          >
+          >{{ item.TEXT }}</li>
         </ul>
       </div>
     </article>
@@ -24,7 +19,7 @@
 
 <script>
 import VueErekMainText from '../../components/PageComponents/Index/MainText.vue';
-import { app } from '../../config/app.js';
+import { app } from 'js/app/index-config';
 export default {
   name: 'ErekLogin',
   components: {

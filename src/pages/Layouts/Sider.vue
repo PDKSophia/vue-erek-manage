@@ -24,24 +24,19 @@
           <div v-for="(item, index) in Menu" :key="index">
             <!-- 没有子菜单 -->
             <MenuItem :name="item.name" v-if="!item.isSubmenu" :to="item._to">
-              <Icon :type="item.icon" />
+              <Icon :type="item.icon"/>
               {{ item.text }}
             </MenuItem>
             <!-- 有子菜单 -->
             <Submenu v-if="item.isSubmenu" :name="item.name">
               <template slot="title">
-                <Icon :type="item.icon" />
+                <Icon :type="item.icon"/>
                 {{ item.text }}
               </template>
               <!-- 对这条记录的子菜单栏进行判断 -->
               <div v-for="(sub, key) in item.list" :key="key">
                 <!-- 子菜单有没有子子菜单 -->
-                <MenuItem
-                  :name="sub.name"
-                  v-if="!sub.hasSubmenu"
-                  :to="sub._to"
-                  >{{ sub.text }}</MenuItem
-                >
+                <MenuItem :name="sub.name" v-if="!sub.hasSubmenu" :to="sub._to">{{ sub.text }}</MenuItem>
                 <!-- 子菜单有子子菜单 -->
                 <Submenu :name="sub.name" v-if="sub.hasSubmenu">
                   <template slot="title">{{ sub.text }}</template>
@@ -50,8 +45,7 @@
                     :name="_subs.name"
                     :key="_index"
                     :to="_subs._to"
-                    >{{ _subs.text }}</MenuItem
-                  >
+                  >{{ _subs.text }}</MenuItem>
                 </Submenu>
               </div>
             </Submenu>
@@ -61,29 +55,28 @@
       <Layout class="erek-right-layout">
         <div class="layout-bread-crumb">
           <Breadcrumb>
-            <BreadcrumbItem v-for="(item, index) in breadItem" :key="index">{{
+            <BreadcrumbItem v-for="(item, index) in breadItem" :key="index">
+              {{
               item
-            }}</BreadcrumbItem>
+              }}
+            </BreadcrumbItem>
           </Breadcrumb>
         </div>
-        <Content
-          class="erek-layout-content"
-          :style="{ padding: '0px 24px 24px' }"
-        >
+        <Content class="erek-layout-content" :style="{ padding: '0px 24px 24px' }">
           <keep-alive>
             <router-view v-if="$route.meta.keepAlive"></router-view>
           </keep-alive>
           <router-view v-if="!$route.meta.keepAlive"></router-view>
         </Content>
-        <footer-layout />
+        <footer-layout/>
       </Layout>
     </Layout>
   </div>
 </template>
 
 <script>
-import { theme } from '../../config/app';
-import BreadItem from '../../config/breadItem';
+import { theme } from 'js/app/index-config';
+import BreadItem from 'js/app/bread-config';
 import FooterLayout from './Footer';
 import { mapState, mapActions } from 'vuex';
 
@@ -95,7 +88,7 @@ export default {
   props: {
     Menu: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     }
@@ -150,8 +143,7 @@ export default {
   background: #dbdbdb !important;
   color: #232323 !important;
 }
-.ivu-menu-light.ivu-menu-vertical
-  .ivu-menu-item-active:not(.ivu-menu-submenu):after {
+.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
   background: #dbdbdb !important;
   width: 1px !important;
 }

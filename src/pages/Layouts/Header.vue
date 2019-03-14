@@ -11,15 +11,11 @@
           height: `${config.HEADER_HEADER} !important`
         }"
       >
-        <div
-          class="layout-logo"
-          :style="{ backgroundColor: config.BG_LOGO_COLOR }"
-        >
+        <div class="layout-logo" :style="{ backgroundColor: config.BG_LOGO_COLOR }">
           <p
             class="erek-vue-manage"
             :style="{ color: `${config.colorVueErek} !important` }"
-            >{{ appname }}</p
-          >
+          >{{ appname }}</p>
         </div>
         <div
           class="layout-nav"
@@ -44,7 +40,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import { app, theme } from '../../config/app';
+import { app, theme } from 'js/app/index-config';
 import { setAuthorityToken, setAuthorityRole } from '../../utils/vue-token';
 export default {
   name: 'ErekManageHeader',

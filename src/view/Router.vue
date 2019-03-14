@@ -1,8 +1,8 @@
 <template>
   <div id="erek-manage-container">
     <Layout id="erek-layout">
-      <erek-header />
-      <erek-sider :Menu="Menu" />
+      <erek-header/>
+      <erek-sider :Menu="Menu"/>
     </Layout>
   </div>
 </template>
@@ -10,9 +10,9 @@
 <script>
 import ErekHeader from '../pages/Layouts/Header.vue';
 import ErekSider from '../pages/Layouts/Sider.vue';
-import Menu from '../config/menu';
-import BreadItem from '../config/breadItem';
-import { getAuthorityToken, getAuthorityRole } from '../utils/vue-token';
+import Menu from 'js/app/menu-config';
+import BreadItem from 'js/app/bread-config';
+import { getAuthorityToken, getAuthorityRole } from 'js/utils/vue-token';
 import { mapActions } from 'vuex';
 export default {
   name: 'ErekManageContainer',
@@ -29,7 +29,7 @@ export default {
   watch: {
     $route: {
       // 路由监听
-      handler: function(val) {
+      handler: function (val) {
         this.setHistroyUrl(val.path);
         for (let key in BreadItem) {
           if (val.path == key) {
