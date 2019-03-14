@@ -1,14 +1,11 @@
 <template>
   <div class="vue-erek-radar-container">
-    <div
-      ref="erek_radar"
-      :style="{ width: width, height: height, marginTop: '50px' }"
-    ></div>
+    <div ref="erek_radar" :style="{ width: width, height: height, marginTop: '50px' }"></div>
   </div>
 </template>
 
 <script>
-import configOptions from '../../config/echarts/radar.config';
+import configOptions from 'js/echarts/radar.config';
 export default {
   name: 'VueErekRadar',
   props: {
@@ -22,13 +19,13 @@ export default {
     },
     series: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     },
     indicator: {
       type: Array,
-      default: function() {
+      default: function () {
         return {};
       }
     }

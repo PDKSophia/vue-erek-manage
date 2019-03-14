@@ -1,14 +1,11 @@
 <template>
   <div class="vue-erek-pie-container">
-    <div
-      ref="erek_pie"
-      :style="{ width: width, height: height, marginTop: '50px' }"
-    ></div>
+    <div ref="erek_pie" :style="{ width: width, height: height, marginTop: '50px' }"></div>
   </div>
 </template>
 
 <script>
-import configOptions from '../../config/echarts/pie.config';
+import configOptions from 'js/echarts/pie.config';
 export default {
   name: 'VueErekPie',
   props: {
@@ -22,7 +19,7 @@ export default {
     },
     series: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     }

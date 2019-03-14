@@ -17,20 +17,19 @@
           color: config.VALUE_FONT_COLOR,
           fontSize: config.VALUE_FONT_SIZE
         }"
-        >{{ tab.value }}</h1
-      >
+      >{{ tab.value }}</h1>
     </div>
   </div>
 </template>
 
 <script>
-import { standCard } from '../../config/global';
+import { standCard } from 'js/app/global-config';
 export default {
   name: 'StandCardComponents',
   props: {
     taskList: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     }
