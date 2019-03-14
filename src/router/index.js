@@ -1,41 +1,41 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import ErekManageRouter from '@/view/Router';
+import Vue from 'vue'
+import Router from 'vue-router'
+import ErekManageRouter from '@/view/Router'
 
 // 首页
-import ErekManageIndex from '@/view/Index/Index';
+import ErekManageIndex from '@/view/Index/Index'
 // 登陆页
-import ErekManageLogin from '@/view/Login/Login';
+import ErekManageLogin from '@/view/Login/Login'
 
 // 后台管理
-import VueErekManageIndex from '@/view/Manage/VueErekIndex/Index';
+import VueErekManageIndex from '@/view/Manage/VueErekIndex/Index'
 
 // 列表页
-import VueErekTableList from '@/view/Manage/VueErekList/Table';
-import VueErekStandardList from '@/view/Manage/VueErekList/Standard';
-import VueErekCardList from '@/view/Manage/VueErekList/Card';
-import VueErekAvatarList from '@/view/Manage/VueErekList/Avatar';
+import VueErekTableList from '@/view/Manage/VueErekList/Table'
+import VueErekStandardList from '@/view/Manage/VueErekList/Standard'
+import VueErekCardList from '@/view/Manage/VueErekList/Card'
+import VueErekAvatarList from '@/view/Manage/VueErekList/Avatar'
 
 // 工具栏
-import VueErekToolMessage from '@/view/Manage/VueErekTool/Message';
-import VueErekToolAdvertise from '@/view/Manage/VueErekTool/Advertise';
-import VueErekToolCommonality from '@/view/Manage/VueErekTool/Commonality';
-import VueErekToolWords from '@/view/Manage/VueErekTool/Words';
+import VueErekToolMessage from '@/view/Manage/VueErekTool/Message'
+import VueErekToolAdvertise from '@/view/Manage/VueErekTool/Advertise'
+import VueErekToolCommonality from '@/view/Manage/VueErekTool/Commonality'
+import VueErekToolWords from '@/view/Manage/VueErekTool/Words'
 
 // 详情页
-import VueErekBaseProfile from '@/view/Manage/VueErekProfile/BasicProfile';
-import VueEreAdvanceProfile from '@/view/Manage/VueErekProfile/AdvanceProfile';
+import VueErekBaseProfile from '@/view/Manage/VueErekProfile/BasicProfile'
+import VueEreAdvanceProfile from '@/view/Manage/VueErekProfile/AdvanceProfile'
 
 // 错误页
-import VueErekException403 from '@/view/Manage/VueErekException/403';
-import VueErekException404 from '@/view/Manage/VueErekException/404';
-import VueErekException500 from '@/view/Manage/VueErekException/500';
+import VueErekException403 from '@/view/Manage/VueErekException/403'
+import VueErekException404 from '@/view/Manage/VueErekException/404'
+import VueErekException500 from '@/view/Manage/VueErekException/500'
 
 // 个人页
-import VueErekUserInformation from '@/view/Manage/VueErekUser/Information';
-import VueErekUserSetting from '@/view/Manage/VueErekUser/Setting';
+import VueErekUserInformation from '@/view/Manage/VueErekUser/Information'
+import VueErekUserSetting from '@/view/Manage/VueErekUser/Setting'
 
-Vue.use(Router);
+Vue.use(Router)
 
 const router = new Router({
   routes: [
@@ -200,5 +200,5 @@ const router = new Router({
       }
     }
   ]
-});
-export default router;
+})
+export default router

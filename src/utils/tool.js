@@ -1,5 +1,3 @@
-import { Message } from 'iview';
-
 export default {
   /**
    * desc: 加载框
