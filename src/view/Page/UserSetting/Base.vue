@@ -2,17 +2,12 @@
   <div class="vue-base-tabs-container" v-if="!initDataLoading">
     <Row :gutter="16">
       <i-col span="13">
-        <Form
-          ref="formValidate"
-          :model="formValidate"
-          :rules="ruleValidate"
-          :label-width="80"
-        >
+        <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80">
           <FormItem label="昵称" prop="username">
-            <Input v-model="formValidate.username" placeholder="修改的名字" />
+            <Input v-model="formValidate.username" placeholder="修改的名字"/>
           </FormItem>
           <FormItem label="邮箱" prop="email">
-            <Input v-model="formValidate.email" placeholder="邮箱..." />
+            <Input v-model="formValidate.email" placeholder="邮箱..."/>
           </FormItem>
           <FormItem label="国家" prop="city">
             <Select v-model="formValidate.city" placeholder="选择国家">
@@ -34,7 +29,7 @@
             </CheckboxGroup>
           </FormItem>
           <FormItem label="街道地址" prop="address">
-            <Input v-model="formValidate.address" placeholder="地址..." />
+            <Input v-model="formValidate.address" placeholder="地址..."/>
           </FormItem>
           <FormItem label="个人简介" prop="desc">
             <Input
@@ -45,20 +40,14 @@
             />
           </FormItem>
           <FormItem>
-            <Button type="primary" @click="handleSubmit('formValidate')"
-              >Submit</Button
-            >
-            <Button
-              @click="handleReset('formValidate')"
-              style="margin-left: 8px"
-              >Reset</Button
-            >
+            <Button type="primary" @click="handleSubmit('formValidate')">Submit</Button>
+            <Button @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
           </FormItem>
         </Form>
       </i-col>
       <i-col span="8">
         <div class="vue-user-avatar-large">
-          <img :src="formValidate.avatar" alt class="avatar" />
+          <img :src="formValidate.avatar" alt class="avatar">
           <a class="erek-button-avatar-upload" href="javascript:;">
             + 个人头像
             <input
@@ -67,7 +56,7 @@
               name="avatar"
               id="avatar"
               @change="handleChangeAvatar"
-            />
+            >
           </a>
         </div>
       </i-col>
@@ -142,13 +131,13 @@ export default {
         .substring(imgName.lastIndexOf('.') + 1)
         .toLowerCase();
       if (imgType !== 'jpg' && imgType !== 'jpeg' && imgType !== 'png') {
-        this.$tool.toastTips('warning', '照片只支持jpg、jpeg、png格式', 1.5);
+        this.$utils.toastTips('warning', '照片只支持jpg、jpeg、png格式', 1.5);
         imgName = '';
         headimg = null;
         return false;
       }
       if (imgSize > 5242000) {
-        this.$tool.toastTips('warning', '大小不能超过5M', 1.5);
+        this.$utils.toastTips('warning', '大小不能超过5M', 1.5);
         imgName = '';
         headimg = null;
         return false;
@@ -159,10 +148,10 @@ export default {
     handleSubmit(name) {
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$tool.toastTips('success', '修改成功!', 1.5);
+          this.$utils.toastTips('success', '修改成功!', 1.5);
           this.setErekUser(this.formValidate);
         } else {
-          this.$tool.toastTips('error', 'Fail!', 1.5);
+          this.$utils.toastTips('error', 'Fail!', 1.5);
         }
       });
     },
@@ -172,7 +161,7 @@ export default {
   },
   mounted() {
     if (this.initDataLoading) {
-      this.$tool.loadingTips('loading', 0, 2000);
+      this.$utils.loadingTips('loading', 0, 2000);
       this.formValidate = { ...this.erekUser };
       setTimeout(() => {
         this.initDataLoading = false;

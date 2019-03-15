@@ -2,40 +2,25 @@
   <div class="erek-login-container">
     <div class="login-form-container">
       <div class="login-in-paper">
-        <div class="login-avatar-paper"> <Icon type="md-lock" /> </div>
+        <div class="login-avatar-paper">
+          <Icon type="md-lock"/>
+        </div>
         <h1 class="login-title">Vue-Erek-Manage</h1>
-        <Form
-          class="loginform-container"
-          ref="loginform"
-          :model="loginform"
-          :rules="ruleValidate"
-        >
+        <Form class="loginform-container" ref="loginform" :model="loginform" :rules="ruleValidate">
           <FormItem class="form-item-container" prop="username">
-            <Input
-              type="text"
-              v-model="loginform.username"
-              placeholder="用户名"
-            />
+            <Input type="text" v-model="loginform.username" placeholder="用户名"/>
           </FormItem>
           <FormItem class="form-item-container" prop="password">
-            <Input
-              type="password"
-              v-model="loginform.password"
-              placeholder="密码"
-            />
+            <Input type="password" v-model="loginform.password" placeholder="密码"/>
           </FormItem>
           <FormItem class="form-item-container" prop="email">
-            <Input type="email" v-model="loginform.email" placeholder="邮箱" />
+            <Input type="email" v-model="loginform.email" placeholder="邮箱"/>
           </FormItem>
           <FormItem>
             <Row>
               <i-col span="15">
                 <FormItem prop="code">
-                  <Input
-                    type="text"
-                    v-model="loginform.code"
-                    placeholder="验证码"
-                  />
+                  <Input type="text" v-model="loginform.code" placeholder="验证码"/>
                 </FormItem>
               </i-col>
               <i-col span="8" offset="1">
@@ -45,16 +30,14 @@
                   size="small"
                   v-show="sendCode"
                   @click="handleSendCode"
-                  >获取验证码</Button
-                >
+                >获取验证码</Button>
                 <Button
                   type="default"
                   size="small"
                   v-show="!sendCode"
                   class="login-button btn-disabled"
                   disabled
-                  >{{ countTime }}s 后重试</Button
-                >
+                >{{ countTime }}s 后重试</Button>
               </i-col>
             </Row>
           </FormItem>
@@ -64,8 +47,7 @@
             icon="ios-log-in"
             class="login-button"
             @click="onHandleClickSubmit('loginform')"
-            >登陆</Button
-          >
+          >登陆</Button>
         </Form>
       </div>
     </div>
@@ -78,7 +60,7 @@ import {
   getEmailCode,
   setAuthorityToken,
   setAuthorityRole
-} from '../../utils/vue-token';
+} from 'js/utils/vue-token';
 
 export default {
   name: 'ErekManageLogin',
@@ -135,7 +117,7 @@ export default {
           setEmailCode(res.code);
         });
       } else {
-        this.$tool.toastTips('warning', '请输入正确邮箱', 1.5);
+        this.$utils.toastTips('warning', '请输入正确邮箱', 1.5);
       }
     },
     // 表单校验登陆
@@ -143,7 +125,7 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           if (getEmailCode() != this.loginform.code) {
-            this.$tool.toastTips('error', '验证码错误', 1.5);
+            this.$utils.toastTips('error', '验证码错误', 1.5);
           } else {
             this.$api.user
               .fetchOauthAdminLogin(JSON.stringify(this.loginform))
@@ -189,8 +171,7 @@ export default {
       align-items: center;
       flex-direction: column;
       background-color: white;
-      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-        0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+      box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
         0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 
       .login-avatar-paper {

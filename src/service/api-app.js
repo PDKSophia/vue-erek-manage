@@ -1,13 +1,7 @@
-import request from './request';
-import { Message } from 'iview';
-import { getAuthorityToken } from '../utils/vue-token';
-
-let baseUrl = '';
-if (process.env.NODE_ENV !== 'production') {
-  baseUrl = '/api';
-} else {
-  // baseUrl = 'http://yun.pengdaokuan.cn/'
-}
+import request from './request'
+import { Message } from 'iview'
+import { getAuthorityToken } from 'js/utils/vue-token'
+import { baseUrl } from 'js/utils/utils'
 
 export default {
   /**
@@ -19,16 +13,16 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res;
+      let { response } = res
       if (response.code === 1) {
-        return response.list;
+        return response.list
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
   /**
    * @获取标准列表数据信息
@@ -39,16 +33,16 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res;
+      let { response } = res
       if (response.code === 1) {
-        return response.list;
+        return response.list
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
   /**
    * @获取 `平台日访问量` 和  `日注册人数`
@@ -59,16 +53,16 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res;
+      let { response } = res
       if (response.code === 1) {
-        return response.list;
+        return response.list
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
   /**
    * @获取所有首页的卡片数据
@@ -79,16 +73,16 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res;
+      let { response } = res
       if (response.code === 1) {
-        return response.list;
+        return response.list
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
 
   /**
@@ -100,16 +94,16 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res;
+      let { response } = res
       if (response.code === 1) {
-        return response.list;
+        return response.list
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
 
   /**
@@ -121,16 +115,16 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res;
+      let { response } = res
       if (response.code === 1) {
-        return response.list;
+        return response.list
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
 
   /**
@@ -142,15 +136,15 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res;
+      let { response } = res
       if (response.code === 1) {
-        return response.list;
+        return response.list
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   }
-};
+}

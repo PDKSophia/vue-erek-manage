@@ -2,19 +2,23 @@
   <div class="vue-erek-avatar-box">
     <div class="erek-page-1-container">
       <Row :gutter="16">
-        <i-col span="22"> <p class="erek-page-2-title">Erek Team</p> </i-col>
-        <i-col span="2"> <float-button /> </i-col>
+        <i-col span="22">
+          <p class="erek-page-2-title">Erek Team</p>
+        </i-col>
+        <i-col span="2">
+          <float-button/>
+        </i-col>
       </Row>
     </div>
     <div class="erek-page-3-container">
-      <avatar-item-list :data="list.data" :pagination="list.pagination" />
+      <avatar-item-list :data="list.data" :pagination="list.pagination"/>
     </div>
   </div>
 </template>
 
 <script>
-import FloatButton from '../../../components/FloatButtonComponents/Index';
-import AvatarItemList from '../../../pages/List/Avatar.vue';
+import FloatButton from 'components/CommonComponents/FloatButton/Index';
+import AvatarItemList from 'components/FrameComponents/List/Avatar.vue';
 export default {
   name: 'AvatarListCompoment',
   components: {

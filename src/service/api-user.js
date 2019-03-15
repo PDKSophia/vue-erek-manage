@@ -1,13 +1,7 @@
-import request from './request';
-import { Message } from 'iview';
-import { getAuthorityToken } from '../utils/vue-token';
-
-let baseUrl = '';
-if (process.env.NODE_ENV !== 'production') {
-  baseUrl = '/api';
-} else {
-  // baseUrl = 'http://yun.pengdaokuan.cn/'
-}
+import request from './request'
+import { Message } from 'iview'
+import { getAuthorityToken } from 'js/utils/vue-token'
+import { baseUrl } from 'js/utils/utils'
 
 export default {
   /**
@@ -22,20 +16,20 @@ export default {
         email: email
       }
     }).then(res => {
-      let { response } = res;
+      let { response } = res
       if (response.code === 1) {
         Message.success({
           content: response.msg,
           duration: 1.5
-        });
-        return response.data;
+        })
+        return response.data
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
   /**
    * desc: 管理员登陆
@@ -49,20 +43,20 @@ export default {
       method: 'POST',
       data: jsondata
     }).then(res => {
-      let { response } = res;
+      let { response } = res
       if (response.code === 1) {
         Message.success({
           content: response.msg,
           duration: 1.5
-        });
-        return response.data;
+        })
+        return response.data
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
   /**
    * desc: 获取用户信息
@@ -73,16 +67,16 @@ export default {
       method: 'GET',
       token: getAuthorityToken()
     }).then(res => {
-      let { response } = res;
+      let { response } = res
       if (response.code === 1) {
-        return response.data;
+        return response.data
       } else {
         Message.error({
           content: response.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
   /**
    * desc: 获取用户信息
@@ -94,13 +88,13 @@ export default {
       token: getAuthorityToken()
     }).then(res => {
       if (res.code === 1) {
-        return res.list;
+        return res.list
       } else {
         Message.error({
           content: res.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   }
-};
+}

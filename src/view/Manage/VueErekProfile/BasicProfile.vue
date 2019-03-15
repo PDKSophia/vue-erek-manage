@@ -2,7 +2,9 @@
   <div class="vue-erek-profile-container">
     <header>
       <div class="vue-erek-meta-header">
-        <div class="vue-erek-meta-flex-row"> <h2>退款申请</h2> </div>
+        <div class="vue-erek-meta-flex-row">
+          <h2>退款申请</h2>
+        </div>
         <div class="vue-erek-meta-flex-row">
           <div class="vue-erek-meta-item">
             <p>取货单号 {{ commodity.detail.id }}</p>
@@ -17,7 +19,7 @@
         </div>
       </div>
     </header>
-    <divider-line :height="divider.height" :bgColor="divider.bgColor" />
+    <divider-line :height="divider.height" :bgColor="divider.bgColor"/>
     <div class="erek-progress-step-container">
       <h3 class="erek-progress-title">用户信息</h3>
       <div class="erek-progress-step">
@@ -36,7 +38,7 @@
         </div>
       </div>
     </div>
-    <divider-line :height="divider.height" :bgColor="divider.bgColor" />
+    <divider-line :height="divider.height" :bgColor="divider.bgColor"/>
     <div class="erek-tabs-container">
       <Tabs value="tabOne">
         <TabPane label="退货商品" name="tabOne">
@@ -54,7 +56,7 @@
 </template>
 
 <script>
-import DividerLine from '../../../components/DividerComponents/Divider';
+import DividerLine from 'components/CommonComponents/Divider/Index.vue';
 import ErekTable from '../../../components/ProfileTableComponents/BaseTable.vue';
 export default {
   name: 'VueErekBaseProfile',

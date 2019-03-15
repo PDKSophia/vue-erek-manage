@@ -1,30 +1,27 @@
 <template>
   <div>
     <div class="vue-erek-home-up">
-      <hoc-echarts-line :lineData="lineData" />
+      <hoc-echarts-line :lineData="lineData"/>
       <div class="vue-erek-right-box" :style="{ height: 'height' }">
         <p class="vue-erek-right-box-title">数据卡片</p>
-        <hoc-echarts-card :data="tabData" />
+        <hoc-echarts-card :data="tabData"/>
       </div>
     </div>
-    <vue-divider
-      :bgColor="divider.bgColor"
-      :height="divider.height"
-    ></vue-divider>
+    <vue-divider :bgColor="divider.bgColor" :height="divider.height"></vue-divider>
     <div class="vue-erek-home-down">
-      <hoc-echarts-radar :radarData="radarData" />
+      <hoc-echarts-radar :radarData="radarData"/>
       <hoc-echarts-pie :pieData="pieData"></hoc-echarts-pie>
-      <hoc-echarts-radar :radarData="radarData" />
+      <hoc-echarts-radar :radarData="radarData"/>
     </div>
   </div>
 </template>
 
 <script>
-import HocEchartsLine from '../../../components/HigherOrderComponent/HOC-EchartLine.vue';
-import HocEchartsPie from '../../../components/HigherOrderComponent/HOC-EchartPie.vue';
-import HocEchartsRadar from '../../../components/HigherOrderComponent/HOC-EchartRadar.vue';
-import HocEchartsCard from '../../../components/HigherOrderComponent/HOC-EchartCard.vue';
-import VueDivider from '../../../components/DividerComponents/Divider.vue';
+import HocEchartsLine from 'components/HigherOrderComponent/HOC-EchartLine.vue';
+import HocEchartsPie from 'components/HigherOrderComponent/HOC-EchartPie.vue';
+import HocEchartsRadar from 'components/HigherOrderComponent/HOC-EchartRadar.vue';
+import HocEchartsCard from 'components/HigherOrderComponent/HOC-EchartCard.vue';
+import VueDivider from 'components/CommonComponents/Divider/Index.vue';
 export default {
   name: 'ErekManageHome',
   components: {

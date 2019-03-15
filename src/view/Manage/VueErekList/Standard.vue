@@ -1,7 +1,7 @@
 <template>
   <div class="erek-standard-container">
-    <vue-stand-card :taskList="taskList" />
-    <vue-divider :bgColor="divider.bgColor" :height="divider.height" />
+    <vue-stand-card :taskList="taskList"/>
+    <vue-divider :bgColor="divider.bgColor" :height="divider.height"/>
     <div class="erek-standard-list">
       <h3>所有待办任务</h3>
       <Button type="dashed" long icon="ios-add">新增</Button>
@@ -11,16 +11,16 @@
         @onHandleClickStandItem="handleCallback"
         v-if="standConfig.data.length !== 0"
       ></erek-stand-list>
-      <no-content v-else />
+      <no-content v-else/>
     </div>
   </div>
 </template>
 
 <script>
-import VueStandCard from '../../../components/StandCardComponents/Index.vue';
-import VueDivider from '../../../components/DividerComponents/Divider.vue';
-import ErekStandList from '../../../pages/List/Standard.vue';
-import NoContent from '../../../components/NoContentComponents/Index.vue';
+import VueStandCard from 'components/CommonComponents/StandCard/Index.vue';
+import VueDivider from 'components/CommonComponents/Divider/Index.vue';
+import ErekStandList from 'components/FrameComponents/List/Standard.vue';
+import NoContent from 'components/CommonComponents/NoContent/Index.vue';
 import { mapState, mapActions } from 'vuex';
 
 export default {
@@ -65,7 +65,7 @@ export default {
       'retrieveStandardList'
     ]),
     handleCallback(value, type) {
-      this.$tool.toastTips(
+      this.$utils.toastTips(
         'info',
         `你当前点击类型 : ${type}, 点击的item id为 : ${value.id}`,
         1

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import VueErekMainText from '../../components/PageComponents/Index/MainText.vue';
+import VueErekMainText from 'components/FrameComponents/Index/MainText.vue';
 import { app } from 'js/app/index-config';
 export default {
   name: 'ErekLogin',

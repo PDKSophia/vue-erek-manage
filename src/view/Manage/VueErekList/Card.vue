@@ -1,16 +1,13 @@
 <template>
   <div class="erek-card-container">
     <div class="erek-card-list">
-      <erek-card-list
-        :data="cardConfig.data"
-        :pagination="cardConfig.pagination"
-      />
+      <erek-card-list :data="cardConfig.data" :pagination="cardConfig.pagination"/>
     </div>
   </div>
 </template>
 
 <script>
-import ErekCardList from '../../../pages/List/Card.vue';
+import ErekCardList from 'components/FrameComponents/List/Card.vue';
 export default {
   name: 'CardListCompoment',
   components: {

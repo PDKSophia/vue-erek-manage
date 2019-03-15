@@ -1,13 +1,9 @@
-import request from './request';
-import { Message } from 'iview';
-import { getAuthorityToken } from '../utils/vue-token';
+import request from './request'
+import { Message } from 'iview'
+import { getAuthorityToken } from 'js/utils/vue-token'
 
-let baseUrl = '';
-if (process.env.NODE_ENV !== 'production') {
-  baseUrl = '/api';
-} else {
-  // baseUrl = 'http://yun.pengdaokuan.cn/'
-}
+import { baseUrl } from 'js/utils/utils'
+
 export default {
   /**
    * desc: 获取表格列表数据
@@ -19,14 +15,14 @@ export default {
       token: getAuthorityToken()
     }).then(res => {
       if (res.code === 1) {
-        return res.data;
+        return res.data
       } else {
         Message.error({
           content: res.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
 
   /**
@@ -39,14 +35,14 @@ export default {
       token: getAuthorityToken()
     }).then(res => {
       if (res.code === 1) {
-        return res.list;
+        return res.list
       } else {
         Message.error({
           content: res.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
 
   /**
@@ -59,14 +55,14 @@ export default {
       token: getAuthorityToken()
     }).then(res => {
       if (res.code === 1) {
-        return res.data;
+        return res.data
       } else {
         Message.error({
           content: res.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
 
   /**
@@ -79,14 +75,14 @@ export default {
       token: getAuthorityToken()
     }).then(res => {
       if (res.code === 1) {
-        return res.data;
+        return res.data
       } else {
         Message.error({
           content: res.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
 
   /**
@@ -100,14 +96,14 @@ export default {
       token: getAuthorityToken()
     }).then(res => {
       if (res.code === 1) {
-        return res.data;
+        return res.data
       } else {
         Message.error({
           content: res.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   },
 
   /**
@@ -120,13 +116,13 @@ export default {
       token: getAuthorityToken()
     }).then(res => {
       if (res.code === 1) {
-        return res.data;
+        return res.data
       } else {
         Message.error({
           content: res.msg,
           duration: 1.5
-        });
+        })
       }
-    });
+    })
   }
-};
+}

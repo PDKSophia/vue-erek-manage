@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import ErekHeader from '../pages/Layouts/Header.vue';
-import ErekSider from '../pages/Layouts/Sider.vue';
+import ErekHeader from 'components/FrameComponents/Layouts/Header.vue';
+import ErekSider from 'components/FrameComponents/Layouts/Sider.vue';
 import Menu from 'js/app/menu-config';
 import BreadItem from 'js/app/bread-config';
 import { getAuthorityToken, getAuthorityRole } from 'js/utils/vue-token';
@@ -45,14 +45,14 @@ export default {
   },
   mounted() {
     if (getAuthorityToken() == undefined || getAuthorityToken() == '') {
-      this.$tool.toastTips('error', 'token 已过期，请重新登陆', 1.5);
+      this.$utils.toastTips('error', 'token 已过期，请重新登陆', 1.5);
       setTimeout(() => {
         this.$router.push({
           path: '/login'
         });
       }, 1000);
     } else if (getAuthorityRole() !== 'admin') {
-      this.$tool.toastTips('error', '对不起，您无权访问', 1.5);
+      this.$utils.toastTips('error', '对不起，您无权访问', 1.5);
       setTimeout(() => {
         this.$router.push({
           path: '/login'

@@ -13,9 +13,7 @@
                 <Button @click="handleActionTwo">操作二</Button>
               </i-col>
               <i-col span="8">
-                <Button type="primary" @click="handleActionThree"
-                  >主操作</Button
-                >
+                <Button type="primary" @click="handleActionThree">主操作</Button>
               </i-col>
             </Row>
           </div>
@@ -24,14 +22,14 @@
           <div class="vue-erek-meta-content">
             <Row :gutter="30">
               <i-col span="12">
-                <p>仓库编号 : VErek-2018-1031</p> <p>创建人 : 彭道宽</p>
+                <p>仓库编号 : VErek-2018-1031</p>
+                <p>创建人 : 彭道宽</p>
                 <p>创建时间 : 2018-10-31 19:20</p>
               </i-col>
               <i-col span="12">
-                <p>所属组织 : Github</p> <p>所属分类 : Erek-Net</p>
-                <p class="meta-desc"
-                  >备注 : Erek-Net下的一款开源后台管理快速开发框架</p
-                >
+                <p>所属组织 : Github</p>
+                <p>所属分类 : Erek-Net</p>
+                <p class="meta-desc">备注 : Erek-Net下的一款开源后台管理快速开发框架</p>
               </i-col>
             </Row>
           </div>
@@ -50,35 +48,19 @@
         </div>
       </div>
     </header>
-    <divider-line :height="divider.height" :bgColor="divider.bgColor" />
+    <divider-line :height="divider.height" :bgColor="divider.bgColor"/>
     <div class="erek-progress-step-container">
       <h3 class="erek-progress-title">流程进度</h3>
       <div class="erek-progress-step">
         <Steps :current="2">
-          <Step
-            title="已上传"
-            icon="ios-cloud-upload-outline"
-            content="这里是该步骤的描述信息"
-          ></Step>
-          <Step
-            title="待审核"
-            icon="ios-funnel-outline"
-            content="这里是该步骤的描述信息"
-          ></Step>
-          <Step
-            title="审核中"
-            icon="ios-disc-outline"
-            content="这里是该步骤的描述信息"
-          ></Step>
-          <Step
-            title="完成"
-            icon="ios-checkmark-circle-outline"
-            content="这里是该步骤的描述信息"
-          ></Step>
+          <Step title="已上传" icon="ios-cloud-upload-outline" content="这里是该步骤的描述信息"></Step>
+          <Step title="待审核" icon="ios-funnel-outline" content="这里是该步骤的描述信息"></Step>
+          <Step title="审核中" icon="ios-disc-outline" content="这里是该步骤的描述信息"></Step>
+          <Step title="完成" icon="ios-checkmark-circle-outline" content="这里是该步骤的描述信息"></Step>
         </Steps>
       </div>
     </div>
-    <divider-line :height="divider.height" :bgColor="divider.bgColor" />
+    <divider-line :height="divider.height" :bgColor="divider.bgColor"/>
     <div class="erek-standard-container">
       <h3 class="erek-standard-title">标准替代</h3>
       <div class="erek-standard-step">
@@ -110,7 +92,7 @@
         </Row>
       </div>
     </div>
-    <divider-line :height="divider.height" :bgColor="divider.bgColor" />
+    <divider-line :height="divider.height" :bgColor="divider.bgColor"/>
     <div class="erek-tabs-container">
       <Tabs value="tabOne">
         <TabPane label="操作日志一" name="tabOne">
@@ -129,7 +111,7 @@
 </template>
 
 <script>
-import DividerLine from '../../../components/DividerComponents/Divider';
+import DividerLine from 'components/CommonComponents/Divider/Index.vue';
 import ErekTable from '../../../components/ProfileTableComponents/AdvanceTable.vue';
 export default {
   name: 'VueErekAdvanceProfile',
@@ -159,13 +141,13 @@ export default {
   },
   methods: {
     handleActionOne() {
-      this.$tool.toastTips('warning', `点击操作1`, 1.5);
+      this.$utils.toastTips('warning', `点击操作1`, 1.5);
     },
     handleActionTwo() {
-      this.$tool.toastTips('info', `点击操作2`, 1.5);
+      this.$utils.toastTips('info', `点击操作2`, 1.5);
     },
     handleActionThree() {
-      this.$tool.toastTips('success', '主操作成功', 1.5);
+      this.$utils.toastTips('success', '主操作成功', 1.5);
     }
   },
   mounted() {

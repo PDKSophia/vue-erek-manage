@@ -3,21 +3,14 @@
     <div class="vue-user-item">
       <div class="vue-user-item-meta">
         <div class="vue-user-item-meta-avatar">
-          <img
-            :src="erekUser.avatar"
-            class="vue-user-item-meta-avatar-image"
-            alt
-          />
+          <img :src="erekUser.avatar" class="vue-user-item-meta-avatar-image" alt>
         </div>
         <div class="vue-user-item-meta-content">
           <h4 class="vue-user-item-meta-title">{{ erekUser.username }}</h4>
           <div class="vue-user-item-meta-summary">
             <span v-for="(tag, index) in erekUser.tag" :key="index">
               {{ tag }}
-              <Divider
-                v-if="index !== erekUser.tag.length - 1"
-                type="vertical"
-              />
+              <Divider v-if="index !== erekUser.tag.length - 1" type="vertical"/>
             </span>
           </div>
         </div>
@@ -32,15 +25,15 @@
             class="vue-erek-link"
           >
             {{ item.text }}
-            <Divider v-if="key !== erekUser.link.length - 1" type="vertical" />
+            <Divider v-if="key !== erekUser.link.length - 1" type="vertical"/>
           </a>
         </ul>
       </div>
     </div>
-    <vue-divider :bg-color="divider.bgColor" :height="divider.height" />
+    <vue-divider :bg-color="divider.bgColor" :height="divider.height"/>
     <div class="vue-erek-article">
       <div class="vue-erek-badge-left">
-        <vue-user-badge :config="badgeConfig" />
+        <vue-user-badge :config="badgeConfig"/>
       </div>
       <div class="vue-erek-content-right">
         <echarts-line
@@ -53,7 +46,7 @@
         />
       </div>
     </div>
-    <vue-divider :bg-color="divider.bgColor" :height="divider.height" />
+    <vue-divider :bg-color="divider.bgColor" :height="divider.height"/>
     <div class="vue-erek-article">
       <div class="vue-erek-badge-left divider-right">
         <div class="vue-erek-pyq-title">动态</div>
@@ -65,7 +58,7 @@
                   class="images-avatar"
                   src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
                   alt
-                />
+                >
               </div>
               <div class="pyq-6-avatar-right">
                 <p class="text-sty-0">
@@ -84,7 +77,7 @@
                   class="images-avatar"
                   src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
                   alt
-                />
+                >
               </div>
               <div class="pyq-6-avatar-right">
                 <p class="text-sty-0">
@@ -107,7 +100,7 @@
                 <img
                   class="team-image"
                   src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
-                />
+                >
                 <h3>Vue.js</h3>
               </div>
             </Card>
@@ -118,7 +111,7 @@
                 <img
                   class="team-image"
                   src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
-                />
+                >
                 <h3>React.js</h3>
               </div>
             </Card>
@@ -129,7 +122,7 @@
                 <img
                   class="team-image"
                   src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
-                />
+                >
                 <h3>Vue.js</h3>
               </div>
             </Card>
@@ -140,7 +133,7 @@
                 <img
                   class="team-image"
                   src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
-                />
+                >
                 <h3>Vue.js</h3>
               </div>
             </Card>
@@ -152,8 +145,8 @@
 </template>
 
 <script>
-import VueDivider from '../../../components/DividerComponents/Divider.vue';
-import VueUserBadge from '../../../components/BadgeComponents/Index.vue';
+import VueDivider from 'components/CommonComponents/Divider/Index.vue';
+import VueUserBadge from 'components/CommonComponents/Badge/Index.vue';
 import EchartsLine from '../../../components/EchartsComponents/Line.vue';
 import { mapState } from 'vuex';
 
