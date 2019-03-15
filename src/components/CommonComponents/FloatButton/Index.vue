@@ -1,6 +1,6 @@
 <template>
   <div class="button-container">
-    <Icon class="button-icon" :type="btnConfig.iconType" />
+    <Icon class="button-icon" :type="btnConfig.iconType"/>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   props: {
     btnConfig: {
       type: Object,
-      default: function() {
+      default: function () {
         return {
           iconType: 'ios-add'
         };

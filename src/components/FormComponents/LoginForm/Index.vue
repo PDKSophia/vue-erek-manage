@@ -7,84 +7,46 @@
       :mask-closable="maskClosable"
       title="管理员登陆"
     >
-      <Form
-        ref="loginform"
-        :model="loginform"
-        :rules="ruleValidate"
-        :label-width="80"
-      >
+      <Form ref="loginform" :model="loginform" :rules="ruleValidate" :label-width="80">
         <FormItem label="用户名" prop="username">
-          <Input
-            type="text"
-            v-model="loginform.username"
-            placeholder="Enter your username"
-          />
+          <Input type="text" v-model="loginform.username" placeholder="Enter your username"/>
         </FormItem>
         <FormItem label="密码" prop="password">
-          <Input
-            type="password"
-            v-model="loginform.password"
-            placeholder="Enter your password"
-          />
+          <Input type="password" v-model="loginform.password" placeholder="Enter your password"/>
         </FormItem>
         <FormItem label="邮箱" prop="email">
-          <Input
-            type="email"
-            v-model="loginform.email"
-            placeholder="Enter your email"
-          />
+          <Input type="email" v-model="loginform.email" placeholder="Enter your email"/>
         </FormItem>
         <FormItem label="验证码" prop="email">
           <Row>
             <i-col span="15">
               <FormItem prop="code">
-                <Input
-                  type="text"
-                  v-model="loginform.code"
-                  placeholder="Enter your code"
-                />
+                <Input type="text" v-model="loginform.code" placeholder="Enter your code"/>
               </FormItem>
             </i-col>
             <i-col span="8" offset="1">
-              <Button
-                type="primary"
-                size="small"
-                v-show="sendCode"
-                @click="handleSendCode"
-                >获取验证码</Button
-              >
+              <Button type="primary" size="small" v-show="sendCode" @click="handleSendCode">获取验证码</Button>
               <Button
                 type="default"
                 size="small"
                 v-show="!sendCode"
                 class="btn-disabled"
                 disabled
-                >{{ countTime }}s 后重试</Button
-              >
+              >{{ countTime }}s 后重试</Button>
             </i-col>
           </Row>
         </FormItem>
       </Form>
       <div slot="footer">
-        <Button
-          type="default"
-          size="small"
-          @click="onHandleClickCancle('loginform')"
-          >取消</Button
-        >
-        <Button
-          type="primary"
-          size="small"
-          @click="onHandleClickSubmit('loginform')"
-          >登陆</Button
-        >
+        <Button type="default" size="small" @click="onHandleClickCancle('loginform')">取消</Button>
+        <Button type="primary" size="small" @click="onHandleClickSubmit('loginform')">登陆</Button>
       </div>
     </Modal>
   </div>
 </template>
 
 <script>
-import { setEmailCode } from '../../../utils/vue-token';
+import { setEmailCode } from 'js/utils/vue-token';
 
 export default {
   name: 'PersonForm',
@@ -144,7 +106,7 @@ export default {
           setEmailCode(res.code);
         });
       } else {
-        this.$tool.toastTips('warning', '请输入正确邮箱', 1.5);
+        this.$utils.toastTips('warning', '请输入正确邮箱', 1.5);
       }
     },
     onHandleClickSubmit(formName) {
@@ -178,7 +140,7 @@ export default {
       });
     }
   },
-  mounted() {}
+  mounted() { }
 };
 </script>
 

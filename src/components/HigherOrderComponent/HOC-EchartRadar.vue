@@ -19,7 +19,7 @@ export default {
   props: {
     radarData: {
       type: Object,
-      default: function() {
+      default: function () {
         return {};
       }
     }

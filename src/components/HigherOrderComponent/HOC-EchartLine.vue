@@ -21,7 +21,7 @@ export default {
   props: {
     lineData: {
       type: Object,
-      default: function() {
+      default: function () {
         return {};
       }
     }

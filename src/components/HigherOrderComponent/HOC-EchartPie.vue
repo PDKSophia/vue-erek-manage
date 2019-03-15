@@ -1,10 +1,6 @@
 <template>
   <div class="hoc-element">
-    <echarts-pie
-      :series="pieSeries"
-      :width="pieWidth"
-      :height="pieHeight"
-    ></echarts-pie>
+    <echarts-pie :series="pieSeries" :width="pieWidth" :height="pieHeight"></echarts-pie>
   </div>
 </template>
 
@@ -18,7 +14,7 @@ export default {
   props: {
     pieData: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     }

@@ -1,12 +1,6 @@
 <template>
   <div>
-    <Table
-      :border="border"
-      :stripe="stripe"
-      :size="size"
-      :data="data"
-      :columns="columns"
-    ></Table>
+    <Table :border="border" :stripe="stripe" :size="size" :data="data" :columns="columns"></Table>
     <div style="margin: 30px 0px;overflow: hidden" v-show="pagination.hasPage">
       <div style="float: right;">
         <Page
@@ -38,13 +32,13 @@ export default {
     },
     data: {
       type: Array,
-      defualt: function() {
+      defualt: function () {
         return [];
       }
     },
     pagination: {
       type: Object,
-      defualt: function() {
+      defualt: function () {
         return [];
       }
     }

@@ -1,5 +1,7 @@
 <template>
-  <div class="hoc-element"> <echarts-card :data="list" /> </div>
+  <div class="hoc-element">
+    <echarts-card :data="list"/>
+  </div>
 </template>
 
 <script>
@@ -12,7 +14,7 @@ export default {
   props: {
     data: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     }

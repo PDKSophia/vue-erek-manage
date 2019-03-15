@@ -21,12 +21,12 @@ export default {
   props: {
     data: {
       type: Array,
-      default: function() {
+      default: function () {
         return [];
       }
     }
   },
-  mounted() {}
+  mounted() { }
 };
 </script>
 
