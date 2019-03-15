@@ -1,4 +1,4 @@
-import * as types from '../types';
+import * as types from '../types'
 
 const state = {
   isFetch: false,
@@ -9,35 +9,35 @@ const state = {
   total: 0,
   currentItem: {},
   currentIndex: -1
-};
+}
 
 const actions = {
   retrieveTaskStatusList({ commit }, payload) {
-    commit(types.RETRIEVE_TASK_LIST, { data: payload });
+    commit(types.RETRIEVE_TASK_LIST, { data: payload })
   },
   retrieveStandardList({ commit }, payload) {
-    commit(types.RETRIEVE_STANDARD_LIST, { data: payload });
-    commit(types.SET_STAND_FETCH_STATUS);
+    commit(types.RETRIEVE_STANDARD_LIST, { data: payload })
+    commit(types.SET_STAND_FETCH_STATUS)
   }
-};
+}
 
 const mutations = {
   [types.SET_STAND_FETCH_STATUS](state) {
-    state.isFetch = true;
+    state.isFetch = true
   },
   [types.RETRIEVE_TASK_LIST](state, payload) {
-    state.taskStatusList = [...payload.data];
+    state.taskStatusList = [...payload.data]
   },
   [types.RETRIEVE_STANDARD_LIST](state, { data }) {
-    state.list = [...data.list];
-    state.pageNum = data.current;
-    state.pageSize = data.size;
-    state.total = data.total;
+    state.list = [...data.list]
+    state.pageNum = data.current
+    state.pageSize = data.size
+    state.total = data.total
   }
-};
+}
 
 export default {
   state,
   actions,
   mutations
-};
+}

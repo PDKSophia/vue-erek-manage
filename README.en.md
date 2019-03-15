@@ -92,17 +92,28 @@
 │   ├── assets
 │   │
 │   ├── components
-│   │    ├─BadgeComponents
-│   │    ├─DividerComponents
+│   │    ├─CommonComponents
+│   │    │    ├─Badge
+│   │    │    ├─Divider
+│   │    │    ├─FolatButton
+│   │    │    ├─NoContent
+│   │    │    ├─StandCard
+│   │    │    ├─StarCard
+│   │    │    └─ ...
 │   │    ├─EchartsCardComponents
 │   │    ├─EchartsComponents
 │   │    │    ├─Line
 │   │    │    ├─Pie
 │   │    │    ├─Radar
 │   │    │    └─ ...
-│   │    ├─FloatButtonComponents
 │   │    ├─FormComponents
 │   │    │    ├─LoginForm
+│   │    │    └─ ...
+│   │    ├─FrameComponents
+│   │    │    ├─Canvas
+│   │    │    ├─Index
+│   │    │    ├─Layout
+│   │    │    ├─List
 │   │    │    └─ ...
 │   │    ├─HigherOrderComponents
 │   │    │    ├─HOC-EchartCard
@@ -110,47 +121,36 @@
 │   │    │    ├─HOC-EchartPie
 │   │    │    ├─HOC-EchartRadar
 │   │    │    └─ ...
-│   │    ├─PageComponents
-│   │    │    ├─Index
-│   │    │    └─ ...
 │   │    ├─ProfileTableComponents
 │   │    │    ├─BaseTable
 │   │    │    ├─AdvanceTable
 │   │    │    └─ ...
-│   │    ├─ScaleCardComponents
-│   │    ├─StarCardComponents
 │   │    └─ ...
 │   │
-│   ├── config
+│   ├── js
+│   │    ├─app
+│   │    │  ├─bread-config.js
+│   │    │  ├─global-config.js
+│   │    │  ├─index-config.js
+│   │    │  ├─menu-config.js
+│   │    │  └─ ...
 │   │    ├─echarts
 │   │    │    ├─line.config.js
 │   │    │    ├─pie.config.js
 │   │    │    ├─radar.config.js
 │   │    │    └─ ...
-│   │    ├─app.js
-│   │    ├─breadItem.js
-│   │    ├─global.js
-│   │    ├─menu.js
-│   │    └─ ...
-│   │
-│   ├── mock
-│   │    ├─app.js
-│   │    ├─card.js
-│   │    ├─data.js
-│   │    ├─echarts.js
-│   │    ├─list.js
-│   │    ├─user.js
-│   │    └─ ...
-│   │
-│   ├── pages
-│   │    ├─Canvas
-│   │    ├─Layouts
-│   │    ├─List
-│   │    │   ├─Avatar
-│   │    │   ├─Card
-│   │    │   ├─Standard
-│   │    │   ├─Table
-│   │    │   └─ ...
+│   │    ├─ mock
+│   │    │    ├─app.js
+│   │    │    ├─card.js
+│   │    │    ├─data.js
+│   │    │    ├─echarts.js
+│   │    │    ├─list.js
+│   │    │    ├─user.js
+│   │    │    └─ ...
+│   │    ├─utils
+│   │    │    ├─utils.js
+│   │    │    ├─vue-token.js
+│   │    │    └─ ...
 │   │    └─ ...
 │   │
 │   ├── router
@@ -165,14 +165,19 @@
 │   │    └─ ...
 │   │
 │   ├── store
-│   │
-│   ├── utils
-│   │    ├─tool.js
-│   │    ├─utils.js
-│   │    ├─vue-token.js
+│   │    ├─modules
+│   │    │    ├─global.js
+│   │    │    ├─standard.js
+│   │    │    ├─table.js
+│   │    │    ├─user.js
+│   │    │    └─ ...
+│   │    ├─index.js
+│   │    ├─types.js
 │   │    └─ ...
+│   │
 │   │
 │   ├── view
+│   │    ├─Index
 │   │    ├─Login
 │   │    ├─Manage
 │   │    │    ├─VueErekException
@@ -181,15 +186,16 @@
 │   │    │    ├─VueErekProfile
 │   │    │    ├─VueErekTool
 │   │    │    ├─VueErekUser
-│   │    │    ├─Router
 │   │    │    └─ ...
+│   │    ├─Router.vue
 │   │    └─ ...
 │   │
+│   ├── main.js
+│   │
+│   ├── App.vue
 │   └─
 │ 
-├── main.js
-│ 
-├── App.vue
+├── vue.config.js
 │ 
 └─
 ```
