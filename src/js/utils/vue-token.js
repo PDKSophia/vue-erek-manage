@@ -34,3 +34,5 @@ export function getEmailCode() {
 export function setEmailCode(code) {
   return sessionStorage.setItem('vue-erek-code', code)
 }
+
+export default {}
