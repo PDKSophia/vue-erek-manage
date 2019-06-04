@@ -84,6 +84,26 @@
 
 😣 最近去把一些个人或者小公司自己做的开源后台框架看了一下，发现自己不仅是代码太垃圾了，包括文件夹的归纳是在太乱了，然后呢就看了别人的文件夹架构，emmmm，就优化一下吧，包括后面用 `eslint + prettier` 格式化了一下代码，看着顺眼多了 👀
 
+## 重构日志
+
+- 2019.05.25
+
+  - 观察 [ant-design-pro](https://github.com/ant-design/ant-design-pro) 与 [iview-admin](https://github.com/iview/iview-admin) 的文件夹架构，推翻之前的 `src/js/app` 文件夹，新增 `src/conf` 文件夹当作配置文件, 整合所有配置文件如 menu 菜单栏、bread 面包屑等
+
+- 2019.05.26
+
+  - 推翻`src/js/utils`文件夹，新增`src/utils`文件夹当作全局处理函数与缓存文件。
+  - 推翻`src/js/mock`文件夹，将所有的 mock 全都整合到一个文件中。
+  - 将所有`service`中的 api 都整合成一个文件。
+  - 重构`request`文件，重新封装所有请求
+  - 修改`Login`登陆页面逻辑，重写 vuex 中 user 模块，通过 dispatch 发起 action 进行登陆，而不是直接调用接口
+  - 重构验证码获取、登陆、通过 token 获取用户信息逻辑，替换接口和页面的 dispatch
+  - 替换所有的 api 接口，重构所有的 vuex 状态机，所有关于 api 操作均由 dispatch 进行分发
+
+- 2019.05.27
+  - 重构用户页的 mock 及 vuex 模块
+  - 重构列表页面的表格模块，通过阅读 vuex 文档，对 vuex 的 namespaced 有一定的了解，模块化 vuex
+
 ## 文件架构
 
 ```
@@ -265,6 +285,18 @@
 ## 吐槽一哈
 
 在做图表、数据卡片的时候，在思考，如何让用户使用起来更加方便简介，想在 `Echarts组件` 和用户使用的 `xx组件` 之间做一层封装，用户只需要传递数据即可，至于其他的默认配置就在中间一层配置就好，这时候，就想到 `React` 大法的好处了，想到 `高阶组件` 的好处了，并不是说 Vue 不能用高阶组件，而是我不会在 Vue 中写简单的高阶组件，心累
+
+---
+
+## vuex 设计
+
+vuex 的设计结构是在写`react`的`redux-soga`上，借鉴过来，并且通过 vuex 文档，最终确定如此设计
+
+- [vuex 命名空间](https://vuex.vuejs.org/zh/guide/modules.html#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)
+
+- [vuex 的 action](https://vuex.vuejs.org/zh/guide/actions.html#action)
+
+- [redux-soga](https://neighborhood999.github.io/redux-saga/)
 
 ---
 
