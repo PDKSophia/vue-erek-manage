@@ -1,7 +1,7 @@
 import request from './request'
 import { Message } from 'iview'
-import { getAuthorityToken } from 'js/utils/vue-token'
-import { baseUrl } from 'js/utils/utils'
+import { getAuthorityToken } from 'utils/auth'
+import { baseUrl } from 'utils/utils'
 
 export default {
   /**
