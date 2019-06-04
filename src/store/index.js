@@ -1,18 +1,20 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createLogger from 'vuex/dist/logger'
 
 import global from './modules/global'
+import echarts from './modules/echarts'
+import list from './modules/list'
 import user from './modules/user'
-import table from './modules/table'
-import standard from './modules/standard'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
     global,
-    user,
-    table,
-    standard
-  }
+    echarts,
+    list,
+    user
+  },
+  plugins: [createLogger()]
 })
