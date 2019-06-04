@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { setEmailCode } from 'js/utils/vue-token';
+import { setEmailCode } from 'utils/auth';
 
 export default {
   name: 'PersonForm',

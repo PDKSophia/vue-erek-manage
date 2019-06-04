@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { standCard } from 'js/app/global-config';
+import { standCard } from 'ekconfig/global';
 export default {
   name: 'StandCardComponents',
   props: {

@@ -16,12 +16,6 @@ import VueErekStandardList from '@/view/Manage/VueErekList/Standard'
 import VueErekCardList from '@/view/Manage/VueErekList/Card'
 import VueErekAvatarList from '@/view/Manage/VueErekList/Avatar'
 
-// 工具栏
-import VueErekToolMessage from '@/view/Manage/VueErekTool/Message'
-import VueErekToolAdvertise from '@/view/Manage/VueErekTool/Advertise'
-import VueErekToolCommonality from '@/view/Manage/VueErekTool/Commonality'
-import VueErekToolWords from '@/view/Manage/VueErekTool/Words'
-
 // 详情页
 import VueErekBaseProfile from '@/view/Manage/VueErekProfile/BasicProfile'
 import VueEreAdvanceProfile from '@/view/Manage/VueErekProfile/AdvanceProfile'
@@ -65,39 +59,6 @@ const router = new Router({
           path: 'erek-home',
           name: 'VueErekManageIndex',
           component: VueErekManageIndex,
-          meta: {
-            keepAlive: false
-          }
-        },
-        // 工具栏
-        {
-          path: 'erek-tool-message',
-          name: 'VueErekToolMessage',
-          component: VueErekToolMessage,
-          meta: {
-            keepAlive: false
-          }
-        },
-        {
-          path: 'erek-tool-advertise',
-          name: 'VueErekToolAdvertise',
-          component: VueErekToolAdvertise,
-          meta: {
-            keepAlive: false
-          }
-        },
-        {
-          path: 'erek-tool-commonality',
-          name: 'VueErekToolCommonality',
-          component: VueErekToolCommonality,
-          meta: {
-            keepAlive: false
-          }
-        },
-        {
-          path: 'erek-tool-words',
-          name: 'VueErekToolWords',
-          component: VueErekToolWords,
           meta: {
             keepAlive: false
           }

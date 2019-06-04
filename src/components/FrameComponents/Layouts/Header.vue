@@ -26,7 +26,7 @@
         >
           <MenuItem name="1">
             <Icon type="md-person"></Icon>
-            {{ erekUser.username }}
+            {{ user.username }}
           </MenuItem>
           <MenuItem name="2">
             <Icon type="md-log-out"></Icon>
@@ -40,12 +40,12 @@
 
 <script>
 import { mapState } from 'vuex';
-import { app, theme } from 'js/app/index-config';
-import { setAuthorityToken, setAuthorityRole } from 'js/utils/vue-token';
+import { app, theme } from 'ekconfig/global';;
+import { setAuthorityToken, setAuthorityRole } from 'utils/auth';
 export default {
   name: 'ErekManageHeader',
   computed: mapState({
-    erekUser: state => state.user.erekUser
+    user: state => state.user.user
   }),
   data() {
     return {

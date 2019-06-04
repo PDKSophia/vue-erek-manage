@@ -75,10 +75,10 @@
 </template>
 
 <script>
-import { theme } from 'js/app/index-config';
-import BreadItem from 'js/app/bread-config';
-import FooterLayout from './Footer';
-import { mapState, mapActions } from 'vuex';
+import { theme } from 'ekconfig/global'
+import BreadItem from 'ekconfig/bread'
+import FooterLayout from './Footer'
+import { mapState } from 'vuex'
 
 export default {
   name: 'ErekManageSider',
@@ -103,22 +103,19 @@ export default {
       activeMenu: '',
       openName: [],
       menuTheme: 'light'
-    };
-  },
-  methods: {
-    ...mapActions(['setHistroyUrl', 'recevieBreadItem'])
+    }
   },
   mounted() {
-    const history = this.$router.history;
-    this.setHistroyUrl(history.current.path);
+    const history = this.$router.history
+    this.$store.dispatch('global/updateHistoryUrlAsync', history.current.path)
     for (let key in BreadItem) {
       if (history.current.path == key) {
-        this.recevieBreadItem(BreadItem[key]);
+        this.$store.dispatch('global/retrieveBreadListAsync', BreadItem[key])
       }
     }
-    this.config = { ...theme.APP_THEME.LAYOUT_MENU };
+    this.config = { ...theme.APP_THEME.LAYOUT_MENU }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">
