@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import ErekBaseSetting from '../../Page/UserSetting/Base.vue';
-import ErekSafeSetting from '../../Page/UserSetting/Safe.vue';
-import ErekAccountSetting from '../../Page/UserSetting/Account.vue';
-import ErekMessageNotice from '../../Page/UserSetting/Notice.vue';
+import ErekBaseSetting from '../../Page/UserSetting/Base.vue'
+import ErekSafeSetting from '../../Page/UserSetting/Safe.vue'
+import ErekAccountSetting from '../../Page/UserSetting/Account.vue'
+import ErekMessageNotice from '../../Page/UserSetting/Notice.vue'
 export default {
   name: 'ErekPersonSetting',
   components: {
@@ -30,7 +30,7 @@ export default {
     ErekAccountSetting,
     ErekMessageNotice
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import VueStandCard from 'components/CommonComponents/StandCard/Index.vue';
-import VueDivider from 'components/CommonComponents/Divider/Index.vue';
-import ErekStandList from 'components/FrameComponents/List/Standard.vue';
-import NoContent from 'components/CommonComponents/NoContent/Index.vue';
-import { mapState, mapActions } from 'vuex';
+import VueStandCard from 'components/CommonComponents/StandCard/Index.vue'
+import VueDivider from 'components/CommonComponents/Divider/Index.vue'
+import ErekStandList from 'components/FrameComponents/List/Standard.vue'
+import NoContent from 'components/CommonComponents/NoContent/Index.vue'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'ErekStandardList',
@@ -32,12 +32,12 @@ export default {
     NoContent
   },
   computed: mapState({
-    isFetch: state => state.standard.isFetch,
-    list: state => state.standard.list,
-    taskStatusList: state => state.standard.taskStatusList,
-    pageNum: state => state.standard.pageNum,
-    pageSize: state => state.standard.pageSize,
-    total: state => state.standard.total
+    isFetch: state => state.list.isFetch,
+    list: state => state.list.list,
+    taskStatusList: state => state.list.taskStatusList,
+    pageNum: state => state.list.pageNum,
+    pageSize: state => state.list.pageSize,
+    total: state => state.list.total
   }),
   data() {
     return {
@@ -55,7 +55,7 @@ export default {
           total: 0
         }
       }
-    };
+    }
   },
   methods: {
     ...mapActions([
@@ -69,45 +69,45 @@ export default {
         'info',
         `你当前点击类型 : ${type}, 点击的item id为 : ${value.id}`,
         1
-      );
+      )
     }
   },
   mounted() {
     if (this.isFetch) {
-      this.taskList = [...this.taskStatusList];
-      this.standConfig.data = [...this.list];
+      this.taskList = [...this.taskStatusList]
+      this.standConfig.data = [...this.list]
       this.standConfig.pagination = {
         hasPage: true,
         pageNum: this.pageNum,
         pageSize: this.pageSize,
         total: this.total
-      };
+      }
     } else {
-      this.startFetch();
+      this.startFetch()
       // 请求获取所有任务
       this.$api.list.fetchAllTaskList().then(res => {
         for (let i = 0; i < res.length; i++) {
-          this.taskList.push(res[i]);
+          this.taskList.push(res[i])
         }
-        this.retrieveTaskStatusList(res); // 存至Vuex
-      });
+        this.retrieveTaskStatusList(res) // 存至Vuex
+      })
       // 请求获取数据
       this.$api.list.fetchRequestStandardApi().then(res => {
-        this.standConfig.data = [...res.list];
+        this.standConfig.data = [...res.list]
         this.standConfig.pagination = {
           hasPage: true,
           pageNum: res.current,
           pageSize: res.size,
           total: res.total
-        };
-        this.retrieveStandardList(res);
+        }
+        this.retrieveStandardList(res)
         setTimeout(() => {
-          this.stopFetch();
-        }, 1000);
-      });
+          this.stopFetch()
+        }, 1000)
+      })
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

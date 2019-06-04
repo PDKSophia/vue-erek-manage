@@ -3,14 +3,14 @@
     <div class="vue-user-item">
       <div class="vue-user-item-meta">
         <div class="vue-user-item-meta-avatar">
-          <img :src="erekUser.avatar" class="vue-user-item-meta-avatar-image" alt>
+          <img :src="user.avatar" class="vue-user-item-meta-avatar-image" alt>
         </div>
         <div class="vue-user-item-meta-content">
-          <h4 class="vue-user-item-meta-title">{{ erekUser.username }}</h4>
+          <h4 class="vue-user-item-meta-title">{{ user.username }}</h4>
           <div class="vue-user-item-meta-summary">
-            <span v-for="(tag, index) in erekUser.tag" :key="index">
+            <span v-for="(tag, index) in user.tag" :key="index">
               {{ tag }}
-              <Divider v-if="index !== erekUser.tag.length - 1" type="vertical"/>
+              <Divider v-if="index !== user.tag.length - 1" type="vertical"/>
             </span>
           </div>
         </div>
@@ -18,14 +18,14 @@
       <div class="vue-user-item-action">
         <ul>
           <a
-            v-for="(item, key) in erekUser.link"
+            v-for="(item, key) in user.link"
             :key="key"
             :href="item.target"
             target="_blank"
             class="vue-erek-link"
           >
             {{ item.text }}
-            <Divider v-if="key !== erekUser.link.length - 1" type="vertical"/>
+            <Divider v-if="key !== user.link.length - 1" type="vertical"/>
           </a>
         </ul>
       </div>
@@ -34,16 +34,6 @@
     <div class="vue-erek-article">
       <div class="vue-erek-badge-left">
         <vue-user-badge :config="badgeConfig"/>
-      </div>
-      <div class="vue-erek-content-right">
-        <echarts-line
-          :x-axis="xAxis"
-          :y-axis="yAxis"
-          :series="lineSeries"
-          :item-list="itemList"
-          :width="lineWidth"
-          :height="lineHeight"
-        />
       </div>
     </div>
     <vue-divider :bg-color="divider.bgColor" :height="divider.height"/>
@@ -145,10 +135,10 @@
 </template>
 
 <script>
-import VueDivider from 'components/CommonComponents/Divider/Index.vue';
-import VueUserBadge from 'components/CommonComponents/Badge/Index.vue';
-import EchartsLine from '../../../components/EchartsComponents/Line.vue';
-import { mapState } from 'vuex';
+import VueDivider from 'components/CommonComponents/Divider/Index.vue'
+import VueUserBadge from 'components/CommonComponents/Badge/Index.vue'
+import EchartsLine from '../../../components/EchartsComponents/Line.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'ErelUserInformation',
@@ -158,7 +148,7 @@ export default {
     EchartsLine
   },
   computed: mapState({
-    erekUser: state => state.user.erekUser
+    user: state => state.user.user
   }),
   data() {
     return {
@@ -180,50 +170,31 @@ export default {
       lineWidth: '100%',
       lineHeight: '250px',
       lineSeries: [] // 折线数据
-    };
+    }
   },
-  mounted() {
-    // 发送请求获取所有个人中心的数据
-    this.$api.app.fetchAllListData().then(res => {
-      // 折线图 - 近期日访问量
-      let loginStep = res.loginStep;
-      for (let i = 0; i < loginStep.timeRange.length; i++) {
-        this.xAxis.data.push(loginStep.timeRange[i]);
-      }
-      this.yAxis.min = loginStep.countRange[0];
-      this.yAxis.max = loginStep.countRange[1];
-
-      for (let j = 0; j < loginStep.data.length; j++) {
-        let config = {
-          text: loginStep.data[j].text,
-          badgeColor: '#00c099'
-        };
-        this.itemList.push(config);
-        let obj = {
-          data: loginStep.data[j].data,
-          type: 'bar',
-          barWidth: 15,
-          itemStyle: {
-            normal: {
-              color: '#00c099' // 设置折线点颜色
+  watch: {
+    user: {
+      handler(newVal) {
+        if (newVal) {
+          this.$nextTick(() => {
+            this.badgeConfig = {
+              namespace: '获得的徽章',
+              valueColor: '#6f80da',
+              data: { ...newVal.badge }
             }
-          },
-          smooth: true // 折线 圆滑
-        };
-        this.lineSeries.push(obj);
+          })
+        }
       }
-    });
-
-    // Step1. 请求获取 “徽章”
-    this.$api.user.fetchBadgeList().then(res => {
-      this.badgeConfig = {
-        namespace: '获得的徽章',
-        valueColor: '#6f80da',
-        data: { ...res }
-      };
-    });
+    }
+  },
+  async mounted() {
+    this.badgeConfig = {
+      namespace: '获得的徽章',
+      valueColor: '#6f80da',
+      data: { ...this.user.badge }
+    }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

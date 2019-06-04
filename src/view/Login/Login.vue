@@ -60,7 +60,7 @@ import {
   getEmailCode,
   setAuthorityToken,
   setAuthorityRole
-} from 'js/utils/vue-token';
+} from 'utils/auth';
 
 export default {
   name: 'ErekManageLogin',
@@ -107,37 +107,28 @@ export default {
       }, 1000);
     },
     // 获取验证码
-    handleSendCode() {
+    async handleSendCode() {
       if (this.$utils.checkEmail(this.loginform.email)) {
-        this.setCountDownTime();
-        this.$api.user.fetchValidateCode(this.loginform.email).then(res => {
-          this.$Notice.open({
-            title: `您的验证码是 : ${res.code}`
-          });
-          setEmailCode(res.code);
-        });
+        this.setCountDownTime()
+        // dispatch 发送请求
+        await this.$store.dispatch('user/retrieveEmailCodeAsync', this.loginform.email)
       } else {
         this.$utils.toastTips('warning', '请输入正确邮箱', 1.5);
       }
     },
     // 表单校验登陆
-    onHandleClickSubmit(formName) {
-      this.$refs[formName].validate(valid => {
+    async onHandleClickSubmit(formName) {
+      this.$refs[formName].validate(async valid => {
         if (valid) {
           if (getEmailCode() != this.loginform.code) {
             this.$utils.toastTips('error', '验证码错误', 1.5);
           } else {
-            this.$api.user
-              .fetchOauthAdminLogin(JSON.stringify(this.loginform))
-              .then(res => {
-                setAuthorityToken(res.token);
-                setAuthorityRole(res.userRole);
-                setTimeout(() => {
-                  this.$router.push({
-                    path: '/erek-manage'
-                  });
-                }, 1500);
+            await this.$store.dispatch('user/oauthLoginAsync', this.loginform)
+            setTimeout(() => {
+              this.$router.push({
+                path: '/erek-manage'
               });
+            }, 1500)
           }
         }
       });

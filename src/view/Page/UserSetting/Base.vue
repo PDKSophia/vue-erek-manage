@@ -65,11 +65,12 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState } from 'vuex'
+
 export default {
   name: 'UserBaseSetting',
   computed: mapState({
-    erekUser: state => state.user.erekUser
+    user: state => state.user.user
   }),
   data() {
     return {
@@ -117,58 +118,68 @@ export default {
           }
         ]
       }
-    };
+    }
+  },
+  watch: {
+    user: {
+      handler(newVal) {
+        if (newVal) {
+          this.$nextTick(() => {
+            this.formValidate = { ...newVal }
+          })
+        }
+      }
+    }
   },
   methods: {
-    ...mapActions(['setErekUser']),
     // 修改头像
     handleChangeAvatar() {
-      var box = document.getElementById('avatar');
-      var headimg = box.files;
-      var imgName = headimg[0].name;
-      var imgSize = headimg[0].size;
+      var box = document.getElementById('avatar')
+      var headimg = box.files
+      var imgName = headimg[0].name
+      var imgSize = headimg[0].size
       var imgType = imgName
         .substring(imgName.lastIndexOf('.') + 1)
-        .toLowerCase();
+        .toLowerCase()
       if (imgType !== 'jpg' && imgType !== 'jpeg' && imgType !== 'png') {
-        this.$utils.toastTips('warning', '照片只支持jpg、jpeg、png格式', 1.5);
-        imgName = '';
-        headimg = null;
-        return false;
+        this.$utils.toastTips('warning', '照片只支持jpg、jpeg、png格式', 1.5)
+        imgName = ''
+        headimg = null
+        return false
       }
       if (imgSize > 5242000) {
-        this.$utils.toastTips('warning', '大小不能超过5M', 1.5);
-        imgName = '';
-        headimg = null;
-        return false;
+        this.$utils.toastTips('warning', '大小不能超过5M', 1.5)
+        imgName = ''
+        headimg = null
+        return false
       } else {
-        this.formValidate.avatar = window.URL.createObjectURL(headimg[0]);
+        this.formValidate.avatar = window.URL.createObjectURL(headimg[0])
       }
     },
     handleSubmit(name) {
       this.$refs[name].validate(valid => {
         if (valid) {
-          this.$utils.toastTips('success', '修改成功!', 1.5);
-          this.setErekUser(this.formValidate);
+          this.$utils.toastTips('success', '修改成功!', 1.5)
+          this.$store.dispatch('user/updateUserAsync', this.formValidate)
         } else {
-          this.$utils.toastTips('error', 'Fail!', 1.5);
+          this.$utils.toastTips('error', 'Fail!', 1.5)
         }
-      });
+      })
     },
     handleReset(name) {
-      this.$refs[name].resetFields();
+      this.$refs[name].resetFields()
     }
   },
-  mounted() {
+  async mounted() {
     if (this.initDataLoading) {
-      this.$utils.loadingTips('loading', 0, 2000);
-      this.formValidate = { ...this.erekUser };
+      this.$utils.loadingTips('loading', 0, 1000)
+      this.formValidate = { ...this.user }
       setTimeout(() => {
-        this.initDataLoading = false;
-      }, 1500);
+        this.initDataLoading = false
+      }, 1000)
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

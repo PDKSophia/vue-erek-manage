@@ -19,7 +19,7 @@
 
 <script>
 import VueErekMainText from 'components/FrameComponents/Index/MainText.vue';
-import { app } from 'js/app/index-config';
+import { app } from 'ekconfig/global';
 export default {
   name: 'ErekLogin',
   components: {

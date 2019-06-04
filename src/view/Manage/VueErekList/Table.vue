@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import ErekTableList from 'components/FrameComponents/List/Table.vue';
-import { mapState, mapActions } from 'vuex';
+import ErekTableList from 'components/FrameComponents/List/Table.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'ErekManageTableList',
@@ -48,11 +48,11 @@ export default {
     ErekTableList
   },
   computed: mapState({
-    isFetch: state => state.table.isFetch,
-    list: state => state.table.list,
-    pageNum: state => state.table.pageNum,
-    pageSize: state => state.table.pageSize,
-    total: state => state.table.total
+    isFetch: state => state.list.isFetch,
+    list: state => state.list.list,
+    pageNum: state => state.list.pageNum,
+    pageSize: state => state.list.pageSize,
+    total: state => state.list.total
   }),
   data() {
     return {
@@ -80,63 +80,65 @@ export default {
           total: 0
         }
       }
-    };
+    }
   },
   methods: {
-    ...mapActions(['startFetch', 'stopFetch', 'retrieveTableList']),
     handleSearchValue() {
       if (this.keyWords && this.selectValue) {
         this.$utils.toastTips(
           'success',
           `你点击了查询，查询${this.keyWords}和${this.selectValue}`,
           2
-        );
+        )
       } else {
-        this.$utils.toastTips('error', `搜索框不能为空`, 2);
+        this.$utils.toastTips('error', `搜索框不能为空`, 2)
       }
     },
     handleResetValue() {
-      this.$utils.toastTips('warning', `你点击了重置`, 2);
-      this.keyWords = '';
-      this.selectValue = '';
+      this.$utils.toastTips('warning', `你点击了重置`, 2)
+      this.keyWords = ''
+      this.selectValue = ''
     },
     handleEmitTableValue(value, type) {
       this.$utils.toastTips(
         'info',
         `你当前点击 : ${type}, 下标索引为 : ${value}`,
         1
-      );
+      )
     }
   },
-  mounted() {
-    console.log('aha', this.isFetch);
+  async mounted() {
     if (this.isFetch) {
-      this.tableConfig.data = [...this.list];
+      this.tableConfig.data = [...this.list]
       this.tableConfig.pagination = {
         hasPage: true,
         pageNum: this.pageNum,
         pageSize: this.pageSize,
         total: this.total
-      };
+      }
     } else {
-      this.startFetch();
-      // 发送请求获取数据信息
-      this.$api.list.fetchRequestTableApi().then(res => {
-        this.tableConfig.data = res.list;
-        this.tableConfig.pagination = {
-          hasPage: true,
-          pageNum: res.current,
-          pageSize: res.size,
-          total: res.total
-        };
-        this.retrieveTableList(res);
-        setTimeout(() => {
-          this.stopFetch();
-        }, 1000);
-      });
+      await this.$store.dispatch('global/startFetch')
+      // 修改请求页数和大小
+      await this.$store.dispatch('list/setPageNum', 1)
+      await this.$store.dispatch('list/setPageSize', 10)
+      // 开始请求
+      await this.$store.dispatch('list/retrieveListAsync', {
+        pageNum: this.pageNum,
+        pageSize: this.pageSize
+      })
+      this.tableConfig.data = this.list
+      this.tableConfig.pagination = {
+        hasPage: true,
+        pageNum: this.current,
+        pageSize: this.size,
+        total: this.total
+      }
+      setTimeout(() => {
+        this.$store.dispatch('global/stopFetch')
+      }, 1000)
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">
