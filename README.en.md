@@ -21,8 +21,8 @@
 ## Characteristic
 
 - Configure `Menu bar` and `Breadcrumbs directly`
-- Imitation `pro-ant-design` framework, provide `Echarts icon` and `Table form list` and other pages to learn from
 - Use `npm + webpack + babel` workflow , and support `ES6`
+- Imitation `pro-ant-design` framework, provide `Echarts icon` and `Table form list` and other pages to learn from
 
 ## Technology
 
@@ -38,19 +38,19 @@
 
 ## Target function
 
-- [ ] Dashboard
-- [ ] List Page
-- [ ] Error Page
-- [ ] Work Management
-- [ ] Person Page
-- [ ] Theme Setting
+- [x] Dashboard
+- [x] List Page
+- [x] Error Page
+- [x] Work Management
+- [x] Person Page
+- [x] Theme Setting
 
 ## Echarts
 
-- [ ] Line Echarts
-- [ ] Data Card
-- [ ] Pie Echarts
-- [ ] Radar Echarts
+- [x] Line Echarts
+- [x] Data Card
+- [x] Pie Echarts
+- [x] Radar Echarts
 - [ ] ...(after doing QAQ)
 
 ## Project Environment
@@ -61,7 +61,6 @@
     2 . Vue-cli is v3.0.0
 
     3 . Other dependencies please move package.json
-
 ```
 
 ## Use
@@ -255,8 +254,6 @@
 ---
 
 <img src='https://github.com/PDKSophia/erek-resume-manage/raw/master/image/ui-14.png'>
-
----
 
 ---
 
