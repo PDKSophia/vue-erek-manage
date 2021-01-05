@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "apollo-tracing": "^0.5.2",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "echarts": "^4.1.0",
     "eslint-plugin-vue": "^5.0.0",
     "iview": "^3.1.3",
